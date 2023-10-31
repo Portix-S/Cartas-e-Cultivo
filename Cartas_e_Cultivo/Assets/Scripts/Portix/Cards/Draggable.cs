@@ -131,7 +131,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             //Debug.Log("-1");
             DropZone roomScript = lastRoom.GetComponent<DropZone>();
             roomScript.currentCards--;
-            gc.PlayCard();
+            gc.PlayCard(cardSO, parentToReturnTo.name);
             
             if(gc.canAffordMana(cardSO.manaCost))
                 gc.loseMana(cardSO.manaCost);
