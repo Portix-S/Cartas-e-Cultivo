@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using System.Linq;
+
 
 public class GameController : MonoBehaviour {
 
@@ -18,6 +20,7 @@ public class GameController : MonoBehaviour {
     public TextMeshProUGUI manaCountText;
     public TextMeshProUGUI graveyardCountText;
 
+   
     private int currentTurn = 0;
     private int mana = 1;
     private int growth = 0;
@@ -26,7 +29,7 @@ public class GameController : MonoBehaviour {
     [Header("Player Configs")]
     [SerializeField] private DropZone handScript;
 
-
+   
     [Header("Turn Configs")]
     public bool playerTurn = true;
     public int maxCardsToDraw = 3;
@@ -41,7 +44,9 @@ public class GameController : MonoBehaviour {
     [SerializeField] GameObject winUI;
     [SerializeField] GameObject loseUI;
     public int cardsOnRooms;
-    public int maxCardsOnRooms = 10;
+    public CardSO[] cardFields;
+
+    public int maxCardsOnRooms = 8;
     public bool isPlaying;
     public bool isOnMenu;
 
@@ -180,12 +185,58 @@ public class GameController : MonoBehaviour {
         loseUI.SetActive(true);
     }
 
-    public void PlayCard()
+    public void PlayCard(CardSO card, string room)
     {
-        cardsOnRooms++;
+        int value = (room.Last() - '0') - 1;
+        // int value = (room.Last().ParseInt());
+        Debug.Log(value);
+        cardFields[value] = card; // nao sei conectar
+        cardsOnRooms++; 
         FindObjectOfType<AudioManager>().Play("cardThrown");  // plays cardThrown sounds
 
     }
 
+    public int[] AdjacentFields(int value) {
+        // Jeito burro, posso mudar futuramente pra uma matriz
+        // Sendo matriz os adjacentes seriam [i+1, j], [i, j+1], [i-1, j], [i, j-1], tendo q tratar pra ser NULL quando extrapolar os limites da matriz
+        int[] adjacent = null;
+        switch(value) {
+            case 0:
+                adjacent = new int[] {1,4};
+                return adjacent;
+            break;
+            case 1:
+                adjacent = new int[] {0,2,5};   
+                return adjacent;
+            break;
+            case 2:
+                adjacent = new int[] {1,3,6};
+                return adjacent;
+            break; 
+            case 3:
+                adjacent = new int[] {2,7};
+                return adjacent;
+            break; 
+            case 4:
+                adjacent =   new int[] {0,5};
+                return adjacent;
+            break; 
+            case 5:
+                adjacent = new int[] {4,6,1};
+                return adjacent;
+            break; 
+            case 6:
+                adjacent = new int[] {5,7,2};
+                return adjacent;
+            break; 
+            case 7:
+                adjacent = new int[] {6,3};
+                return adjacent;
+            break;
+            default:
+            return adjacent;
+
+        } 
+    }
 
 }
