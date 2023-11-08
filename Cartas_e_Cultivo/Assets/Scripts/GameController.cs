@@ -197,7 +197,7 @@ public class GameController : MonoBehaviour {
     }
 
     public int[] AdjacentFields(int value) {
-        // Jeito burro, posso mudar futuramente pra uma matriz
+        // Jeito burro, posso mudar futuramente pra uma mat riz
         // Sendo matriz os adjacentes seriam [i+1, j], [i, j+1], [i-1, j], [i, j-1], tendo q tratar pra ser NULL quando extrapolar os limites da matriz
         int[] adjacent = null;
         switch(value) {

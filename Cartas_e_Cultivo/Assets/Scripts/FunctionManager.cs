@@ -16,7 +16,7 @@ public class FunctionManager : MonoBehaviour {
         onDieFunctions.Add(1, () => {PotatoOnDie();});
     }
 
-    void DrawEvent(int amount, string reason) {
+    void DrawEvent(int amount, string reason) { 
         if (amount > 1)
         {
             for (int i = 0; i < amount; i++)
@@ -24,7 +24,6 @@ public class FunctionManager : MonoBehaviour {
         }
         Debug.Log("Drew " + amount.ToString() + " because of " + reason + " event.");
     }
-
     // OnDraw Events
     // pls make it an alphabetic order
     // i beg you
@@ -37,7 +36,9 @@ public class FunctionManager : MonoBehaviour {
     // OnPlay Events
     // pls make it an alphabetic order
     // i beg you
-
+    /* void CallaLillyOnPlay() {
+   
+    } */
     void PotatoOnPlay() {
         int amount = 1;
         DrawEvent(amount, "Potato onPlay");
@@ -52,4 +53,6 @@ public class FunctionManager : MonoBehaviour {
         DrawEvent(amount, "Potato onDie");
     }
 
+    
 }
+
