@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f67fef03b5fa5249a777c52d1fba8ff, type: 3}
-  m_Name: Watermelon
+  m_Name: Potato
   m_EditorClassIdentifier: 
   cardID: 1
-  cardName: Watermelon
-  description: It's a watermelon
-  mask: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  artwork: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  manaCost: 3
-  growthTime: 4
-  health: 5
+  cardName: Batata
+  description: Compre 1 carta
+  mask: {fileID: 21300000, guid: 5469890ae28b7744fad9a70ea4482312, type: 3}
+  artwork: {fileID: 21300000, guid: 5469890ae28b7744fad9a70ea4482312, type: 3}
+  ImagemdaCarta: {fileID: 21300000, guid: 1e06c9e16199bf743993414f8e2147ea, type: 3}
+  manaCost: 1
+  growthTime: 2
+  health: 2
   hasOnDraw: 1
   hasOnPlay: 1
   hasOnDie: 1

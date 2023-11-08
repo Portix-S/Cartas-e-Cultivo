@@ -588,18 +588,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 6545856416568580813}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e152131f752054b8c2c06f209c225a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a6ccc4fd568b1f46988648626fbbc05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   beenPlayed: 0
   cardSO: {fileID: 0}
-  nameText: {fileID: 8139978577632301591}
-  descriptionText: {fileID: 7138495757052362003}
-  maskImage: {fileID: 557310824459575322}
-  artworkImage: {fileID: 8168403284060435851}
-  manaCostText: {fileID: 1062980411594305951}
-  healthText: {fileID: 7576031870613206702}
-  growthTimeText: {fileID: 7786282954930727253}
+  nameText: {fileID: 0}
+  descriptionText: {fileID: 0}
+  maskImage: {fileID: 0}
+  artworkImage: {fileID: 0}
+  manaCostText: {fileID: 0}
+  healthText: {fileID: 0}
+  growthTimeText: {fileID: 0}
 --- !u!61 &6907885028290646615
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -705,7 +705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -781,7 +781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.754717, g: 0.5582058, b: 0.5582058, a: 0.3764706}
+  m_Color: {r: 0.9716981, g: 0.08616941, b: 0.08616941, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
