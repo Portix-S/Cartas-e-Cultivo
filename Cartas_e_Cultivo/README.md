@@ -1,12 +1,13 @@
 <pre>
 Simplesmente o pináculo do game design
+Development by GAMSO Ufscar
 
   CARTAS & CULTIVO
 
 Desenvolvedores
 
 Bruno Kenzo Yui                       
-Sona sla do que                   
+Portix               
 Ronan
-Monique
+
 </pre>
