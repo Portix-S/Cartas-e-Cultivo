@@ -15,7 +15,7 @@ MonoBehaviour:
   cardID: 1
   cardName: Melancia
   description: Show
-  mask: {fileID: 21300000, guid: 5469890ae28b7744fad9a70ea4482312, type: 3}
+  mask: {fileID: 0}
   artwork: {fileID: 21300000, guid: 5469890ae28b7744fad9a70ea4482312, type: 3}
   ImagemdaCarta: {fileID: 0}
   manaCost: 2

@@ -188,9 +188,9 @@ public class GameController : MonoBehaviour {
     public void PlayCard(CardSO card, string room)
     {
         int value = (room.Last() - '0') - 1;
-        // int value = (room.Last().ParseInt());
+         // int value = (room.Last().ParseInt());
         Debug.Log(value);
-        cardFields[value] = card; // nao sei conectar
+        cardFields[value] = card; 
         cardsOnRooms++; 
         FindObjectOfType<AudioManager>().Play("cardThrown");  // plays cardThrown sounds
 
@@ -202,7 +202,7 @@ public class GameController : MonoBehaviour {
         int[] adjacent = null;
         switch(value) {
             case 0:
-                adjacent = new int[] {1,4};
+                adjacent = new int[] {  1,4};
                 return adjacent;
             break;
             case 1:

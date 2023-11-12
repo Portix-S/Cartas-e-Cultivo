@@ -12,7 +12,7 @@ public class FunctionManager : MonoBehaviour {
 
     void Start() {
         onDrawFunctions.Add(1, () => {PotatoOnDraw();});
-        onPlayFunctions.Add(1, () => {PotatoOnPlay();});
+        onPlayFunctions.Add(2, () => {PotatoOnPlay(); /*CallaLillyOnPlay();*/});
         onDieFunctions.Add(1, () => {PotatoOnDie();});
     }
 
@@ -36,8 +36,17 @@ public class FunctionManager : MonoBehaviour {
 
     // OnPlay Events
     // pls make it an alphabetic order
-    // i beg you
+    // i beg you 
+    /* void CallaLillyOnPlay(int value) {
 
+        int[] adj = gc.AdjacentFields(value);
+        for(int i=0; i<3; i++) {
+         
+            gc.cardFields[adj[i]].health++;
+            
+        }
+    }
+    */      
     void PotatoOnPlay() {
         int amount = 1;
         DrawEvent(amount, "Potato onPlay");

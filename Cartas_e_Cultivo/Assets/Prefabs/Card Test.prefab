@@ -72,7 +72,7 @@ MonoBehaviour:
   cardSO: {fileID: 11400000, guid: 7c43aa3cae8d6e2438fb203048bb9798, type: 2}
   nameText: {fileID: 6923825572883229014}
   descriptionText: {fileID: 5059020671507721852}
-  maskImage: {fileID: 6733428759133473449}
+  maskImage: {fileID: 7437088290286675357}
   artworkImage: {fileID: 9076696558236709880}
   manaCostText: {fileID: 640565831806425250}
   healthText: {fileID: 9220712813296631708}

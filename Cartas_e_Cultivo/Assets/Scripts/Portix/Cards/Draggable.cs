@@ -35,7 +35,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     [Header("Growth Stats")]
     private int growthLevel = 0;
-    [SerializeField] private int maxGrowthLevel = 1;
+        [SerializeField] private int maxGrowthLevel = 1;
 
     private void Awake()
     {
