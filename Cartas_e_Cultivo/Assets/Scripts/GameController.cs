@@ -193,7 +193,8 @@ public class GameController : MonoBehaviour {
         cardFields[value] = card; 
         cardsOnRooms++; 
         FindObjectOfType<AudioManager>().Play("cardThrown");  // plays cardThrown sounds
-
+        int[] adj = AdjacentFields(value);
+        if(card.cardName == "CallaLily") {for(int i=0; i<3; i++) {cardFields[adj[i]].health++;}}
     }
 
     public int[] AdjacentFields(int value) {

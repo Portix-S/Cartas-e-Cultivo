@@ -30,8 +30,7 @@ public class FunctionManager : MonoBehaviour {
     // i beg you
 
     void PotatoOnDraw() {
-        int amount = 1;
-        DrawEvent(amount, "Potato onDraw");
+        Console.Write("Does not does anything");
     }
 
     // OnPlay Events
@@ -45,11 +44,10 @@ public class FunctionManager : MonoBehaviour {
             gc.cardFields[adj[i]].health++;
             
         }
-    }
-    */      
+    } */
+         
     void PotatoOnPlay() {
-        int amount = 1;
-        DrawEvent(amount, "Potato onPlay");
+        Console.Write("Does not does anything");
     }
 
     // OnDie Events
@@ -57,8 +55,10 @@ public class FunctionManager : MonoBehaviour {
     // i beg you
 
     void PotatoOnDie() {
-        int amount = 1;
-        DrawEvent(amount, "Potato onDie");
+        Console.Write("Does not does anything");
     }
 
+    /* void WatermelonOnDie() {
+           
+    } */
 }
