@@ -10,7 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f67fef03b5fa5249a777c52d1fba8ff, type: 3}
+  <<<<<<<< Updated upstream:Cartas_e_Cultivo/Assets/Art/Cartas/CopoDeLeite.asset
   m_Name: CopoDeLeite
+========
+  m_Name: CopodeLeite
+>>>>>>>> Stashed changes:Cartas_e_Cultivo/Assets/Art/Cartas/CopodeLeite.asset
   m_EditorClassIdentifier: 
   cardID: 1
   cardName: Copo de Leite
