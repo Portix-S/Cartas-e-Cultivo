@@ -30,6 +30,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public TextMeshProUGUI manaCostText;
     public TextMeshProUGUI healthText;
+    //public int health;
     public TextMeshProUGUI growthTimeText;
 
 
@@ -51,6 +52,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         manaCostText.text = cardSO.manaCost.ToString();
         healthText.text = cardSO.health.ToString();
+       //  health = int.Parse(healthText.text);
         growthTimeText.text = cardSO.growthTime.ToString();
     }
 
@@ -127,11 +129,11 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         // When it changes zone, get the room it was and remove a card from it
         if (changedByDropZone)
-        {
+        {   
             //Debug.Log("-1");
             DropZone roomScript = lastRoom.GetComponent<DropZone>();
             roomScript.currentCards--;
-            gc.PlayCard(cardSO, parentToReturnTo.name);
+            gc.PlayCard(this, parentToReturnTo.name);
             
             if(gc.canAffordMana(cardSO.manaCost))
                 gc.loseMana(cardSO.manaCost);

@@ -39,13 +39,15 @@ public class GameController : MonoBehaviour {
     [SerializeField] private bool stimulateGrowth;
     public event EventHandler OnPlayerTurnBegin;
     public int cardsGrown;
+   
     [Header("Game Manager")]
     [SerializeField] GameObject playButton;
     [SerializeField] GameObject winUI;
     [SerializeField] GameObject loseUI;
     public int cardsOnRooms;
-    public CardSO[] cardFields;
+    public List<Draggable> cardFields;
 
+    public GameObject[] rooms;
     public int maxCardsOnRooms = 8;
     public bool isPlaying;
     public bool isOnMenu;
@@ -90,20 +92,15 @@ public class GameController : MonoBehaviour {
         Debug.Log("Drawing");
         if (deck.Count >= 1)
         { // Se houverem cartas no deck:
-            if(deck.Count > maxCardsToDraw)
-            {
-                int numOfCardsInHand = handScript.GetMaxCards() - handScript.currentCards;
-                if (numOfCardsInHand >= 3)
+        
+                int numOfCardsInHand = handScript.currentCards;
+                if (currentTurn == 0)
                 {
-                    numOfCardsToBeBought = 3;
+                    numOfCardsToBeBought = 5;
                 }
-                else
-                    numOfCardsToBeBought = numOfCardsInHand;
-            }
-            else
-            {
-                numOfCardsToBeBought = deck.Count;
-            }
+                else { 
+                    numOfCardsToBeBought = 1;
+                    }
             Debug.Log("Buying " + numOfCardsToBeBought + " cards");
             for (int i = 0; i < numOfCardsToBeBought; i++)
             {
@@ -185,16 +182,27 @@ public class GameController : MonoBehaviour {
         loseUI.SetActive(true);
     }
 
-    public void PlayCard(CardSO card, string room)
+    public void PlayCard(Draggable card, string room)
     {
         int value = (room.Last() - '0') - 1;
+        int[] adj = AdjacentFields(value);
          // int value = (room.Last().ParseInt());
         Debug.Log(value);
         cardFields[value] = card; 
         cardsOnRooms++; 
         FindObjectOfType<AudioManager>().Play("cardThrown");  // plays cardThrown sounds
-        int[] adj = AdjacentFields(value);
-        if(card.cardName == "CallaLily") {for(int i=0; i<3; i++) {cardFields[adj[i]].health++;}}
+        
+        //"Funções" onPlay() das cartas, eventualmente mudar de cardName para cardID;
+        
+        //if(card.nameText.text == "Copo de Leite") {
+            for(int i=0; i<adj.Length; i++) {
+                cardFields[adj[i]].health++;
+                Debug.Log("Cartas curadas?");
+            }
+        }
+        if(card.nameText.text == "Cafe") {DrawCard();}
+        // if (card.cardName == "Melancia") {for(int i=0; i<adj.length; i++) {PlayCard(melanciafilho, rooms[adj[i]].name);}}
+            
     }
 
     public int[] AdjacentFields(int value) {
@@ -203,7 +211,7 @@ public class GameController : MonoBehaviour {
         int[] adjacent = null;
         switch(value) {
             case 0:
-                adjacent = new int[] {  1,4};
+                adjacent = new int[] {1,4};
                 return adjacent;
             break;
             case 1:
