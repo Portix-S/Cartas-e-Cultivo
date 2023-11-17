@@ -122,7 +122,7 @@ public class GameController : MonoBehaviour {
 
     public void ShuffleDeck() {
         int n = deck.Count;
-        Debug.Log("Shuffling");
+        //Debug.Log("Shuffling");
         while (n > 1) {  
             n--;  
             int k = rng.Next(n + 1);  
@@ -130,6 +130,8 @@ public class GameController : MonoBehaviour {
             deck[k] = deck[n];  
             deck[n] = value;  
         }
+        Debug.Log("Shuffling");
+
     }
 
     public void EndTurn() {

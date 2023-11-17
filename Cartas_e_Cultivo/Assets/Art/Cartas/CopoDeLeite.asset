@@ -10,15 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f67fef03b5fa5249a777c52d1fba8ff, type: 3}
-  <<<<<<<< Updated upstream:Cartas_e_Cultivo/Assets/Art/Cartas/CopoDeLeite.asset
-  m_Name: CopoDeLeite
-========
   m_Name: CopodeLeite
->>>>>>>> Stashed changes:Cartas_e_Cultivo/Assets/Art/Cartas/CopodeLeite.asset
   m_EditorClassIdentifier: 
   cardID: 1
-  cardName: Copo de Leite
-  description: Cura adjacentes ao plantar
+  cardName: Lirio
+  description: Cure as cartas adjacentes
   mask: {fileID: 21300000, guid: 2a84ef8162863fe4a93a5cb081845227, type: 3}
   artwork: {fileID: 21300000, guid: 5469890ae28b7744fad9a70ea4482312, type: 3}
   ImagemdaCarta: {fileID: 21300000, guid: 2a84ef8162863fe4a93a5cb081845227, type: 3}

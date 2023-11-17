@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: 1
   cardName: Limao
-  description: Li sua mao
-  mask: {fileID: 21300000, guid: 3eed40123c1d8814e9147cd1058b55c6, type: 3}
+  description: Veja as cartas do oponente
+  mask: {fileID: 21300000, guid: de4ab556b8c23434e9409c972c2f7538, type: 3}
   artwork: {fileID: 21300000, guid: 5469890ae28b7744fad9a70ea4482312, type: 3}
-  ImagemdaCarta: {fileID: 21300000, guid: 3eed40123c1d8814e9147cd1058b55c6, type: 3}
+  ImagemdaCarta: {fileID: 21300000, guid: de4ab556b8c23434e9409c972c2f7538, type: 3}
   manaCost: 4
   growthTime: 3
   health: 3
