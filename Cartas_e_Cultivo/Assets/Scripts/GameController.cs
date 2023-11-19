@@ -195,13 +195,7 @@ public class GameController : MonoBehaviour {
         FindObjectOfType<AudioManager>().Play("cardThrown");  // plays cardThrown sounds
         
         //"Funções" onPlay() das cartas, eventualmente mudar de cardName para cardID;
-        
-        /*if(card.nameText.text == "Copo de Leite") {
-            for(int i=0; i<adj.Length; i++) {
-                cardFields[adj[i]].health++;
-                Debug.Log("Cartas curadas?");
-            }
-        }*/
+       
         if(card.nameText.text == "Cafe") {DrawCard();}
         // if (card.cardName == "Melancia") {for(int i=0; i<adj.length; i++) {PlayCard(melanciafilho, rooms[adj[i]].name);}}
             
