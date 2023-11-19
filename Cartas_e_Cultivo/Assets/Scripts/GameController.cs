@@ -65,6 +65,7 @@ public class GameController : MonoBehaviour {
     public void Start() {
         ShuffleDeck();
         MulliganSystem();
+
     }
 
     public bool canAffordMana(int value) {
@@ -259,7 +260,7 @@ public class GameController : MonoBehaviour {
 
         } 
     }
-
+  
     public void MulliganSystem()
     {
         mulligan.SetActive(true);
@@ -352,5 +353,4 @@ public class GameController : MonoBehaviour {
         card.gameObject.SetActive(true);
         deck.Remove(card);
     }
-
 }
