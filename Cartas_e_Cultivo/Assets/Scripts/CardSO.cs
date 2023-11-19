@@ -15,6 +15,7 @@ public class CardSO : ScriptableObject {
 
     public Sprite mask;
     public Sprite artwork;
+    public Sprite ImagemdaCarta;
 
     public int manaCost;
     public int growthTime;
