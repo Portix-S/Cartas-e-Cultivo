@@ -52,9 +52,20 @@ public class GameController : MonoBehaviour {
     public bool isPlaying;
     public bool isOnMenu;
 
+    [Header("Mulligan System")]
+    [SerializeField] GameObject mulligan;
+    [SerializeField] GameObject returnCardsButton;
+    [SerializeField] private Button[] mulliganButtons;
+    public Transform[] mulliganSlots;
+    public List<Transform> mulliganFreeSlots;
+    public List<Draggable> cardsOnMulligan;
+    public List<Draggable> cardsToBeReturned;
+    public Draggable teste;
 
     public void Start() {
         ShuffleDeck();
+        MulliganSystem();
+
     }
 
     public bool canAffordMana(int value) {
@@ -249,5 +260,97 @@ public class GameController : MonoBehaviour {
 
         } 
     }
+  
+    public void MulliganSystem()
+    {
+        mulligan.SetActive(true);
+        for(int i = 0; i < 5; i++)
+        {
+            DrawToMulligan(mulliganSlots[i]);
+        }
+    }
 
+    private void SendCardsToHand()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            Draggable card = cardsOnMulligan[0];
+            card.transform.SetParent(handScript.gameObject.transform);
+            card.transform.localScale = new Vector3(1f, 1f);
+            handScript.currentCards++;
+            cardsOnMulligan.Remove(card);
+        }
+        mulligan.SetActive(false);
+    }
+
+    public void SelectCard(GameObject test)
+    {
+        Button b = test.GetComponent<Button>();
+        ColorBlock cb = b.colors;
+
+        teste = test.gameObject.transform.parent.GetComponentInChildren<Draggable>();
+        if (cardsToBeReturned.Contains(teste))
+        {
+            cb.normalColor = Color.white;
+            cardsToBeReturned.Remove(teste);
+            mulliganFreeSlots.Remove(teste.transform.parent);
+        }
+        else
+        {
+            cb.normalColor = Color.red;
+            cardsToBeReturned.Add(teste);
+            mulliganFreeSlots.Add(teste.transform.parent); // Can save just one of them
+        }
+        cb.selectedColor = cb.normalColor;
+        b.colors = cb;
+
+        if (cardsToBeReturned.Count > 0)
+            returnCardsButton.SetActive(true);
+        else
+            returnCardsButton.SetActive(false);
+
+    }
+
+    public void ReturnCards()
+    {
+        foreach (Button button in mulliganButtons)
+        {
+            ColorBlock cb = button.colors;
+            cb.normalColor = Color.white;
+            button.colors = cb;
+            button.gameObject.SetActive(false);
+        }
+        returnCardsButton.SetActive(false);
+        int number = cardsToBeReturned.Count;
+        for(int i = 0; i < number; i++)
+        {
+            Draggable card = cardsToBeReturned[i];
+            deck.Add(card);
+            card.transform.SetParent(handScript.transform);
+            card.transform.localScale = new Vector3(1f, 1f);
+            card.gameObject.SetActive(false);
+            Transform freeSlot = mulliganFreeSlots[i];
+            DrawToMulligan(freeSlot);
+            cardsOnMulligan.Remove(card);
+        }
+        ShuffleDeck();
+        for (int i = 0; i < number; i++)
+        {
+            Transform test = mulliganFreeSlots[0];
+            cardsToBeReturned.Remove(cardsToBeReturned[0]);
+            mulliganFreeSlots.Remove(test);
+        }
+        Invoke("SendCardsToHand", 5f);
+    }
+
+    private void DrawToMulligan(Transform mulliganPos)
+    {
+        Draggable card = deck[0];
+        cardsOnMulligan.Add(card);
+        card.transform.SetParent(mulliganPos);
+        card.transform.localScale = new Vector3(2.2f, 2.2f);
+        card.transform.localPosition = new Vector3(0f, 0f, 0f);
+        card.gameObject.SetActive(true);
+        deck.Remove(card);
+    }
 }
