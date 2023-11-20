@@ -22,7 +22,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
     {
         // If Something was dropped on this place on the board
         Draggable cardScript = eventData.pointerDrag.GetComponent<Draggable>();
-        if (cardScript != null && currentCards < maxCards && cardScript.parentToReturnTo != this.transform && !cardScript.played && cardScript.CanAffordMana())
+        if (cardScript != null && currentCards < maxCards && cardScript.parentToReturnTo != this.transform && !cardScript.played && cardScript.CanAffordMana() && !cardScript.isAICard)
         {
             // Add a card to this room, changes entered card's new parent, tells this card that it changed rooms and that it has been played
             currentCards++;
@@ -30,6 +30,19 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
             cardScript.changedByDropZone = true;
             cardScript.played = true;
 
+        }
+    }
+
+
+    public bool CanDropCards()
+    {
+        if(currentCards < maxCards)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 

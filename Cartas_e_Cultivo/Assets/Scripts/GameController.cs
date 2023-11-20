@@ -35,10 +35,11 @@ public class GameController : MonoBehaviour {
     public Transform[] enemyHandSlots;
     public bool[] enemyAvailableSlots;
     public int enemyCardsInHand;
-    private int enemyMana = 1;
+    [SerializeField] private int enemyMana = 1;
     public int enemyCardsGrown;
     public List<Draggable> enemyCardFields;
-    [SerializeField] private DropZone[] enemyRooms;
+    [SerializeField] private List<GameObject> enemyAvailableRooms;
+    [SerializeField] private List<DropZone> enemyRooms;
     [SerializeField] private DropZone enemyHandScript;
 
 
@@ -80,7 +81,6 @@ public class GameController : MonoBehaviour {
         ShuffleDeck(ref enemyDeck);
         MulliganSystem();
         EnemyDrawCard(5);
-
     }
 
     public bool canAffordMana(int value) {
@@ -380,10 +380,11 @@ public class GameController : MonoBehaviour {
             {
                 Draggable card = enemyDeck[0]; // Seleciona a primeira carta do deck
                 card.gameObject.SetActive(true); // Dá visibilidade à carta comprada -> mudar para gameObjects depois
+                Debug.Log("tentando " + card.cardSO.cardName);
                 enemyCards.Add(card); // Adciona carta comprada à mão da IA
                 //card.onDraw(); // Realiza evento ao comprar
+                Debug.Log("Enemy drew " + card.cardSO.cardName);
                 enemyDeck.Remove(card); // Remove carta comprada do deck
-                Debug.Log("Enemy drew " + card.nameText.text);
             }
             CheckPlayableCards();
         }
@@ -402,6 +403,37 @@ public class GameController : MonoBehaviour {
             }
         }
         enemyPlayableCards = enemyPlayableCards.OrderByDescending(x => x.cardSO.manaCost).ToList();
+        Invoke("PlayCardsAI", 2f);
+    }
+
+    private void PlayCardsAI()
+    {
+        if (enemyPlayableCards.Count > 0 && !playerTurn)
+        {
+            Draggable card = enemyPlayableCards[0]; // Escolhe a carta mais cara
+            // enemyPlayableCards.Remove(card);
+            enemyCards.Remove(card); // Remove da mao
+            enemyMana -= card.cardSO.manaCost; // Diminui a mana
+            int randomRoom = UnityEngine.Random.Range(0, enemyAvailableRooms.Count);
+            GameObject selectedRoom = enemyAvailableRooms[randomRoom]; // Escolhe uma sala disponível aleatória
+
+            int value = 0;
+            for(int i = 0; i < enemyRooms.Count; i++) // Encontra o index da sala selecionada
+            {
+                if(enemyRooms[i].gameObject.name == selectedRoom.name)
+                {
+                    value = i;
+                    break;
+                }
+            }
+            enemyAvailableRooms.Remove(selectedRoom); // Remove a sala das salas disponíveis
+            
+            DropZone roomToBeDropped = enemyRooms[value]; // Seleciona a sala a ser jogada
+            card.transform.SetParent(roomToBeDropped.gameObject.transform); // Muda o pai
+            roomToBeDropped.currentCards++; // Aumenta o número de cartas na sala
+            Debug.Log("Enemy played " + card.cardSO.cardName);
+            Invoke("CheckPlayableCards", 0.5f);
+        }
     }
 
 }
