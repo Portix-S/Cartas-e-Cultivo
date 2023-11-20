@@ -51,6 +51,7 @@ public class GameController : MonoBehaviour {
 
     [Header("Growth Stats")]
     [SerializeField] private bool stimulateGrowth;
+    public event EventHandler OnEnemyTurnBegin;
     public event EventHandler OnPlayerTurnBegin;
     public int cardsGrown;
    
@@ -176,10 +177,23 @@ public class GameController : MonoBehaviour {
             stimulateGrowth = false;
             enemyMana = (currentTurn + 1 > 10) ? 10 : currentTurn + 1;
             EnemyDrawCard(1);
+            OnEnemyTurnBegin?.Invoke(this, EventArgs.Empty);
         }
 
         FindObjectOfType<AudioManager>().Play("buttonClick1"); // plays a button sound
         growth = (int) currentTurn / 2; 
+    }
+
+    public void TryEndTurn()
+    {
+        if(playerTurn)
+        {
+            EndTurn();
+        }
+        else
+        {
+            Debug.Log("Can't end turn now");
+        }
     }
 
     private void Update() {
@@ -190,6 +204,12 @@ public class GameController : MonoBehaviour {
         {
             Debug.Log("Show Win");
             WinGame();
+        }
+
+        if(enemyCardsGrown >= maxCardsOnRooms)
+        {
+            Debug.Log("Show Lose");
+            ShowLoseUI();
         }
     }
 
@@ -237,35 +257,27 @@ public class GameController : MonoBehaviour {
             case 0:
                 adjacent = new int[] {1,4};
                 return adjacent;
-            break;
             case 1:
                 adjacent = new int[] {0,2,5};   
                 return adjacent;
-            break;
             case 2:
                 adjacent = new int[] {1,3,6};
                 return adjacent;
-            break; 
             case 3:
                 adjacent = new int[] {2,7};
                 return adjacent;
-            break; 
             case 4:
                 adjacent =   new int[] {0,5};
                 return adjacent;
-            break; 
             case 5:
                 adjacent = new int[] {4,6,1};
                 return adjacent;
-            break; 
             case 6:
                 adjacent = new int[] {5,7,2};
                 return adjacent;
-            break; 
             case 7:
                 adjacent = new int[] {6,3};
                 return adjacent;
-            break;
             default:
             return adjacent;
 
@@ -314,12 +326,6 @@ public class GameController : MonoBehaviour {
         }
         cb.selectedColor = cb.normalColor;
         b.colors = cb;
-
-        if (cardsToBeReturned.Count > 0)
-            returnCardsButton.SetActive(true);
-        else
-            returnCardsButton.SetActive(false);
-
     }
 
     public void ReturnCards()
@@ -351,7 +357,7 @@ public class GameController : MonoBehaviour {
             cardsToBeReturned.Remove(cardsToBeReturned[0]);
             mulliganFreeSlots.Remove(test);
         }
-        Invoke("SendCardsToHand", 5f);
+        Invoke("SendCardsToHand", 3f);
     }
 
     private void DrawToMulligan(Transform mulliganPos)
@@ -397,12 +403,12 @@ public class GameController : MonoBehaviour {
             }
         }
         enemyPlayableCards = enemyPlayableCards.OrderByDescending(x => x.cardSO.manaCost).ToList();
-        Invoke("PlayCardsAI", 2f);
+        Invoke("PlayCardsAI", 1.5f);
     }
 
     private void PlayCardsAI()
     {
-        if (enemyPlayableCards.Count > 0 && !playerTurn)
+        if (enemyPlayableCards.Count > 0 && !playerTurn && enemyAvailableRooms.Count > 0)
         {
             Draggable card = enemyPlayableCards[0]; // Escolhe a carta mais cara
             // enemyPlayableCards.Remove(card);
@@ -424,9 +430,14 @@ public class GameController : MonoBehaviour {
             
             DropZone roomToBeDropped = enemyRooms[value]; // Seleciona a sala a ser jogada
             card.transform.SetParent(roomToBeDropped.gameObject.transform); // Muda o pai
+            card.played = true;
             roomToBeDropped.currentCards++; // Aumenta o número de cartas na sala
             Debug.Log("Enemy played " + card.cardSO.cardName);
             Invoke("CheckPlayableCards", 0.5f);
+        }
+        else if(enemyPlayableCards.Count == 0 && !playerTurn || enemyAvailableRooms.Count == 0 && !playerTurn)
+        {
+            EndTurn();
         }
     }
 
