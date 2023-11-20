@@ -51,7 +51,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         // Initial Congiguration of a card
         gc = FindObjectOfType(typeof(GameController)) as GameController;
-        gc.OnPlayerTurnBegin += Gc_OnPlayerTurnBegin;
+
         //isOnHand = true; // Ser� usado mais pra frente
         if(!isAICard)
         {
@@ -60,9 +60,13 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
             maskImage.sprite = cardSO.mask;
             artworkImage.sprite = cardSO.artwork;
-
-        manaCostText.text = cardSO.manaCost.ToString();
-
+            gc.OnPlayerTurnBegin += Gc_OnPlayerTurnBegin;
+            manaCostText.text = cardSO.manaCost.ToString();
+        }
+        else
+        {
+            gc.OnEnemyTurnBegin += Gc_OnEnemyTurnBegin;
+        }
         healthText.text = cardSO.health.ToString();
         health = int.Parse(healthText.text);
 
@@ -84,9 +88,26 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                 // Funções OnGrowth() das cartas, localizacao temporaria
                 int value = (parentToReturnTo.name.Last() - '0') - 1;
                 int[] adj = gc.AdjacentFields(value);  
-                if (this.nameText.text == "Lirio") {for(int i=0; i<adj.Length; i++) { gc.cardFields[adj[i]].health++; Debug.Log("Vida" + gc.cardFields[adj[i]].health);}}
+                if (this.nameText.text == "Lirio") 
+                {   for(int i=0; i<adj.Length; i++) 
+                    { 
+                        gc.cardFields[adj[i]].health++; 
+                        Debug.Log("Vida" + gc.cardFields[adj[i]].health);
+                    }
+                }
         }
+    }
 
+    private void Gc_OnEnemyTurnBegin(object sender, System.EventArgs e)
+    {
+        if (played && growthLevel < maxGrowthLevel)
+        {
+            Debug.Log("Grow enemy card" + cardSO.cardName + " level" + growthLevel + "out of" + maxGrowthLevel);
+            growthLevel++;
+            if(growthLevel == maxGrowthLevel)
+                gc.enemyCardsGrown++;
+                // artworkImage = grownSprite;
+        }
     }
 
     // Pointer enter/exit lidar com visuais das salas?
