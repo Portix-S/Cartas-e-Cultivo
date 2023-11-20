@@ -10,6 +10,9 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     // This script handles all drag systems of a card
     //
 
+    [Header("Only for AI")]
+    public bool isAICard = false;
+
     public Transform parentToReturnTo = null;
     private Transform lastRoom = null;
     public bool changedByDropZone;
@@ -20,7 +23,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     //[SerializeField] private bool isOnHand;
     //[SerializeField] private bool isOnRoom;
     [Header("Passando Do Sona")]
-    [SerializeField] private CardSO cardSO;
+    [SerializeField] public CardSO cardSO;
     private GameController gc;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI descriptionText;
@@ -36,7 +39,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     [Header("Growth Stats")]
     private int growthLevel = 0;
-        [SerializeField] private int maxGrowthLevel = 1;
+    [SerializeField] private int maxGrowthLevel = 1;
 
     private void Awake()
     {
@@ -44,23 +47,27 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         gc = FindObjectOfType(typeof(GameController)) as GameController;
         gc.OnPlayerTurnBegin += Gc_OnPlayerTurnBegin;
         //isOnHand = true; // Ser� usado mais pra frente
-        nameText.text = cardSO.cardName;
-        descriptionText.text = cardSO.description;
+        if(!isAICard)
+        {
+            nameText.text = cardSO.cardName;
+            descriptionText.text = cardSO.description;
 
-        maskImage.sprite = cardSO.mask;
-        artworkImage.sprite = cardSO.artwork;
+            maskImage.sprite = cardSO.mask;
+            artworkImage.sprite = cardSO.artwork;
 
-        manaCostText.text = cardSO.manaCost.ToString();
-        healthText.text = cardSO.health.ToString();
-       //  health = int.Parse(healthText.text);
-        growthTimeText.text = cardSO.growthTime.ToString();
+            manaCostText.text = cardSO.manaCost.ToString();
+            healthText.text = cardSO.health.ToString();
+            // health = int.Parse(healthText.text);
+            growthTimeText.text = cardSO.growthTime.ToString();
+        }
+        maxGrowthLevel = cardSO.growthTime;
     }
 
     private void Gc_OnPlayerTurnBegin(object sender, System.EventArgs e)
     {
         if (played && growthLevel < maxGrowthLevel)
         {
-            Debug.Log("Grow");
+            Debug.Log("Grow" + cardSO.cardName);
             growthLevel++;
             if(growthLevel == maxGrowthLevel)
                 gc.cardsGrown++;

@@ -9,12 +9,11 @@ using System.Linq;
 
 public class GameController : MonoBehaviour {
 
+    [Header("Player Configs")]
     public List<Draggable> deck = new List<Draggable>();
     public List<Draggable> graveyard = new List<Draggable>();
     public Transform[] handSlots;
     public bool[] availableSlots;
-
-    
 
     public TextMeshProUGUI deckCountText;
     public TextMeshProUGUI manaCountText;
@@ -26,10 +25,24 @@ public class GameController : MonoBehaviour {
     private int growth = 0;
     private bool canPlayerDraw = true;
     private int numOfCardsToBeBought;
-    [Header("Player Configs")]
     [SerializeField] private DropZone handScript;
 
-   
+    [Header("Enemy AI Configs")]
+    public List<Draggable> enemyCards = new List<Draggable>();
+    public List<Draggable> enemyPlayableCards = new List<Draggable>();
+    public List<Draggable> enemyDeck = new List<Draggable>(); 
+    public List<Draggable> enemyGraveyard = new List<Draggable>();
+    public Transform[] enemyHandSlots;
+    public bool[] enemyAvailableSlots;
+    public int enemyCardsInHand;
+    private int enemyMana = 1;
+    public int enemyCardsGrown;
+    public List<Draggable> enemyCardFields;
+    [SerializeField] private DropZone[] enemyRooms;
+    [SerializeField] private DropZone enemyHandScript;
+
+
+
     [Header("Turn Configs")]
     public bool playerTurn = true;
     public int maxCardsToDraw = 3;
@@ -63,8 +76,10 @@ public class GameController : MonoBehaviour {
     public Draggable teste;
 
     public void Start() {
-        ShuffleDeck();
+        ShuffleDeck(ref deck);
+        ShuffleDeck(ref enemyDeck);
         MulliganSystem();
+        EnemyDrawCard(5);
 
     }
 
@@ -131,7 +146,7 @@ public class GameController : MonoBehaviour {
             Debug.Log("Don't have any more cards left");
     }
 
-    public void ShuffleDeck() {
+    public void ShuffleDeck(ref List<Draggable> deck) {
         int n = deck.Count;
         //Debug.Log("Shuffling");
         while (n > 1) {  
@@ -159,6 +174,8 @@ public class GameController : MonoBehaviour {
         {
             canPlayerDraw = false;
             stimulateGrowth = false;
+            enemyMana = (currentTurn + 1 > 10) ? 10 : currentTurn + 1;
+            EnemyDrawCard(1);
         }
 
         FindObjectOfType<AudioManager>().Play("buttonClick1"); // plays a button sound
@@ -333,7 +350,7 @@ public class GameController : MonoBehaviour {
             DrawToMulligan(freeSlot);
             cardsOnMulligan.Remove(card);
         }
-        ShuffleDeck();
+        ShuffleDeck(ref deck);
         for (int i = 0; i < number; i++)
         {
             Transform test = mulliganFreeSlots[0];
@@ -353,4 +370,38 @@ public class GameController : MonoBehaviour {
         card.gameObject.SetActive(true);
         deck.Remove(card);
     }
+
+    private void EnemyDrawCard(int numOfCardsToBeBought)
+    {
+        if (enemyDeck.Count >= 1)
+        { // Se houverem cartas no deck:
+            Debug.Log("Buying " + numOfCardsToBeBought + " cards");
+            for (int i = 0; i < numOfCardsToBeBought; i++)
+            {
+                Draggable card = enemyDeck[0]; // Seleciona a primeira carta do deck
+                card.gameObject.SetActive(true); // Dá visibilidade à carta comprada -> mudar para gameObjects depois
+                enemyCards.Add(card); // Adciona carta comprada à mão da IA
+                //card.onDraw(); // Realiza evento ao comprar
+                enemyDeck.Remove(card); // Remove carta comprada do deck
+                Debug.Log("Enemy drew " + card.nameText.text);
+            }
+            CheckPlayableCards();
+        }
+        else
+            Debug.Log("Don't have any more cards left");
+    }
+
+    private void CheckPlayableCards() // Checa quais cartas podem ser jogadas
+    {
+        enemyPlayableCards.Clear();
+        foreach (Draggable card in enemyCards)
+        {
+            if (enemyMana >= card.cardSO.manaCost)
+            {
+                enemyPlayableCards.Add(card);
+            }
+        }
+        enemyPlayableCards = enemyPlayableCards.OrderByDescending(x => x.cardSO.manaCost).ToList();
+    }
+
 }
