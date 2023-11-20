@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f67fef03b5fa5249a777c52d1fba8ff, type: 3}
-  m_Name: CopodeLeite
+  m_Name: CopoDeLeite
   m_EditorClassIdentifier: 
   cardID: 1
   cardName: Lirio

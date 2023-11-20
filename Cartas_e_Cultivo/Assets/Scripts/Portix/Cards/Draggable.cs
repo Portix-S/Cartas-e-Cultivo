@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using System;
+using System.Linq;
 
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -31,9 +33,13 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public Image maskImage;
     public Image artworkImage;
 
+    public Image plantSprite;
+
+    public Image grownSprite;
+
     public TextMeshProUGUI manaCostText;
     public TextMeshProUGUI healthText;
-    //public int health;
+    public int health;
     public TextMeshProUGUI growthTimeText;
 
 
@@ -55,12 +61,13 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             maskImage.sprite = cardSO.mask;
             artworkImage.sprite = cardSO.artwork;
 
-            manaCostText.text = cardSO.manaCost.ToString();
-            healthText.text = cardSO.health.ToString();
-            // health = int.Parse(healthText.text);
-            growthTimeText.text = cardSO.growthTime.ToString();
-        }
+        manaCostText.text = cardSO.manaCost.ToString();
+
+        healthText.text = cardSO.health.ToString();
+        health = int.Parse(healthText.text);
+
         maxGrowthLevel = cardSO.growthTime;
+        growthTimeText.text = cardSO.growthTime.ToString();
     }
 
     private void Gc_OnPlayerTurnBegin(object sender, System.EventArgs e)
@@ -71,6 +78,13 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             growthLevel++;
             if(growthLevel == maxGrowthLevel)
                 gc.cardsGrown++;
+                artworkImage = grownSprite;
+                Debug.Log("Grow");
+
+                // Funções OnGrowth() das cartas, localizacao temporaria
+                int value = (parentToReturnTo.name.Last() - '0') - 1;
+                int[] adj = gc.AdjacentFields(value);  
+                if (this.nameText.text == "Lirio") {for(int i=0; i<adj.Length; i++) { gc.cardFields[adj[i]].health++; Debug.Log("Vida" + gc.cardFields[adj[i]].health);}}
         }
 
     }
@@ -141,7 +155,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             DropZone roomScript = lastRoom.GetComponent<DropZone>();
             roomScript.currentCards--;
             gc.PlayCard(this, parentToReturnTo.name);
-            
+            artworkImage = plantSprite;
             if(gc.canAffordMana(cardSO.manaCost))
                 gc.loseMana(cardSO.manaCost);
         }
@@ -151,6 +165,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         changedByDropZone = false;
         GetComponent<CanvasGroup>().blocksRaycasts = true;
 
+
+        
 
         // Sistema de detec��o de salas, ser� usado no futuro
         /*
