@@ -9,12 +9,11 @@ using System.Linq;
 
 public class GameController : MonoBehaviour {
 
+    [Header("Player Configs")]
     public List<Draggable> deck = new List<Draggable>();
     public List<Draggable> graveyard = new List<Draggable>();
     public Transform[] handSlots;
     public bool[] availableSlots;
-
-    
 
     public TextMeshProUGUI deckCountText;
     public TextMeshProUGUI manaCountText;
@@ -26,10 +25,25 @@ public class GameController : MonoBehaviour {
     private int growth = 0;
     private bool canPlayerDraw = true;
     private int numOfCardsToBeBought;
-    [Header("Player Configs")]
     [SerializeField] private DropZone handScript;
 
-   
+    [Header("Enemy AI Configs")]
+    public List<Draggable> enemyCards = new List<Draggable>();
+    public List<Draggable> enemyPlayableCards = new List<Draggable>();
+    public List<Draggable> enemyDeck = new List<Draggable>(); 
+    public List<Draggable> enemyGraveyard = new List<Draggable>();
+    public Transform[] enemyHandSlots;
+    public bool[] enemyAvailableSlots;
+    public int enemyCardsInHand;
+    [SerializeField] private int enemyMana = 1;
+    public int enemyCardsGrown;
+    public List<Draggable> enemyCardFields;
+    [SerializeField] private List<GameObject> enemyAvailableRooms;
+    [SerializeField] private List<DropZone> enemyRooms;
+    [SerializeField] private DropZone enemyHandScript;
+
+
+
     [Header("Turn Configs")]
     public bool playerTurn = true;
     public int maxCardsToDraw = 3;
@@ -63,9 +77,10 @@ public class GameController : MonoBehaviour {
     public Draggable teste;
 
     public void Start() {
-        ShuffleDeck();
+        ShuffleDeck(ref deck);
+        ShuffleDeck(ref enemyDeck);
         MulliganSystem();
-
+        EnemyDrawCard(5);
     }
 
     public bool canAffordMana(int value) {
@@ -131,7 +146,7 @@ public class GameController : MonoBehaviour {
             Debug.Log("Don't have any more cards left");
     }
 
-    public void ShuffleDeck() {
+    public void ShuffleDeck(ref List<Draggable> deck) {
         int n = deck.Count;
         //Debug.Log("Shuffling");
         while (n > 1) {  
@@ -159,6 +174,8 @@ public class GameController : MonoBehaviour {
         {
             canPlayerDraw = false;
             stimulateGrowth = false;
+            enemyMana = (currentTurn + 1 > 10) ? 10 : currentTurn + 1;
+            EnemyDrawCard(1);
         }
 
         FindObjectOfType<AudioManager>().Play("buttonClick1"); // plays a button sound
@@ -327,7 +344,7 @@ public class GameController : MonoBehaviour {
             DrawToMulligan(freeSlot);
             cardsOnMulligan.Remove(card);
         }
-        ShuffleDeck();
+        ShuffleDeck(ref deck);
         for (int i = 0; i < number; i++)
         {
             Transform test = mulliganFreeSlots[0];
@@ -347,4 +364,70 @@ public class GameController : MonoBehaviour {
         card.gameObject.SetActive(true);
         deck.Remove(card);
     }
+
+    private void EnemyDrawCard(int numOfCardsToBeBought)
+    {
+        if (enemyDeck.Count >= 1)
+        { // Se houverem cartas no deck:
+            Debug.Log("Buying " + numOfCardsToBeBought + " cards");
+            for (int i = 0; i < numOfCardsToBeBought; i++)
+            {
+                Draggable card = enemyDeck[0]; // Seleciona a primeira carta do deck
+                card.gameObject.SetActive(true); // Dá visibilidade à carta comprada -> mudar para gameObjects depois
+                Debug.Log("tentando " + card.cardSO.cardName);
+                enemyCards.Add(card); // Adciona carta comprada à mão da IA
+                //card.onDraw(); // Realiza evento ao comprar
+                Debug.Log("Enemy drew " + card.cardSO.cardName);
+                enemyDeck.Remove(card); // Remove carta comprada do deck
+            }
+            CheckPlayableCards();
+        }
+        else
+            Debug.Log("Don't have any more cards left");
+    }
+
+    private void CheckPlayableCards() // Checa quais cartas podem ser jogadas
+    {
+        enemyPlayableCards.Clear();
+        foreach (Draggable card in enemyCards)
+        {
+            if (enemyMana >= card.cardSO.manaCost)
+            {
+                enemyPlayableCards.Add(card);
+            }
+        }
+        enemyPlayableCards = enemyPlayableCards.OrderByDescending(x => x.cardSO.manaCost).ToList();
+        Invoke("PlayCardsAI", 2f);
+    }
+
+    private void PlayCardsAI()
+    {
+        if (enemyPlayableCards.Count > 0 && !playerTurn)
+        {
+            Draggable card = enemyPlayableCards[0]; // Escolhe a carta mais cara
+            // enemyPlayableCards.Remove(card);
+            enemyCards.Remove(card); // Remove da mao
+            enemyMana -= card.cardSO.manaCost; // Diminui a mana
+            int randomRoom = UnityEngine.Random.Range(0, enemyAvailableRooms.Count);
+            GameObject selectedRoom = enemyAvailableRooms[randomRoom]; // Escolhe uma sala disponível aleatória
+
+            int value = 0;
+            for(int i = 0; i < enemyRooms.Count; i++) // Encontra o index da sala selecionada
+            {
+                if(enemyRooms[i].gameObject.name == selectedRoom.name)
+                {
+                    value = i;
+                    break;
+                }
+            }
+            enemyAvailableRooms.Remove(selectedRoom); // Remove a sala das salas disponíveis
+            
+            DropZone roomToBeDropped = enemyRooms[value]; // Seleciona a sala a ser jogada
+            card.transform.SetParent(roomToBeDropped.gameObject.transform); // Muda o pai
+            roomToBeDropped.currentCards++; // Aumenta o número de cartas na sala
+            Debug.Log("Enemy played " + card.cardSO.cardName);
+            Invoke("CheckPlayableCards", 0.5f);
+        }
+    }
+
 }
