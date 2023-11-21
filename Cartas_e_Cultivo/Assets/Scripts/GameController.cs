@@ -9,6 +9,9 @@ using System.Linq;
 
 public class GameController : MonoBehaviour {
 
+    
+
+
     [Header("Player Configs")]
     public List<Draggable> deck = new List<Draggable>();
     public List<Draggable> graveyard = new List<Draggable>();
@@ -19,7 +22,8 @@ public class GameController : MonoBehaviour {
     public TextMeshProUGUI manaCountText;
     public TextMeshProUGUI graveyardCountText;
 
-   
+    public Animator animator;
+
     private int currentTurn = 0;
     private int mana = 1;
     private int growth = 0;
@@ -242,6 +246,8 @@ public class GameController : MonoBehaviour {
         cardsOnRooms++; 
         FindObjectOfType<AudioManager>().Play("cardThrown");  // plays cardThrown sounds
         
+
+        card.gameObject.GetComponent<Animator>().SetTrigger("INICIO");
         //"Funções" onPlay() das cartas, eventualmente mudar de cardName para cardID;
        
         if(card.nameText.text == "Cafe") {DrawCard();}

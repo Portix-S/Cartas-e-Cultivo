@@ -1,0 +1,708 @@
+fileFormatVersion: 2
+guid: 1b844606f7e5b6c459f9a10fb0c3dc3c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ActionPlanting_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 1115
+        width: 72
+        height: 258
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01640e8838e976c49a46c13c04760894
+      internalID: -72393274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_1
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 1115
+        width: 72
+        height: 151
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2809111222fe7c4d9be40d6f690a57b
+      internalID: -984834102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_2
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 1115
+        width: 72
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a95d9d23330aeb4d9a1fbe7bcdf26bd
+      internalID: -395652567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_3
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1113
+        width: 72
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c22b251c7825c96479e995c2f4677925
+      internalID: -1656328697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_4
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 1111
+        width: 72
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ba9149942c3764da2561cc625ec478
+      internalID: -247488671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_5
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 832
+        width: 74
+        height: 91
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e44f1216c2ec84298f70cf756dbbf9
+      internalID: -1943213621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_6
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 837
+        width: 189
+        height: 124
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71eaacd7d1de7c1409a5f93a5b5d0bcd
+      internalID: 1814385763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_7
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 836
+        width: 124
+        height: 131
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f67b9d0ea8c333248a4e997cfb28af41
+      internalID: -950329178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_8
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 840
+        width: 58
+        height: 193
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 714cd2d0687f79f4b8ac76dd20c04a84
+      internalID: -806451880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_9
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 835
+        width: 189
+        height: 69
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eef9c2a7d8e10e647b1aac93affb4e32
+      internalID: -1439117006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_10
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 673
+        width: 37
+        height: 123
+      alignment: 9
+      pivot: {x: 0.5176672, y: 0.2130102}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b9c6eb80a6879543bf57165ce89c42c
+      internalID: -1951874194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_11
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 706
+        width: 97
+        height: 105
+      alignment: 9
+      pivot: {x: 0.7965223, y: 0.6369646}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ba18b91a0295a746ba9d1e449645dcc
+      internalID: 1613009278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_12
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 724
+        width: 114
+        height: 93
+      alignment: 9
+      pivot: {x: 0.7867089, y: 0.29615834}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 333f8aec77a08444b9d166cacda1ad06
+      internalID: 848018787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_13
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 690
+        width: 110
+        height: 88
+      alignment: 9
+      pivot: {x: 0.6663951, y: 0.2548627}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d07d4f1f0cd06b54e9961c69321702f9
+      internalID: -548880916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_14
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 684
+        width: 69
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebbf113f7849dd9429a70a33763bf320
+      internalID: 292133204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_15
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 389
+        width: 97
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23601ed133edf924ba4b44163289aad5
+      internalID: -1235206187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_17
+      rect:
+        serializedVersion: 2
+        x: 1401
+        y: 402
+        width: 114
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc7181f2f07c39b4cae0f035296875bf
+      internalID: -560152952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_20
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 372
+        width: 80
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db73b081f26674243b1bbcb8fdfebab5
+      internalID: 394214390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_25
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 352
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.5342848, y: 0.017265625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5afdff67411b25044bf48f683cacda1d
+      internalID: -1359470910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_28
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 353
+        width: 85
+        height: 30
+      alignment: 9
+      pivot: {x: 0.50887346, y: -0.0028493246}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0813686fab0cb8f4991f0ce844f94878
+      internalID: -1162543701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_31
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 125
+        width: 126
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb5735f85a6f5444db5c55ce56d8d51e
+      internalID: -970619027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_33
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 126
+        width: 143
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0adfff725865d04496e33700795bb26
+      internalID: -1150902843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_49
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 132
+        width: 155
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2a60cb21461f8647b946462648561e2
+      internalID: 871086357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_52
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 132
+        width: 168
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3586178a7cf875742b7600366bb5e850
+      internalID: -1718075988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionPlanting_54
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 134
+        width: 185
+        height: 54
+      alignment: 9
+      pivot: {x: 0.4352094, y: 0.4870408}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee7940c9b9009da4ba159e07c940d8f4
+      internalID: 1890724486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ActionPlanting_0: -72393274
+      ActionPlanting_1: -984834102
+      ActionPlanting_10: -1951874194
+      ActionPlanting_11: 1613009278
+      ActionPlanting_12: 848018787
+      ActionPlanting_13: -548880916
+      ActionPlanting_14: 292133204
+      ActionPlanting_15: -1235206187
+      ActionPlanting_16: -1696929015
+      ActionPlanting_17: -560152952
+      ActionPlanting_18: 425073719
+      ActionPlanting_19: -1951694569
+      ActionPlanting_2: -395652567
+      ActionPlanting_20: 394214390
+      ActionPlanting_21: 937422445
+      ActionPlanting_22: -1812128112
+      ActionPlanting_23: -1880577547
+      ActionPlanting_24: 1836891522
+      ActionPlanting_25: -1359470910
+      ActionPlanting_26: -1646779360
+      ActionPlanting_27: -807462967
+      ActionPlanting_28: -1162543701
+      ActionPlanting_29: -1407181549
+      ActionPlanting_3: -1656328697
+      ActionPlanting_30: 235836521
+      ActionPlanting_31: -970619027
+      ActionPlanting_32: 2106036790
+      ActionPlanting_33: -1150902843
+      ActionPlanting_34: -1465258761
+      ActionPlanting_35: 785580713
+      ActionPlanting_36: 1950131048
+      ActionPlanting_37: 1913852047
+      ActionPlanting_38: -144921353
+      ActionPlanting_39: -2113701356
+      ActionPlanting_4: -247488671
+      ActionPlanting_40: 1297478697
+      ActionPlanting_41: -1664695413
+      ActionPlanting_42: 1307819622
+      ActionPlanting_43: 411246770
+      ActionPlanting_44: 1723656658
+      ActionPlanting_45: 1735389514
+      ActionPlanting_46: 623584453
+      ActionPlanting_47: -391760561
+      ActionPlanting_48: 645559475
+      ActionPlanting_49: 871086357
+      ActionPlanting_5: -1943213621
+      ActionPlanting_50: 660610652
+      ActionPlanting_51: 716871710
+      ActionPlanting_52: -1718075988
+      ActionPlanting_53: -626095493
+      ActionPlanting_54: 1890724486
+      ActionPlanting_55: 1928332915
+      ActionPlanting_6: 1814385763
+      ActionPlanting_7: -950329178
+      ActionPlanting_8: -806451880
+      ActionPlanting_9: -1439117006
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -42,6 +42,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public int health;
     public TextMeshProUGUI growthTimeText;
 
+   
+
 
     [Header("Growth Stats")]
     private int growthLevel = 0;
@@ -53,19 +55,19 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         gc = FindObjectOfType(typeof(GameController)) as GameController;
 
         //isOnHand = true; // Ser� usado mais pra frente
-        if(!isAICard)
+        nameText.text = cardSO.cardName;
+        descriptionText.text = cardSO.description;
+        maskImage.sprite = cardSO.mask;
+        artworkImage.sprite = cardSO.artwork;
+        manaCostText.text = cardSO.manaCost.ToString();
+        if (!isAICard)
         {
-            nameText.text = cardSO.cardName;
-            descriptionText.text = cardSO.description;
-
-            maskImage.sprite = cardSO.mask;
-            artworkImage.sprite = cardSO.artwork;
             gc.OnPlayerTurnBegin += Gc_OnPlayerTurnBegin;
-            manaCostText.text = cardSO.manaCost.ToString();
         }
         else
         {
             gc.OnEnemyTurnBegin += Gc_OnEnemyTurnBegin;
+            //manaCostText.gameObject.SetActive(false);
         }
         healthText.text = cardSO.health.ToString();
         health = int.Parse(healthText.text);
