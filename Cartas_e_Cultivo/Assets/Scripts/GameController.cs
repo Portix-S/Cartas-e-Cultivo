@@ -127,7 +127,7 @@ public class GameController : MonoBehaviour {
                 int numOfCardsInHand = handScript.currentCards;
                 if (currentTurn == 0)
                 {
-                    numOfCardsToBeBought = 5;
+                    numOfCardsToBeBought = 0;
                 }
                 else { 
                     numOfCardsToBeBought = 1;
@@ -226,7 +226,7 @@ public class GameController : MonoBehaviour {
     {
         isPlaying = false;
         isOnMenu = true;
-        winUI.SetActive(true);
+        winUI.SetActive(true);  
     }
 
     public void ShowLoseUI()
@@ -247,7 +247,7 @@ public class GameController : MonoBehaviour {
         FindObjectOfType<AudioManager>().Play("cardThrown");  // plays cardThrown sounds
         
 
-        card.gameObject.GetComponent<Animator>().SetTrigger("INICIO");
+            card.gameObject.GetComponent<Animator>().SetTrigger("INICIO");
         //"Funções" onPlay() das cartas, eventualmente mudar de cardName para cardID;
        
         if(card.nameText.text == "Cafe") {DrawCard();}
@@ -422,7 +422,7 @@ public class GameController : MonoBehaviour {
             enemyMana -= card.cardSO.manaCost; // Diminui a mana
             int randomRoom = UnityEngine.Random.Range(0, enemyAvailableRooms.Count);
             GameObject selectedRoom = enemyAvailableRooms[randomRoom]; // Escolhe uma sala disponível aleatória
-
+            
             int value = 0;
             for(int i = 0; i < enemyRooms.Count; i++) // Encontra o index da sala selecionada
             {
@@ -440,6 +440,8 @@ public class GameController : MonoBehaviour {
             roomToBeDropped.currentCards++; // Aumenta o número de cartas na sala
             Debug.Log("Enemy played " + card.cardSO.cardName);
             Invoke("CheckPlayableCards", 0.5f);
+            card.gameObject.GetComponent<Animator>().SetTrigger("INICIO");
+
         }
         else if(enemyPlayableCards.Count == 0 && !playerTurn || enemyAvailableRooms.Count == 0 && !playerTurn)
         {

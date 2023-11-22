@@ -33,9 +33,6 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public Image maskImage;
     public Image artworkImage;
 
-    public Image plantSprite;
-
-    public Image grownSprite;
 
     public TextMeshProUGUI manaCostText;
     public TextMeshProUGUI healthText;
@@ -84,15 +81,20 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             growthLevel++;
             if(growthLevel == maxGrowthLevel)
                 gc.cardsGrown++;
-                artworkImage = grownSprite;
                 Debug.Log("Grow");
 
                 // Funções OnGrowth() das cartas, localizacao temporaria
                 int value = (parentToReturnTo.name.Last() - '0') - 1;
-                int[] adj = gc.AdjacentFields(value);  
-                if (this.nameText.text == "Lirio") 
-                {   for(int i=0; i<adj.Length; i++) 
-                    { 
+                int[] adj = gc.AdjacentFields(value); 
+                if(this.nameText.text == "Batata") {
+                    this.gameObject.GetComponent<Animator>().SetInteger("ID", 0);
+
+                } 
+                if (this.nameText.text == "Lirio") {
+
+                    this.gameObject.GetComponent<Animator>().SetInteger("ID", 1);
+                    for(int i=0; i<adj.Length; i++) 
+                    {
                         gc.cardFields[adj[i]].health++; 
                         Debug.Log("Vida" + gc.cardFields[adj[i]].health);
                     }
@@ -178,7 +180,6 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             DropZone roomScript = lastRoom.GetComponent<DropZone>();
             roomScript.currentCards--;
             gc.PlayCard(this, parentToReturnTo.name);
-            artworkImage = plantSprite;
             if(gc.canAffordMana(cardSO.manaCost))
                 gc.loseMana(cardSO.manaCost);
         }
