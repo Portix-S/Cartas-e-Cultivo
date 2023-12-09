@@ -9757,6 +9757,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1691526574}
     m_Modifications:
+    - target: {fileID: 569951209547062277, guid: fb093622a42f8a467a55025a953a6b93, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 569951209547062277, guid: fb093622a42f8a467a55025a953a6b93, type: 3}
+      propertyPath: m_Color.a
+      value: 0.70980394
+      objectReference: {fileID: 0}
+    - target: {fileID: 569951209547062277, guid: fb093622a42f8a467a55025a953a6b93, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 569951209547062277, guid: fb093622a42f8a467a55025a953a6b93, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 569951209547062277, guid: fb093622a42f8a467a55025a953a6b93, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 569951209547062277, guid: fb093622a42f8a467a55025a953a6b93, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 784075851810760581, guid: fb093622a42f8a467a55025a953a6b93, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9848,6 +9872,14 @@ PrefabInstance:
     - target: {fileID: 1833173298290135664, guid: fb093622a42f8a467a55025a953a6b93, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7529175428168400470, guid: fb093622a42f8a467a55025a953a6b93, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7529175428168400470, guid: fb093622a42f8a467a55025a953a6b93, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8248516906157224512, guid: fb093622a42f8a467a55025a953a6b93, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
