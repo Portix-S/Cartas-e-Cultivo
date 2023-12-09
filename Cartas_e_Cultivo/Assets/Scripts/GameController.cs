@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 
 public class GameController : MonoBehaviour {
@@ -172,6 +173,7 @@ public class GameController : MonoBehaviour {
             currentTurn += 1;
             stimulateGrowth = true;
             canPlayerDraw = true;
+            DrawClick();
             mana = (currentTurn + 1 > 10) ? 10 : currentTurn + 1;
             OnPlayerTurnBegin?.Invoke(this, EventArgs.Empty);
         }
@@ -227,6 +229,7 @@ public class GameController : MonoBehaviour {
         isPlaying = false;
         isOnMenu = true;
         winUI.SetActive(true);  
+        Invoke("GameOverMenu", 3f);
     }
 
     public void ShowLoseUI()
@@ -234,6 +237,12 @@ public class GameController : MonoBehaviour {
         isPlaying = false;
         isOnMenu = true;
         loseUI.SetActive(true);
+        Invoke("GameOverMenu", 3f);
+    }
+
+    private void GameOverMenu()
+    {
+        SceneManager.LoadScene("GameOver");
     }
 
     public void PlayCard(Draggable card, string room)

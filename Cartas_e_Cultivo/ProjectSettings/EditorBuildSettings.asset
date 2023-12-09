@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 941bcd7d442c6ab91987a2825945bfbe
+  - enabled: 1
+    path: Assets/Scenes/Portix Scene.unity
+    guid: 11bfdf424a6b4ac268728cd4789fce21
   m_configObjects: {}
