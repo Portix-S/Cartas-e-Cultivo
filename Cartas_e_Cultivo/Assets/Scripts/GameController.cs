@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour {
 
 
     [Header("Player Configs")]
+    public List<Deck> deckTest = new List<Deck>();
     public List<Draggable> deck = new List<Draggable>();
     public List<Draggable> graveyard = new List<Draggable>();
     public Transform[] handSlots;
@@ -83,6 +84,19 @@ public class GameController : MonoBehaviour {
     public Draggable teste;
 
     public void Start() {
+        // Adiciona todas as cartas ao deck e à mao
+        /*
+        foreach(Deck deck in deckTest)
+        {
+            for(int i = 0; i < deck.amount; i++)
+            {
+                Draggable card = Instantiate(deck.card, handScript.transform).GetComponent<Draggable>();
+                card.gameObject.SetActive(false);
+                this.deck.Add(card);
+            }
+        }
+        //*/
+
         ShuffleDeck(ref deck);
         ShuffleDeck(ref enemyDeck);
         MulliganSystem();
@@ -458,4 +472,11 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    [Serializable]
+    public class Deck{
+        public Transform card;
+        public int amount;
+
+
+    }
 }

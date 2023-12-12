@@ -8285,6 +8285,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace3c46b80fbfaa4290e7439759eb6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deckTest:
+  - card: {fileID: 0}
+    amount: 0
   deck:
   - {fileID: 1886137179}
   - {fileID: 859151407}
