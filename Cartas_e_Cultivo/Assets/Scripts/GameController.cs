@@ -142,7 +142,7 @@ public class GameController : MonoBehaviour {
                                                  //card.transform.position = handSlots[i].position; // Insere a carta no espaço correto
                                                  //card.currentSlot = i;
                 //availableSlots[i] = false; // Avisa que o espaço agora está ocupado
-                card.onDraw(); // Realiza evento ao comprar
+               // card.onDraw(); // Realiza evento ao comprar
                 deck.Remove(card); // Remove carta comprada do deck
                 FindObjectOfType<AudioManager>().Play("cardDrawn");  // plays cardDrawn sounds
                 //return;
@@ -247,6 +247,7 @@ public class GameController : MonoBehaviour {
 
     public void PlayCard(Draggable card, string room)
     {
+        card.Animations();
         int value = (room.Last() - '0') - 1;
         int[] adj = AdjacentFields(value);
          // int value = (room.Last().ParseInt());
@@ -254,9 +255,8 @@ public class GameController : MonoBehaviour {
         cardFields[value] = card; 
         cardsOnRooms++; 
         FindObjectOfType<AudioManager>().Play("cardThrown");  // plays cardThrown sounds
-        
+        //card.gameObject.GetComponent<Animator>().SetTrigger("INICIO");
 
-            card.gameObject.GetComponent<Animator>().SetTrigger("INICIO");
         //"Funções" onPlay() das cartas, eventualmente mudar de cardName para cardID;
        
         if(card.nameText.text == "Cafe") {DrawCard();}

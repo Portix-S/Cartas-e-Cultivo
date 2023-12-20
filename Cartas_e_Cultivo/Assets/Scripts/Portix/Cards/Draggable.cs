@@ -74,44 +74,51 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     }
 
     private void Gc_OnPlayerTurnBegin(object sender, System.EventArgs e)
-    {
-        if (played && growthLevel < maxGrowthLevel)
+    {   
+        Debug.Log("Grow player card" + cardSO.cardName + " level" + growthLevel + "out of" + maxGrowthLevel);
+        /*if(growthLevel >= 1) {
+            this.gameObject.GetComponent<Animator>().SetTrigger("INIT4");
+        }*/
+        if (played && growthLevel < maxGrowthLevel) 
         {
-            Debug.Log("Grow" + cardSO.cardName);
-            growthLevel++;
-            if(growthLevel == maxGrowthLevel)
+            growthLevel++;  
+            if(growthLevel == maxGrowthLevel) {
                 gc.cardsGrown++;
                 Debug.Log("Grow");
 
                 // Funções OnGrowth() das cartas, localizacao temporaria
-                int value = (parentToReturnTo.name.Last() - '0') - 1;
+               int value = (parentToReturnTo.name.Last() - '0') - 1;
                 int[] adj = gc.AdjacentFields(value); 
-                if(this.nameText.text == "Batata") {
-                    this.gameObject.GetComponent<Animator>().SetInteger("ID", 0);
-
-                } 
+     
                 if (this.nameText.text == "Lirio") {
 
-                    this.gameObject.GetComponent<Animator>().SetInteger("ID", 1);
                     for(int i=0; i<adj.Length; i++) 
-                    {
-                        gc.cardFields[adj[i]].health++; 
-                        Debug.Log("Vida" + gc.cardFields[adj[i]].health);
+                    {   
+                        if (gc.cardFields[adj[i]] != null) {
+                            gc.cardFields[adj[i]].health++; 
+                             Debug.Log("Vida" + gc.cardFields[adj[i]].health);
+                        }
                     }
                 }
+            }
         }
+        Animations();
+
+
     }
 
     private void Gc_OnEnemyTurnBegin(object sender, System.EventArgs e)
-    {
+    {   
         if (played && growthLevel < maxGrowthLevel)
         {
             Debug.Log("Grow enemy card" + cardSO.cardName + " level" + growthLevel + "out of" + maxGrowthLevel);
             growthLevel++;
-            if(growthLevel == maxGrowthLevel)
-                gc.enemyCardsGrown++;
-                // artworkImage = grownSprite;
+            if(growthLevel == maxGrowthLevel) gc.enemyCardsGrown++;
+
         }
+        Animations();
+
+        
     }
 
     // Pointer enter/exit lidar com visuais das salas?
@@ -240,5 +247,42 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public void onDie()
     {
         cardSO.onDie();
+    }
+
+    public void Animations() {
+        int timeforGrowth = maxGrowthLevel - growthLevel;
+        if(played) {
+            switch (timeforGrowth) {
+                case 1:
+                    this.gameObject.GetComponent<Animator>().SetTrigger("INICIO"); //vamos precisar de um broto de uma folha só
+                    break;
+                case 2:
+                    this.gameObject.GetComponent<Animator>().SetTrigger("INIT4"); 
+                    break;
+                case 3:
+                    this.gameObject.GetComponent<Animator>().SetTrigger("INIT4");
+                    break;
+                case 4:
+                    this.gameObject.GetComponent<Animator>().SetTrigger("INIT4");
+                    break;
+                case 5:
+                    this.gameObject.GetComponent<Animator>().SetTrigger("INIT4");
+                    break;
+                default:
+                    this.gameObject.GetComponent<Animator>().SetTrigger("INICIO");
+                    break;
+                
+            }
+        }
+        if(growthLevel == maxGrowthLevel) {
+            if(this.nameText.text == "Batata") {
+                this.gameObject.GetComponent<Animator>().SetInteger("ID", 0);
+            } 
+            if (this.nameText.text == "Lirio") {
+                this.gameObject.GetComponent<Animator>().SetInteger("ID", 1);
+
+            }
+        }
+        
     }
 }
