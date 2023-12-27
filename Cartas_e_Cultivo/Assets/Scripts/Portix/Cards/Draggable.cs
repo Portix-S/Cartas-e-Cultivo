@@ -116,6 +116,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             if(growthLevel == maxGrowthLevel) gc.enemyCardsGrown++;
 
         }
+
         Animations();
 
         
@@ -257,16 +258,16 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                     this.gameObject.GetComponent<Animator>().SetTrigger("INICIO"); //vamos precisar de um broto de uma folha só
                     break;
                 case 2:
-                    this.gameObject.GetComponent<Animator>().SetTrigger("INIT4"); 
+                    this.gameObject.GetComponent<Animator>().SetTrigger("INICIO"); 
                     break;
                 case 3:
-                    this.gameObject.GetComponent<Animator>().SetTrigger("INIT4");
+                    this.gameObject.GetComponent<Animator>().SetTrigger("INIT3");
                     break;
                 case 4:
                     this.gameObject.GetComponent<Animator>().SetTrigger("INIT4");
                     break;
                 case 5:
-                    this.gameObject.GetComponent<Animator>().SetTrigger("INIT4");
+                    this.gameObject.GetComponent<Animator>().SetTrigger("INIT5");
                     break;
                 default:
                     this.gameObject.GetComponent<Animator>().SetTrigger("INICIO");

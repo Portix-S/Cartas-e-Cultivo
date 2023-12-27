@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d763c40d05551e14fb04c4f8eb93926b
+guid: 8cebc66615a6c8945b2d9a53a3ee54d7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Broto_4_Entry_0
+      name: Broto_4_Transition_Away_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 2048
-        width: 2048
-        height: 2048
+        y: 2560
+        width: 1280
+        height: 1280
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c5675ebba7f878418bb6eb9cd950b6b
-      internalID: 1796549712
+      spriteID: aa674093b55419245916128cc52e8afb
+      internalID: 12662188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Broto_4_Entry_1
+      name: Broto_4_Transition_Away_1
       rect:
         serializedVersion: 2
-        x: 2048
-        y: 2048
-        width: 2048
-        height: 2048
+        x: 1280
+        y: 2560
+        width: 1280
+        height: 1280
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,62 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5182d2f6c2106241a02538d31ac4f83
-      internalID: 973372722
+      spriteID: e26def8ca42e6dc4bba95638dde0af0b
+      internalID: -635242570
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Broto_4_Entry_2
+      name: Broto_4_Transition_Away_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 1280
+        height: 1280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4411f074901264647bba3032d762cc57
+      internalID: -589712405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broto_4_Transition_Away_3
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1280
+        width: 1280
+        height: 1280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a38820165aa055498cbcf7c5af2dc54
+      internalID: -1449363410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broto_4_Transition_Away_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2048
-        height: 2048
+        width: 1280
+        height: 1280
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b625460e77e73884784f2715c9974601
-      internalID: -559205329
+      spriteID: 917aa2f8d20e13c4f883fb95a5658a04
+      internalID: 976542785
       vertices: []
       indices: 
       edges: []
@@ -183,10 +225,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Broto_4_Entry_0: 1796549712
-      Broto_4_Entry_1: 973372722
-      Broto_4_Entry_2: -559205329
-      Broto_4_Entry_3: -659350001
+      Broto_4_Transition_Away_0: 12662188
+      Broto_4_Transition_Away_1: -635242570
+      Broto_4_Transition_Away_2: -589712405
+      Broto_4_Transition_Away_3: -1449363410
+      Broto_4_Transition_Away_4: 976542785
+      Broto_4_Transition_Away_5: -1799706166
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
