@@ -1,19 +1,16 @@
+using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using TMPro;
-using System.Linq;
 
-public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
+public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    //
-    // This script handles all drag systems of a card
-    //
-
     [Header("Only for AI")]
     public bool isAICard;
 
     public Transform parentToReturnTo;
+    private Transform newRoom;
     private Transform lastRoom;
     public bool changedByDropZone;
     private Image image;
@@ -44,31 +41,32 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private int growthLevel = 0;
     [SerializeField] private int maxGrowthLevel = 1;
 
+    
     private void Awake()
     {
         // Initial Configuration of a card
         gc = FindObjectOfType(typeof(GameController)) as GameController;
 
         //isOnHand = true; // Ser� usado mais pra frente
-        nameText.text = cardSO.cardName;
-        descriptionText.text = cardSO.description;
-        maskImage.sprite = cardSO.mask;
-        artworkImage.sprite = cardSO.artwork;
-        manaCostText.text = cardSO.manaCost.ToString();
-        if (!isAICard)
-        {
-            gc.OnPlayerTurnBegin += Gc_OnPlayerTurnBegin;
-        }
-        else
-        {
-            gc.OnEnemyTurnBegin += Gc_OnEnemyTurnBegin;
-            //manaCostText.gameObject.SetActive(false);
-        }
-        healthText.text = cardSO.health.ToString();
-        health = int.Parse(healthText.text);
-
+        // nameText.text = cardSO.cardName;
+        // descriptionText.text = cardSO.description;
+        // maskImage.sprite = cardSO.mask;
+        // artworkImage.sprite = cardSO.artwork;
+        // manaCostText.text = cardSO.manaCost.ToString();
+        // if (!isAICard)
+        // {
+        //     gc.OnPlayerTurnBegin += Gc_OnPlayerTurnBegin;
+        // }
+        // else
+        // {
+        //     gc.OnEnemyTurnBegin += Gc_OnEnemyTurnBegin;
+        //     //manaCostText.gameObject.SetActive(false);
+        // }
+        // healthText.text = cardSO.health.ToString();
+        // health = int.Parse(healthText.text);
+        //
         maxGrowthLevel = cardSO.growthTime;
-        growthTimeText.text = cardSO.growthTime.ToString();
+        // growthTimeText.text = cardSO.growthTime.ToString();
     }
 
     private void Gc_OnPlayerTurnBegin(object sender, System.EventArgs e)
@@ -133,83 +131,65 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         //if already played that card, it'll only be destroyed (if clicked, by now)
         if (!played)
         {
-            Debug.Log("OnBeginDrag");
-            parentToReturnTo = this.transform.parent;
-            lastRoom = this.transform.parent;
-            this.transform.SetParent(this.transform.parent.parent);
+            // Debug.Log("OnBeginDrag");
+            var parent = this.transform.parent;
+            parentToReturnTo = parent;
+            lastRoom = parent;
+            this.transform.SetParent(parent.parent);
 
             GetComponent<CanvasGroup>().blocksRaycasts = false;
         }
         else
         {
             Debug.Log("Essa carta j� foi jogada");
-            //this.gameObject.SetActive(false);
-            // gc.graveyard.Add(this);
-            // onDie();
-            //DropZone roomScript = lastRoom.GetComponent<DropZone>();
-            //roomScript.currentCards++;
         }
     }
 
-    public void OnDrag(PointerEventData eventdata)
+    public void OnDrag(PointerEventData eventdata) // Perfect for Dragging
     {
-        // Only makes the card to be glued to mouse position
-        // Maybe add offset later
         if (!played)
-        {
             this.transform.position = eventdata.position;
-            Debug.Log("OnDrag");
-        }
-        
     }
 
     public void OnEndDrag(PointerEventData eventdata)
     {
-        // As the card stopped being dragged, checks what to do
-        Debug.Log("OnEndDrag");
-        if(lastRoom != null)
-            Debug.Log(parentToReturnTo.name);
-
-        if (!gc.canAffordMana(cardSO.manaCost))
+        if (!gc.canAffordMana(cardSO.manaCost) && !played)
         {
-            Debug.Log("N�o possui mana o suficiente");
+            Debug.Log("N�o tem mana suficiente");
         }
 
-        // When it changes zone, get the room it was and remove a card from it
-        if (changedByDropZone)
-        {   
-            //Debug.Log("-1");
-            DropZone roomScript = lastRoom.GetComponent<DropZone>();
-            roomScript.currentCards--;
-            gc.PlayCard(this, parentToReturnTo.name);
-            if(gc.canAffordMana(cardSO.manaCost))
-                gc.loseMana(cardSO.manaCost);
-        }
-
-        // Changes the parent to new room and let raycast to work again
-        this.transform.SetParent(parentToReturnTo);
-        changedByDropZone = false;
-        GetComponent<CanvasGroup>().blocksRaycasts = true;
-
-
-        
-
-        // Sistema de detec��o de salas, ser� usado no futuro
-        /*
-        if(parentToReturnTo.tag == "Room")
+        if (lastRoom == newRoom || newRoom == null)
         {
-            isOnRoom = true;
-            isOnHand = false;
+            this.transform.SetParent(lastRoom);
         }
-        else if(parentToReturnTo.tag == "Hand")
-        {
-            isOnHand = true;
-            isOnRoom = false;
-        }
-        //*/
-
     }
 
+    // Room manager calls this function to play a card in that room
+    public void PlayCard(RoomManager roomManager)
+    {
+        Debug.Log("PlayCard");
+        // Change Room
+        newRoom = roomManager.transform;
+        this.transform.SetParent(newRoom);
+        
+        // Lose mana
+        gc.loseMana(cardSO.manaCost);
+        
+        // Change Card State
+        played = true;
+        
+        // Remove card from last room
+        if (lastRoom != null)
+        {
+            RoomManager roomScript = lastRoom.GetComponent<RoomManager>();
+            roomScript.currentCards--;
+        }
+        // Maybe do Somthing?
+        //cardSO.onPlay();
+        
+        GetComponent<CanvasGroup>().blocksRaycasts = true;
+    }
+    
     public bool CanAffordMana()
     {
         return gc.canAffordMana(cardSO.manaCost);
@@ -243,4 +223,5 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         cardSO.onDie();
     }
+
 }

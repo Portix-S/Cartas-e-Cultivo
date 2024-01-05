@@ -15,7 +15,7 @@ public class CardSO : ScriptableObject {
 
     public Sprite mask;
     public Sprite artwork;
-    public Sprite ImagemdaCarta;
+    public Sprite imagemDaCarta;
 
     public int manaCost;
     public int growthTime;
@@ -24,6 +24,7 @@ public class CardSO : ScriptableObject {
     public bool hasOnDraw;
     public bool hasOnPlay;
     public bool hasOnDie;
+    
 
     public void onDraw() {
         if(hasOnDraw) {

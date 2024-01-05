@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,9 +5,8 @@ using TMPro;
 using System;
 using System.Linq;
 using UnityEngine.SceneManagement;
-
-
-public class GameController : MonoBehaviour {
+public class GameManager2 : MonoBehaviour
+{
     [Header("Player Configs")]
     public List<Deck> deckTest = new List<Deck>();
     public List<Draggable> deck = new List<Draggable>();
@@ -27,7 +25,7 @@ public class GameController : MonoBehaviour {
     private int growth = 0;
     private bool canPlayerDraw = true;
     private int numOfCardsToBeBought;
-    [SerializeField] private DropZone handScript;
+    [SerializeField] private RoomManager handScript;
 
     [Header("Enemy AI Configs")]
     public List<Draggable> enemyCards = new List<Draggable>();
@@ -81,22 +79,22 @@ public class GameController : MonoBehaviour {
 
     public void Start() {
         // Adiciona todas as cartas ao deck e à mao
-        /*
+        //*
         foreach(Deck deck in deckTest)
         {
             for(int i = 0; i < deck.amount; i++)
             {
-                Draggable card = Instantiate(deck.card, handScript.transform).GetComponent<Draggable>();
-                card.gameObject.SetActive(false);
-                this.deck.Add(card);
+                CardMovement card = Instantiate(deck.card, handScript.transform).GetComponent<CardMovement>();
+                // card.gameObject.SetActive(false);
+                // this.deck.Add(card);
             }
         }
         //*/
 
-        ShuffleDeck(ref deck);
-        ShuffleDeck(ref enemyDeck);
-        MulliganSystem();
-        EnemyDrawCard(5);
+        // ShuffleDeck(ref deck);
+        // ShuffleDeck(ref enemyDeck);
+        // MulliganSystem();
+        // EnemyDrawCard(5);
     }
 
     public bool canAffordMana(int value) {
@@ -213,9 +211,9 @@ public class GameController : MonoBehaviour {
     }
 
     private void Update() {
-        deckCountText.text = deck.Count.ToString();
-        manaCountText.text = mana.ToString();
-        graveyardCountText.text = graveyard.Count.ToString();
+        // deckCountText.text = deck.Count.ToString();
+        // manaCountText.text = mana.ToString();
+        // graveyardCountText.text = graveyard.Count.ToString();
         if(cardsGrown >= maxCardsOnRooms)
         {
             Debug.Log("Show Win");
