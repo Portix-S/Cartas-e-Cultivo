@@ -21,7 +21,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     //[SerializeField] private bool isOnRoom;
     [Header("Passando Do Sona")]
     [SerializeField] public CardSO cardSO;
-    private GameController gc;
+    private GameManager2 gc;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI descriptionText;
 
@@ -34,8 +34,8 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public int health;
     public TextMeshProUGUI growthTimeText;
 
-   
 
+    private Animator anim;
 
     [Header("Growth Stats")]
     private int growthLevel = 0;
@@ -45,28 +45,31 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     private void Awake()
     {
         // Initial Configuration of a card
-        gc = FindObjectOfType(typeof(GameController)) as GameController;
-
+        gc = FindObjectOfType(typeof(GameManager2)) as GameManager2;
+        anim = GetComponent<Animator>();
         //isOnHand = true; // Ser� usado mais pra frente
         // nameText.text = cardSO.cardName;
         // descriptionText.text = cardSO.description;
         // maskImage.sprite = cardSO.mask;
         // artworkImage.sprite = cardSO.artwork;
         // manaCostText.text = cardSO.manaCost.ToString();
-        // if (!isAICard)
-        // {
-        //     gc.OnPlayerTurnBegin += Gc_OnPlayerTurnBegin;
-        // }
-        // else
-        // {
-        //     gc.OnEnemyTurnBegin += Gc_OnEnemyTurnBegin;
-        //     //manaCostText.gameObject.SetActive(false);
-        // }
+        if (!isAICard)
+        {
+            gc.OnPlayerTurnBegin += Gc_OnPlayerTurnBegin;
+        }
+        else
+        {
+            gc.OnEnemyTurnBegin += Gc_OnEnemyTurnBegin;
+            //manaCostText.gameObject.SetActive(false);
+        }
         // healthText.text = cardSO.health.ToString();
         // health = int.Parse(healthText.text);
         //
-        maxGrowthLevel = cardSO.growthTime;
-        // growthTimeText.text = cardSO.growthTime.ToString();
+        if (cardSO.hasGrowthTime)
+        {
+            maxGrowthLevel = cardSO.GetGrowthTime();
+            // growthTimeText.text = cardSO.growthTime.ToString();
+        }
     }
 
     private void Gc_OnPlayerTurnBegin(object sender, System.EventArgs e)
@@ -81,23 +84,27 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                 Debug.Log("Grow");
 
                 // Funções OnGrowth() das cartas, localizacao temporaria
-                int value = (parentToReturnTo.name.Last() - '0') - 1;
-                int[] adj = gc.AdjacentFields(value);
-                if (this.nameText.text == "Batata")
-                {
-                    this.gameObject.GetComponent<Animator>().SetInteger("ID", 0);
-
-                }
-
-                if (this.nameText.text == "Lirio")
-                {
-                    this.gameObject.GetComponent<Animator>().SetInteger("ID", 1);
-                    foreach (var t in adj)
-                    {
-                        gc.cardFields[t].health++;
-                        Debug.Log("Vida" + gc.cardFields[t].health);
-                    }
-                }
+                // int value = (parentToReturnTo.name.Last() - '0') - 1;
+                // int[] adj = gc.AdjacentFields(value);
+                
+                // Atualizar tudo pelo script especifico da planta
+                cardSO.OnGrowth(anim);
+                
+                // if (this.nameText.text == "Batata")
+                // {
+                //     this.gameObject.GetComponent<Animator>().SetInteger("ID", 0);
+                //
+                // }
+                //
+                // if (this.nameText.text == "Lirio")
+                // {
+                //     this.gameObject.GetComponent<Animator>().SetInteger("ID", 1);
+                //     foreach (var t in adj)
+                //     {
+                //         gc.cardFields[t].health++;
+                //         Debug.Log("Vida" + gc.cardFields[t].health);
+                //     }
+                // }
             }
         }
     }
@@ -144,6 +151,11 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             Debug.Log("Essa carta j� foi jogada");
         }
     }
+    
+    public bool CanBePlayedOnEnemyRoom()
+    {
+        return cardSO.GetCanBePlayedOnEnemyRoom();
+    }
 
     public void OnDrag(PointerEventData eventdata) // Perfect for Dragging
     {
@@ -173,7 +185,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         this.transform.SetParent(newRoom);
         
         // Lose mana
-        gc.loseMana(cardSO.manaCost);
+        gc.LoseMana(cardSO.manaCost);
         
         // Change Card State
         played = true;
@@ -184,10 +196,13 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             RoomManager roomScript = lastRoom.GetComponent<RoomManager>();
             roomScript.currentCards--;
         }
-        // Maybe do Somthing?
-        //cardSO.onPlay();
+        // Maybe do Something?
+        cardSO.OnPlay();
         
-        GetComponent<CanvasGroup>().blocksRaycasts = true;
+        // GetComponent<CanvasGroup>().blocksRaycasts = true;
+        FindObjectOfType<AudioManager>().Play("cardThrown");
+        
+        anim.SetTrigger("INICIO");
     }
     
     public bool CanAffordMana()
@@ -211,17 +226,17 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     
     public void onDraw()
     {
-        cardSO.onDraw();
+        cardSO.OnDraw();
     }
 
     public void onPlay()
     {
-        cardSO.onPlay();
+        cardSO.OnPlay();
     }
 
     public void onDie()
     {
-        cardSO.onDie();
+        cardSO.OnDie();
     }
 
 }

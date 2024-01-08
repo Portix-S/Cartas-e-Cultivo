@@ -64,11 +64,11 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             gc.OnEnemyTurnBegin += Gc_OnEnemyTurnBegin;
             //manaCostText.gameObject.SetActive(false);
         }
-        healthText.text = cardSO.health.ToString();
-        health = int.Parse(healthText.text);
+        // healthText.text = cardSO.health.ToString();
+        // health = int.Parse(healthText.text);
 
-        maxGrowthLevel = cardSO.growthTime;
-        growthTimeText.text = cardSO.growthTime.ToString();
+        // maxGrowthLevel = cardSO.growthTime;
+        // growthTimeText.text = cardSO.growthTime.ToString();
     }
 
     private void Gc_OnPlayerTurnBegin(object sender, System.EventArgs e)
@@ -231,16 +231,16 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     
     public void onDraw()
     {
-        cardSO.onDraw();
+        cardSO.OnDraw();
     }
 
     public void onPlay()
     {
-        cardSO.onPlay();
+        cardSO.OnPlay();
     }
 
     public void onDie()
     {
-        cardSO.onDie();
+        cardSO.OnDie();
     }
 }

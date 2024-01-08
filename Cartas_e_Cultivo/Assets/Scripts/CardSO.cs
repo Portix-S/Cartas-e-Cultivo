@@ -5,11 +5,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using System;
 
-[CreateAssetMenu(fileName = "New Card", menuName = "Card")]
-public class CardSO : ScriptableObject {
+public abstract class CardSO : ScriptableObject {
 
     public int cardID;
-
+    
     public string cardName;
     public string description;
 
@@ -18,30 +17,30 @@ public class CardSO : ScriptableObject {
     public Sprite imagemDaCarta;
 
     public int manaCost;
-    public int growthTime;
-    public int health;
-
+    
+    public bool hasGrowthTime;
+    public bool hasHealth;
     public bool hasOnDraw;
     public bool hasOnPlay;
     public bool hasOnDie;
-    
+    [SerializeField] protected bool canBePlayedOnEnemyRoom;
+    [SerializeField] protected bool canBePlayedOnPlayerRoom;
 
-    public void onDraw() {
-        if(hasOnDraw) {
-            FunctionManager.onDrawFunctions[cardID]?.Invoke();
-        }
+    public bool GetCanBePlayedOnPlayerRoom()
+    {
+        return canBePlayedOnPlayerRoom;
     }
+    public bool GetCanBePlayedOnEnemyRoom()
+    {
+        return canBePlayedOnEnemyRoom;
+    }
+    public abstract int GetGrowthTime();
+    public abstract int GetHealth();
+    public abstract void OnDraw();
+    public abstract void OnGrowth(Animator anim);
+    public abstract void OnPlay();
+    public abstract void OnDie();
 
-    public void onPlay() {
-        if(hasOnPlay) {
-            FunctionManager.onPlayFunctions[cardID]?.Invoke();
-        }
-    }
 
-    public void onDie() {
-        if(hasOnDie) {
-            FunctionManager.onDieFunctions[cardID]?.Invoke();
-        }
-    }
 
 }
