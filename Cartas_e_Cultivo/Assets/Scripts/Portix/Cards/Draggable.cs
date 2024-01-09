@@ -1,7 +1,9 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using System;
 using System.Linq;
 
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
@@ -11,10 +13,10 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     //
 
     [Header("Only for AI")]
-    public bool isAICard;
+    public bool isAICard = false;
 
-    public Transform parentToReturnTo;
-    private Transform lastRoom;
+    public Transform parentToReturnTo = null;
+    private Transform lastRoom = null;
     public bool changedByDropZone;
     private Image image;
     public bool played;
@@ -46,7 +48,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     private void Awake()
     {
-        // Initial Configuration of a card
+        // Initial Congiguration of a card
         gc = FindObjectOfType(typeof(GameController)) as GameController;
 
         //isOnHand = true; // Ser� usado mais pra frente
@@ -64,56 +66,60 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             gc.OnEnemyTurnBegin += Gc_OnEnemyTurnBegin;
             //manaCostText.gameObject.SetActive(false);
         }
-        // healthText.text = cardSO.health.ToString();
-        // health = int.Parse(healthText.text);
+        healthText.text = cardSO.health.ToString();
+        health = int.Parse(healthText.text);
 
-        // maxGrowthLevel = cardSO.growthTime;
-        // growthTimeText.text = cardSO.growthTime.ToString();
+        maxGrowthLevel = cardSO.growthTime;
+        growthTimeText.text = cardSO.growthTime.ToString();
     }
 
     private void Gc_OnPlayerTurnBegin(object sender, System.EventArgs e)
-    {
-        if (played && growthLevel < maxGrowthLevel)
+    {   
+        Debug.Log("Grow player card" + cardSO.cardName + " level" + growthLevel + "out of" + maxGrowthLevel);
+        /*if(growthLevel >= 1) {
+            this.gameObject.GetComponent<Animator>().SetTrigger("INIT4");
+        }*/
+        if (played && growthLevel < maxGrowthLevel) 
         {
-            Debug.Log("Grow" + cardSO.cardName);
-            growthLevel++;
-            if (growthLevel == maxGrowthLevel)
-            {
+            growthLevel++;  
+            if(growthLevel == maxGrowthLevel) {
                 gc.cardsGrown++;
                 Debug.Log("Grow");
 
                 // Funções OnGrowth() das cartas, localizacao temporaria
-                int value = (parentToReturnTo.name.Last() - '0') - 1;
-                int[] adj = gc.AdjacentFields(value);
-                if (this.nameText.text == "Batata")
-                {
-                    this.gameObject.GetComponent<Animator>().SetInteger("ID", 0);
+               int value = (parentToReturnTo.name.Last() - '0') - 1;
+                int[] adj = gc.AdjacentFields(value); 
+     
+                if (this.nameText.text == "Lirio") {
 
-                }
-
-                if (this.nameText.text == "Lirio")
-                {
-                    this.gameObject.GetComponent<Animator>().SetInteger("ID", 1);
-                    foreach (var t in adj)
-                    {
-                        gc.cardFields[t].health++;
-                        Debug.Log("Vida" + gc.cardFields[t].health);
+                    for(int i=0; i<adj.Length; i++) 
+                    {   
+                        if (gc.cardFields[adj[i]] != null) {
+                            gc.cardFields[adj[i]].health++; 
+                             Debug.Log("Vida" + gc.cardFields[adj[i]].health);
+                        }
                     }
                 }
             }
         }
+        Animations();
+
+
     }
 
     private void Gc_OnEnemyTurnBegin(object sender, System.EventArgs e)
-    {
+    {   
         if (played && growthLevel < maxGrowthLevel)
         {
             Debug.Log("Grow enemy card" + cardSO.cardName + " level" + growthLevel + "out of" + maxGrowthLevel);
             growthLevel++;
-            if(growthLevel == maxGrowthLevel)
-                gc.enemyCardsGrown++;
-                // artworkImage = grownSprite;
+            if(growthLevel == maxGrowthLevel) gc.enemyCardsGrown++;
+
         }
+
+        Animations();
+
+        
     }
 
     // Pointer enter/exit lidar com visuais das salas?
@@ -144,8 +150,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         {
             Debug.Log("Essa carta j� foi jogada");
             //this.gameObject.SetActive(false);
-            // gc.graveyard.Add(this);
-            // onDie();
+            gc.graveyard.Add(this);
+            onDie();
             //DropZone roomScript = lastRoom.GetComponent<DropZone>();
             //roomScript.currentCards++;
         }
@@ -231,16 +237,53 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     
     public void onDraw()
     {
-        cardSO.OnDraw();
+        cardSO.onDraw();
     }
 
     public void onPlay()
     {
-        cardSO.OnPlay();
+        cardSO.onPlay();
     }
 
     public void onDie()
     {
-        cardSO.OnDie();
+        cardSO.onDie();
+    }
+
+    public void Animations() {
+        int timeforGrowth = maxGrowthLevel - growthLevel;
+        if(played) {
+            switch (timeforGrowth) {
+                case 1:
+                    this.gameObject.GetComponent<Animator>().SetTrigger("INICIO"); //vamos precisar de um broto de uma folha só
+                    break;
+                case 2:
+                    this.gameObject.GetComponent<Animator>().SetTrigger("INICIO"); 
+                    break;
+                case 3:
+                    this.gameObject.GetComponent<Animator>().SetTrigger("INIT3");
+                    break;
+                case 4:
+                    this.gameObject.GetComponent<Animator>().SetTrigger("INIT4");
+                    break;
+                case 5:
+                    this.gameObject.GetComponent<Animator>().SetTrigger("INIT5");
+                    break;
+                default:
+                    this.gameObject.GetComponent<Animator>().SetTrigger("INICIO");
+                    break;
+                
+            }
+        }
+        if(growthLevel == maxGrowthLevel) {
+            if(this.nameText.text == "Batata") {
+                this.gameObject.GetComponent<Animator>().SetInteger("ID", 0);
+            } 
+            if (this.nameText.text == "Lirio") {
+                this.gameObject.GetComponent<Animator>().SetInteger("ID", 1);
+
+            }
+        }
+        
     }
 }
