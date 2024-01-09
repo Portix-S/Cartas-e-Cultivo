@@ -8,7 +8,7 @@ public class MenuManager : MonoBehaviour
     
     public void Play()
     {
-        SceneManager.LoadScene("Portix Scene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void Exit()

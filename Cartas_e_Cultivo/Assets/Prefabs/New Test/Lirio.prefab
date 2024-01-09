@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 1911410481645776086}
   - component: {fileID: 4696373733601966443}
   m_Layer: 5
-  m_Name: Veneno
+  m_Name: Lirio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -439,7 +439,7 @@ MonoBehaviour:
   changedByDropZone: 0
   played: 0
   layoutElement: {fileID: 0}
-  cardSO: {fileID: 11400000, guid: d4095b96528d8594aa4b3dd8025cfff8, type: 2}
+  cardSO: {fileID: 11400000, guid: bdb965a0ae93508469459327f8c38800, type: 2}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
   maskImage: {fileID: 0}
@@ -448,7 +448,7 @@ MonoBehaviour:
   healthText: {fileID: 0}
   health: 0
   growthTimeText: {fileID: 0}
-  maxGrowthLevel: 1
+  maxGrowthLevel: 2
 --- !u!1 &3809994511533765827
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,7 +964,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: de4ab556b8c23434e9409c972c2f7538, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a84ef8162863fe4a93a5cb081845227, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1040,7 +1040,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Veneno
+  m_text: Lirio
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 888cd2eb98f18bf4480ed6a7fe42c27d, type: 2}
   m_sharedMaterial: {fileID: -5166092694447943323, guid: 888cd2eb98f18bf4480ed6a7fe42c27d, type: 2}

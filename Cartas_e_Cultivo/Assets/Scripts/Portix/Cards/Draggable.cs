@@ -66,11 +66,11 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             gc.OnEnemyTurnBegin += Gc_OnEnemyTurnBegin;
             //manaCostText.gameObject.SetActive(false);
         }
-        healthText.text = cardSO.health.ToString();
+        // healthText.text = cardSO.health.ToString();
         health = int.Parse(healthText.text);
 
-        maxGrowthLevel = cardSO.growthTime;
-        growthTimeText.text = cardSO.growthTime.ToString();
+        // maxGrowthLevel = cardSO.growthTime;
+        // growthTimeText.text = cardSO.growthTime.ToString();
     }
 
     private void Gc_OnPlayerTurnBegin(object sender, System.EventArgs e)
@@ -151,7 +151,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             Debug.Log("Essa carta j� foi jogada");
             //this.gameObject.SetActive(false);
             gc.graveyard.Add(this);
-            onDie();
+            // onDie();
             //DropZone roomScript = lastRoom.GetComponent<DropZone>();
             //roomScript.currentCards++;
         }
@@ -235,20 +235,20 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         image.color = tempCor;
     }
     
-    public void onDraw()
-    {
-        cardSO.onDraw();
-    }
-
-    public void onPlay()
-    {
-        cardSO.onPlay();
-    }
-
-    public void onDie()
-    {
-        cardSO.onDie();
-    }
+    // public void onDraw()
+    // {
+    //     cardSO.onDraw();
+    // }
+    //
+    // public void onPlay()
+    // {
+    //     cardSO.onPlay();
+    // }
+    //
+    // public void onDie()
+    // {
+    //     cardSO.onDie();
+    // }
 
     public void Animations() {
         int timeforGrowth = maxGrowthLevel - growthLevel;
