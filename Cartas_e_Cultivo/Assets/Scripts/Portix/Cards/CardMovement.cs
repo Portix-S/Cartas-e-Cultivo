@@ -74,7 +74,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     private void Gc_OnPlayerTurnBegin(object sender, System.EventArgs e)
     {
-        if (played && growthLevel < maxGrowthLevel)
+        if (played && growthLevel < maxGrowthLevel && !isAICard)
         {
             Debug.Log("Grow" + cardSO.cardName);
             growthLevel++;
@@ -111,13 +111,16 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     private void Gc_OnEnemyTurnBegin(object sender, System.EventArgs e)
     {
-        if (played && growthLevel < maxGrowthLevel)
+        if (played && growthLevel < maxGrowthLevel && isAICard)
         {
             Debug.Log("Grow enemy card" + cardSO.cardName + " level" + growthLevel + "out of" + maxGrowthLevel);
             growthLevel++;
-            if(growthLevel == maxGrowthLevel)
+            if (growthLevel == maxGrowthLevel)
+            {
                 gc.enemyCardsGrown++;
-                // artworkImage = grownSprite;
+                cardSO.OnGrowth(anim);
+            }
+            // artworkImage = grownSprite;
         }
     }
 
@@ -173,6 +176,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         if (lastRoom == newRoom || newRoom == null)
         {
             this.transform.SetParent(lastRoom);
+            GetComponent<CanvasGroup>().blocksRaycasts = true;
         }
     }
 
