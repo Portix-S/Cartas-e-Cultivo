@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a744391f0f07f841978f04c197b1fa9, type: 3}
   m_Name: "Lim\xE3o"
   m_EditorClassIdentifier: 
-  cardID: 2
+  cardID: 4
   cardName: "Lim\xE3o"
   description: Lemon
   mask: {fileID: 0}

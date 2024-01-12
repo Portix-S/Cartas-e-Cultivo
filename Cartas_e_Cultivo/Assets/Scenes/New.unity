@@ -5769,13 +5769,19 @@ MonoBehaviour:
     amount: 2
   - card: {fileID: 4946529856588461148, guid: 37a979921c17b2344b89cf97dea08067, type: 3}
     amount: 2
-  - card: {fileID: 4946529856588461148, guid: 5306b9536e39aeb42a2d83c0be9addb6, type: 3}
+  - card: {fileID: 4946529856588461148, guid: bb774f122708b3b408aec37fbe472da3, type: 3}
     amount: 2
-  - card: {fileID: 4946529856588461148, guid: a6baa82416e2574429c070be721ee709, type: 3}
+  - card: {fileID: 4946529856588461148, guid: 7905a1d191dce7040a890c4bc639d823, type: 3}
     amount: 2
-  - card: {fileID: 4946529856588461148, guid: e13abef6243a1934e94fb37cbc0f6cc8, type: 3}
+  - card: {fileID: 4946529856588461148, guid: 7183037e83dd63e40a4aaad33337dec8, type: 3}
     amount: 2
-  - card: {fileID: 4946529856588461148, guid: c2e5b42d4fe667747853b25ce87997a5, type: 3}
+  - card: {fileID: 4946529856588461148, guid: 1ea5d720ff97e214e8982167f220ff16, type: 3}
+    amount: 2
+  - card: {fileID: 4946529856588461148, guid: 23c3640b933b862488ed9c25f4b369bc, type: 3}
+    amount: 2
+  - card: {fileID: 4946529856588461148, guid: efa0957ea7957d14686c14bf75607d6f, type: 3}
+    amount: 2
+  - card: {fileID: 4946529856588461148, guid: 7a8427a8ee875e941b5bad1d30dd3820, type: 3}
     amount: 2
   deck: []
   graveyard: []
@@ -26328,19 +26334,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493502502239319
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26367,19 +26380,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493502595888255
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26406,19 +26426,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493502660377353
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26445,19 +26472,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493502679199921
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26484,19 +26518,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493502750271294
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26523,19 +26564,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493502846405175
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26562,19 +26610,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493502936801836
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26601,19 +26656,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493503023872455
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26640,19 +26702,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493503229016461
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26679,19 +26748,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493503429452898
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26718,19 +26794,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493503544843303
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26757,19 +26840,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493503598282584
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26796,19 +26886,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493503951874186
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26835,19 +26932,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493504160449280
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26874,19 +26978,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!95 &8466294129306209001
 Animator:
   serializedVersion: 5

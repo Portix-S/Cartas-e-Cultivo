@@ -1,5 +1,81 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &427012506141624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2391338916598130135}
+  - component: {fileID: 2975030294094039896}
+  - component: {fileID: 2270863273188359335}
+  m_Layer: 1
+  m_Name: CardBack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &2391338916598130135
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427012506141624}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3638917959755036244}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 39.19997, y: 34.522884}
+  m_SizeDelta: {x: 343.3588, y: 446.3094}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2975030294094039896
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427012506141624}
+  m_CullTransparentMesh: 1
+--- !u!114 &2270863273188359335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427012506141624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9283019, g: 0.9283019, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 098e08e273590e74a91a66bc0874b3e4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &569862384959179652
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +298,7 @@ GameObject:
   - component: {fileID: 6125213190420041058}
   - component: {fileID: 2669199882288199864}
   m_Layer: 1
-  m_Name: Artwork
+  m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -436,19 +512,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 0
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
-  cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
-  nameText: {fileID: 0}
-  descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
-  manaCostText: {fileID: 0}
-  healthText: {fileID: 0}
-  health: 0
-  growthTimeText: {fileID: 0}
+  cardSO: {fileID: 11400000, guid: fc2b3c7126f73aa4f99dc89f57cd582d, type: 2}
+  frame: {fileID: 2669199882288199864}
+  artwork: {fileID: 2609792037277482430}
+  cardBack: {fileID: 427012506141624}
+  nameText: {fileID: 7042118424486694189}
+  descriptionText: {fileID: 660457036172679205}
+  manaCostText: {fileID: 7584848796941265040}
+  healthText: {fileID: 6430491101970866959}
+  growthTimeText: {fileID: 6609142394083660256}
+  cardName: Abobora
+  cardDescription: Uma das aboboras
+  cardFrame: {fileID: 21300000, guid: 5469890ae28b7744fad9a70ea4482312, type: 3}
+  cardArtwork: {fileID: 21300000, guid: f0905bafe423be74e8f83fcced7f94ca, type: 3}
+  manaCost: 1
   maxGrowthLevel: 1
+  health: 1
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!1 &3809994511533765827
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,6 +568,7 @@ RectTransform:
   - {fileID: 7362765444394021262}
   - {fileID: 2687292269851223629}
   - {fileID: 7269031398230708405}
+  - {fileID: 2391338916598130135}
   m_Father: {fileID: 4946529856588461148}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -798,8 +882,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 16.7}
-  m_SizeDelta: {x: 46.7395, y: 11.349}
+  m_AnchoredPosition: {x: 29.123108, y: -2.1296}
+  m_SizeDelta: {x: 104.9857, y: 49.0082}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2830146620101915499
 CanvasRenderer:
@@ -829,7 +913,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Cria clones ao ser destruida
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 888cd2eb98f18bf4480ed6a7fe42c27d, type: 2}
   m_sharedMaterial: {fileID: -5166092694447943323, guid: 888cd2eb98f18bf4480ed6a7fe42c27d, type: 2}
@@ -892,7 +976,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 13.207761, y: 0, z: -44.35954, w: -39.281998}
+  m_margin: {x: 12.698087, y: 0, z: 13.385654, w: 0.1346283}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -910,7 +994,7 @@ GameObject:
   - component: {fileID: 3946148818802444710}
   - component: {fileID: 2609792037277482430}
   m_Layer: 5
-  m_Name: ImagemdaCarta
+  m_Name: Artwork
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -933,8 +1017,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28.251, y: 84.638}
-  m_SizeDelta: {x: 127.0704, y: 127.2301}
+  m_AnchoredPosition: {x: 28.569021, y: 89.07939}
+  m_SizeDelta: {x: 127.0704, y: 110.7105}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3946148818802444710
 CanvasRenderer:

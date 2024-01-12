@@ -523,7 +523,7 @@ MonoBehaviour:
   healthText: {fileID: 6430491101970866959}
   growthTimeText: {fileID: 6609142394083660256}
   cardName: Lirio
-  cardDescription: Liiiiiirio
+  cardDescription: Cure as cartas adjacentes em 2 pontos
   cardFrame: {fileID: 21300000, guid: 5469890ae28b7744fad9a70ea4482312, type: 3}
   cardArtwork: {fileID: 21300000, guid: 2a84ef8162863fe4a93a5cb081845227, type: 3}
   manaCost: 1

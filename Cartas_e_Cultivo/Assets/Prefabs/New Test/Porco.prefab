@@ -447,7 +447,7 @@ MonoBehaviour:
   healthText: {fileID: 0}
   growthTimeText: {fileID: 0}
   cardName: Porco
-  cardDescription: Bordo
+  cardDescription: Destrua uma carta de planta do oponente
   cardFrame: {fileID: 21300000, guid: 061a9c14650e06540b29b526da4d3a97, type: 3}
   cardArtwork: {fileID: 21300000, guid: d49a37e6d5aefde449d924ff7d763b47, type: 3}
   manaCost: 2
