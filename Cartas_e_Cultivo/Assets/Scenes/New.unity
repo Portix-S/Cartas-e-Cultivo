@@ -360,7 +360,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: 523a9b8a855835d46a96e5a246fe3111, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: maxGrowthLevel
       value: 2
@@ -744,7 +744,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: bbab6bce0d8f96049a0a0430843d9ee6, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: maxGrowthLevel
       value: 2
@@ -1151,7 +1151,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: 7c43aa3cae8d6e2438fb203048bb9798, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: maxGrowthLevel
       value: 2
@@ -1414,7 +1414,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: 523a9b8a855835d46a96e5a246fe3111, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2719,7 +2719,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: bbab6bce0d8f96049a0a0430843d9ee6, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: maxGrowthLevel
       value: 2
@@ -3414,7 +3414,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: eb09fe4f26725004bb8d4c8c090429ea, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: maxGrowthLevel
       value: 2
@@ -3674,7 +3674,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: 0a98281c28f28774083f8c2b5db7c4bc, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4012,7 +4012,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: 0a98281c28f28774083f8c2b5db7c4bc, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: maxGrowthLevel
       value: 2
@@ -4710,7 +4710,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: bbab6bce0d8f96049a0a0430843d9ee6, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4969,7 +4969,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: 7c43aa3cae8d6e2438fb203048bb9798, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: maxGrowthLevel
       value: 2
@@ -5190,7 +5190,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: eb09fe4f26725004bb8d4c8c090429ea, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: maxGrowthLevel
       value: 2
@@ -7235,7 +7235,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: 5f802e9236afd86458ddef1dba371126, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: maxGrowthLevel
       value: 2
@@ -7280,7 +7280,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -585, y: -164}
+  m_AnchoredPosition: {x: -596, y: -164}
   m_SizeDelta: {x: 57.3153, y: 54.7562}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1926076270
@@ -22670,14 +22670,14 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6096622931560717922}
-  - {fileID: 6096622930843186996}
-  - {fileID: 18486}
   - {fileID: 344440085}
   - {fileID: 1582310618}
-  - {fileID: 1047878854}
+  - {fileID: 18486}
+  - {fileID: 6096622930843186996}
   - {fileID: 1684397849}
-  - {fileID: 179599907}
+  - {fileID: 1047878854}
   - {fileID: 1116829224}
+  - {fileID: 179599907}
   - {fileID: 1691526574}
   m_Father: {fileID: 2034040415757347406}
   m_RootOrder: -1
