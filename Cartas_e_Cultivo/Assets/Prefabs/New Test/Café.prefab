@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 1911410481645776086}
   - component: {fileID: 4696373733601966443}
   m_Layer: 5
-  m_Name: Lirio
+  m_Name: "Caf\xE9"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -439,7 +439,7 @@ MonoBehaviour:
   changedByDropZone: 0
   played: 0
   layoutElement: {fileID: 0}
-  cardSO: {fileID: 11400000, guid: bdb965a0ae93508469459327f8c38800, type: 2}
+  cardSO: {fileID: 11400000, guid: 9c3609b97a97984448d62118d29d17d2, type: 2}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
   maskImage: {fileID: 0}
@@ -448,7 +448,7 @@ MonoBehaviour:
   healthText: {fileID: 0}
   health: 0
   growthTimeText: {fileID: 0}
-  maxGrowthLevel: 2
+  maxGrowthLevel: 1
 --- !u!1 &3809994511533765827
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,7 +829,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Cure as cartas adjacentes em 2 pontos de vida
+  m_text: New Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 888cd2eb98f18bf4480ed6a7fe42c27d, type: 2}
   m_sharedMaterial: {fileID: -5166092694447943323, guid: 888cd2eb98f18bf4480ed6a7fe42c27d, type: 2}
@@ -933,8 +933,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 30.7, y: 74.984}
-  m_SizeDelta: {x: 127.0704, y: 110.7105}
+  m_AnchoredPosition: {x: 30.8, y: 70.2}
+  m_SizeDelta: {x: 124.4975, y: 106.14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3946148818802444710
 CanvasRenderer:
@@ -964,7 +964,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2a84ef8162863fe4a93a5cb081845227, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8c9ffea2b99bbea4484f63b63b24c092, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1009,8 +1009,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 30.7, y: 47.5}
-  m_SizeDelta: {x: 68.8977, y: 12.1}
+  m_AnchoredPosition: {x: 28.235, y: 47.5}
+  m_SizeDelta: {x: 72.0017, y: 12.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7025430406881767916
 CanvasRenderer:
@@ -1040,7 +1040,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lirio
+  m_text: Cafe
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 888cd2eb98f18bf4480ed6a7fe42c27d, type: 2}
   m_sharedMaterial: {fileID: -5166092694447943323, guid: 888cd2eb98f18bf4480ed6a7fe42c27d, type: 2}

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a744391f0f07f841978f04c197b1fa9, type: 3}
-  m_Name: Lirio
+  m_Name: Abobora
   m_EditorClassIdentifier: 
-  cardID: 3
-  cardName: Lirio
-  description: Lirio
+  cardID: 0
+  cardName: Abobora
+  description: 
   mask: {fileID: 0}
   artwork: {fileID: 0}
   imagemDaCarta: {fileID: 0}
@@ -27,5 +27,5 @@ MonoBehaviour:
   canBePlayedOnEnemyRoom: 0
   canBePlayedOnPlayerRoom: 0
   isPlantCard: 1
-  growthTime: 2
+  growthTime: 1
   health: 0

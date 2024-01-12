@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daffb05723cb3034199fd8d3e4870fb4, type: 3}
   m_Name: Porco
   m_EditorClassIdentifier: 
-  cardID: 3
+  cardID: 5
   cardName: 
   description: 
   mask: {fileID: 0}

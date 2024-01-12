@@ -5762,13 +5762,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deckPreset:
   - card: {fileID: 4946529856588461148, guid: 1295b7c1708189e4aa75ee3fb547c30c, type: 3}
-    amount: 5
+    amount: 2
   - card: {fileID: 4946529856588461148, guid: 73250f48c93d629469f9b3c54f95a588, type: 3}
-    amount: 5
+    amount: 2
   - card: {fileID: 4946529856588461148, guid: b6d929d64c0032243bac03490e8f927e, type: 3}
-    amount: 5
+    amount: 2
   - card: {fileID: 4946529856588461148, guid: 37a979921c17b2344b89cf97dea08067, type: 3}
-    amount: 5
+    amount: 2
+  - card: {fileID: 4946529856588461148, guid: 5306b9536e39aeb42a2d83c0be9addb6, type: 3}
+    amount: 2
+  - card: {fileID: 4946529856588461148, guid: a6baa82416e2574429c070be721ee709, type: 3}
+    amount: 2
+  - card: {fileID: 4946529856588461148, guid: e13abef6243a1934e94fb37cbc0f6cc8, type: 3}
+    amount: 2
+  - card: {fileID: 4946529856588461148, guid: c2e5b42d4fe667747853b25ce87997a5, type: 3}
+    amount: 2
   deck: []
   graveyard: []
   handSlots: []
