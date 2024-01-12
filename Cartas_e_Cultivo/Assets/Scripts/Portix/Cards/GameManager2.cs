@@ -103,6 +103,7 @@ public class GameManager2 : MonoBehaviour
                 CardMovement card = Instantiate(deck.card, enemyHandScript.transform).GetComponent<CardMovement>();
                 card.gameObject.SetActive(false);
                 card.isAICard = true;
+                card.TurnCard();
                 this.enemyDeck.Add(card);
             }
         }
@@ -356,6 +357,7 @@ public class GameManager2 : MonoBehaviour
             (transform1 = card.transform).SetParent(handScript.gameObject.transform);
             transform1.localScale = new Vector3(1f, 1f);
             handScript.currentCards++;
+            card.isOnHand = true;
             cardsOnMulligan.Remove(card);
         }
         mulligan.SetActive(false);
@@ -425,6 +427,7 @@ public class GameManager2 : MonoBehaviour
         transform1.localScale = new Vector3(2.2f, 2.2f);
         transform1.localPosition = new Vector3(0f, 0f, 0f);
         card.gameObject.SetActive(true);
+        card.isOnHand = false;
         deck.Remove(card);
     }
 

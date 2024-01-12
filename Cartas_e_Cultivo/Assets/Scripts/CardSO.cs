@@ -34,6 +34,9 @@ public abstract class CardSO : ScriptableObject {
     {
         return canBePlayedOnEnemyRoom;
     }
+
+    public abstract bool IsPlantCard();
+    
     public abstract int GetGrowthTime();
     public abstract int GetHealth();
     public abstract void OnDraw();

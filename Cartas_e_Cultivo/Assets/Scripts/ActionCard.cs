@@ -25,6 +25,11 @@ public class ActionCard : CardSO {
     {
     }
     
+    public override bool IsPlantCard()
+    {
+        return false;
+    }
+    
     public override void OnDraw()
     {
     }
