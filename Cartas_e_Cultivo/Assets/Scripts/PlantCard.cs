@@ -22,6 +22,11 @@ public class PlantCard : CardSO {
     {
         return health;
     }
+    
+    public override bool IsPlantCard()
+    {
+        return true;
+    }
 
     public override void OnDraw()
     {

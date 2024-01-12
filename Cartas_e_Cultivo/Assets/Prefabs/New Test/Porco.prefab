@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 6125213190420041058}
   - component: {fileID: 2669199882288199864}
   m_Layer: 1
-  m_Name: Artwork
+  m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -436,19 +436,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 0
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: d4095b96528d8594aa4b3dd8025cfff8, type: 2}
-  nameText: {fileID: 0}
-  descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
-  manaCostText: {fileID: 0}
+  frame: {fileID: 2669199882288199864}
+  artwork: {fileID: 2609792037277482430}
+  cardBack: {fileID: 5323654875118770061}
+  nameText: {fileID: 7042118424486694189}
+  descriptionText: {fileID: 660457036172679205}
+  manaCostText: {fileID: 7584848796941265040}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
-  maxGrowthLevel: 1
+  cardName: Porco
+  cardDescription: Bordo
+  cardFrame: {fileID: 21300000, guid: 061a9c14650e06540b29b526da4d3a97, type: 3}
+  cardArtwork: {fileID: 21300000, guid: d49a37e6d5aefde449d924ff7d763b47, type: 3}
+  manaCost: 2
+  maxGrowthLevel: 0
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!1 &3809994511533765827
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,6 +490,7 @@ RectTransform:
   - {fileID: 2451042944752917216}
   - {fileID: 3582123396478003310}
   - {fileID: 2687292269851223629}
+  - {fileID: 3434141744594012138}
   m_Father: {fileID: 4946529856588461148}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -626,6 +634,82 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &5323654875118770061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3434141744594012138}
+  - component: {fileID: 621834324329941731}
+  - component: {fileID: 1277356827012260366}
+  m_Layer: 1
+  m_Name: CardBack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &3434141744594012138
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5323654875118770061}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3638917959755036244}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 28.251038, y: 50.466187}
+  m_SizeDelta: {x: 157.4763, y: 195.5735}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &621834324329941731
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5323654875118770061}
+  m_CullTransparentMesh: 1
+--- !u!114 &1277356827012260366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5323654875118770061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9283019, g: 0.9283019, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: b40c92e8498aa2a43a6cdf6ac2043869, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5625468438238285974
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,7 +857,7 @@ GameObject:
   - component: {fileID: 3946148818802444710}
   - component: {fileID: 2609792037277482430}
   m_Layer: 5
-  m_Name: ImagemdaCarta
+  m_Name: Artwork
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

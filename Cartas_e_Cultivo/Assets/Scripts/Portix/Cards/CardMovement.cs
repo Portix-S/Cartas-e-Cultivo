@@ -12,34 +12,37 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public Transform parentToReturnTo;
     private Transform newRoom;
     private Transform lastRoom;
-    public bool changedByDropZone;
-    private Image image;
-    public bool played;
-    //[SerializeField] private GameObject roomPrefab;
+    private Image image; // ???
     public LayoutElement layoutElement;
-    //[SerializeField] private bool isOnHand;
-    //[SerializeField] private bool isOnRoom;
-    [Header("Passando Do Sona")]
+    
+    [Header("Reference to Hierarchy")]
     [SerializeField] public CardSO cardSO;
     private GameManager2 gc;
+    
+    public Image frame;
+    public Image artwork;
+    [SerializeField] private GameObject cardBack;
+
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI descriptionText;
-
-    public Image maskImage;
-    public Image artworkImage;
-
-
     public TextMeshProUGUI manaCostText;
     public TextMeshProUGUI healthText;
-    public int health;
     public TextMeshProUGUI growthTimeText;
 
-
-    private Animator anim;
-
-    [Header("Growth Stats")]
-    private int growthLevel = 0;
+    [Header("Card Configs")] [SerializeField]
+    private string cardName;
+    [SerializeField] private string cardDescription;
+    [SerializeField] private Sprite cardFrame, cardArtwork;
+    [SerializeField] private int manaCost;
     [SerializeField] private int maxGrowthLevel = 1;
+
+    public int health;
+    private Animator anim;
+    public bool played;
+    private int growthLevel = 0;
+    private bool isPlantCard;
+    public bool isOnHand;
+    public bool isTurnedBack;
 
     
     private void Awake()
@@ -48,11 +51,19 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         gc = FindObjectOfType(typeof(GameManager2)) as GameManager2;
         anim = GetComponent<Animator>();
         //isOnHand = true; // Ser� usado mais pra frente
-        // nameText.text = cardSO.cardName;
-        // descriptionText.text = cardSO.description;
-        // maskImage.sprite = cardSO.mask;
-        // artworkImage.sprite = cardSO.artwork;
-        // manaCostText.text = cardSO.manaCost.ToString();
+        isPlantCard = cardSO.IsPlantCard();
+        nameText.text = cardName;
+        descriptionText.text = cardDescription;
+        frame.sprite = cardFrame;
+        artwork.sprite = cardArtwork;
+        manaCostText.text = manaCost.ToString();
+
+        if (isPlantCard)
+        {
+            healthText.text = health.ToString();
+            growthTimeText.text = maxGrowthLevel.ToString();
+        }
+
         if (!isAICard)
         {
             gc.OnPlayerTurnBegin += Gc_OnPlayerTurnBegin;
@@ -61,14 +72,6 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         {
             gc.OnEnemyTurnBegin += Gc_OnEnemyTurnBegin;
             //manaCostText.gameObject.SetActive(false);
-        }
-        // healthText.text = cardSO.health.ToString();
-        // health = int.Parse(healthText.text);
-        //
-        if (cardSO.hasGrowthTime)
-        {
-            maxGrowthLevel = cardSO.GetGrowthTime();
-            // growthTimeText.text = cardSO.growthTime.ToString();
         }
     }
 
@@ -128,13 +131,15 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public void OnPointerEnter(PointerEventData eventData)
     {
         //Debug.Log("Entrou");
-        this.transform.localScale = new Vector3(1.1f, 1.1f, 1f);
+        if(isOnHand)
+            this.transform.localScale = new Vector3(1.1f, 1.1f, 1f);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         //Debug.Log("Saiu");
-        this.transform.localScale = new Vector3(1f, 1f, 1f);
+        if(isOnHand)
+            this.transform.localScale = new Vector3(1f, 1f, 1f);
     }
 
     public void OnBeginDrag(PointerEventData eventdata)
@@ -245,4 +250,9 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         cardSO.OnDie();
     }
 
+    public void TurnCard()
+    {
+        isTurnedBack = !isTurnedBack;
+        cardBack.SetActive(isTurnedBack);
+    }
 }
