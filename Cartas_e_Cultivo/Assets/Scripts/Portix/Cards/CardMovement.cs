@@ -128,11 +128,13 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public void OnPointerEnter(PointerEventData eventData)
     {
         //Debug.Log("Entrou");
+        this.transform.localScale = new Vector3(1.1f, 1.1f, 1f);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         //Debug.Log("Saiu");
+        this.transform.localScale = new Vector3(1f, 1f, 1f);
     }
 
     public void OnBeginDrag(PointerEventData eventdata)

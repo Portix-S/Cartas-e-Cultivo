@@ -5767,6 +5767,8 @@ MonoBehaviour:
     amount: 5
   - card: {fileID: 4946529856588461148, guid: b6d929d64c0032243bac03490e8f927e, type: 3}
     amount: 5
+  - card: {fileID: 4946529856588461148, guid: 37a979921c17b2344b89cf97dea08067, type: 3}
+    amount: 5
   deck: []
   graveyard: []
   handSlots: []
