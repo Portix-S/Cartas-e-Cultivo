@@ -513,7 +513,7 @@ MonoBehaviour:
   isAICard: 0
   parentToReturnTo: {fileID: 0}
   layoutElement: {fileID: 0}
-  cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  cardSO: {fileID: 11400000, guid: 4a1e2cd13dbe2814396e5544afb07b79, type: 2}
   frame: {fileID: 2669199882288199864}
   artwork: {fileID: 2609792037277482430}
   cardBack: {fileID: 427012506141624}
@@ -526,9 +526,9 @@ MonoBehaviour:
   cardDescription: 'Lima limao '
   cardFrame: {fileID: 21300000, guid: 5469890ae28b7744fad9a70ea4482312, type: 3}
   cardArtwork: {fileID: 21300000, guid: de4ab556b8c23434e9409c972c2f7538, type: 3}
-  manaCost: 1
-  maxGrowthLevel: 1
-  health: 1
+  manaCost: 2
+  maxGrowthLevel: 3
+  health: 3
   played: 0
   isOnHand: 0
   isTurnedBack: 0

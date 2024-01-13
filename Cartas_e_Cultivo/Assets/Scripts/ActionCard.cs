@@ -34,7 +34,7 @@ public class ActionCard : CardSO {
     {
     }
 
-    public override void OnPlay()
+    public override void OnPlay(Animator anim)
     {
         Debug.Log("Carta de Ação");
     }

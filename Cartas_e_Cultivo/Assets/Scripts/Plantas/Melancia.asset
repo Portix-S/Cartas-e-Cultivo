@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a744391f0f07f841978f04c197b1fa9, type: 3}
   m_Name: Melancia
   m_EditorClassIdentifier: 
-  cardID: 6
+  cardID: 5
   cardName: Melancia
   description: Melancia
   mask: {fileID: 0}

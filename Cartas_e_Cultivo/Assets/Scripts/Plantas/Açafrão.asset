@@ -12,20 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a744391f0f07f841978f04c197b1fa9, type: 3}
   m_Name: "A\xE7afr\xE3o"
   m_EditorClassIdentifier: 
-  cardID: 0
+  cardID: 8
   cardName: "A\xE7afr\xE3o"
   description: 
   mask: {fileID: 0}
   artwork: {fileID: 0}
   imagemDaCarta: {fileID: 0}
-  manaCost: 1
+  manaCost: 2
   hasGrowthTime: 0
   hasHealth: 0
   hasOnDraw: 0
   hasOnPlay: 0
   hasOnDie: 0
-  canBePlayedOnEnemyRoom: 1
+  canBePlayedOnEnemyRoom: 0
   canBePlayedOnPlayerRoom: 0
   isPlantCard: 1
-  growthTime: 1
-  health: 0
+  growthTime: 2
+  health: 3

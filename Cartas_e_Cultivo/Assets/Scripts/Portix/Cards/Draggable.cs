@@ -253,7 +253,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public void Animations() {
         int timeforGrowth = maxGrowthLevel - growthLevel;
         if(played) {
-            switch (timeforGrowth) {
+           /* switch (timeforGrowth) {
                 case 1:
                     this.gameObject.GetComponent<Animator>().SetTrigger("INICIO"); //vamos precisar de um broto de uma folha só
                     break;
@@ -273,8 +273,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                     this.gameObject.GetComponent<Animator>().SetTrigger("INICIO");
                     break;
                 
-            }
-        }
+            }*/ 
+        }    
         if(growthLevel == maxGrowthLevel) {
             if(this.nameText.text == "Batata") {
                 this.gameObject.GetComponent<Animator>().SetInteger("ID", 0);
@@ -283,6 +283,27 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                 this.gameObject.GetComponent<Animator>().SetInteger("ID", 1);
 
             }
+            if (this.nameText.text == "Cafe") {
+                this.gameObject.GetComponent<Animator>().SetInteger("ID", 2);
+
+            }
+            if (this.nameText.text == "Limao") {
+                this.gameObject.GetComponent<Animator>().SetInteger("ID", 4);
+
+            }
+            if (this.nameText.text == "Melancia") {
+                this.gameObject.GetComponent<Animator>().SetInteger("ID", 5);
+
+            }
+            if (this.nameText.text == "Abobora") {
+                this.gameObject.GetComponent<Animator>().SetInteger("ID", 7);
+
+            }
+            if (this.nameText.text == "Acafrao") {
+                this.gameObject.GetComponent<Animator>().SetInteger("ID", 8);
+
+            }
+    
         }
         
     }

@@ -285,8 +285,8 @@ public class GameManager2 : MonoBehaviour
         cardsOnRooms++; 
         FindObjectOfType<AudioManager>().Play("cardThrown");  // plays cardThrown sounds
         
-
-            card.gameObject.GetComponent<Animator>().SetTrigger("INICIO");
+        
+        // card.gameObject.GetComponent<Animator>().SetTrigger("INICIO");
         //"Funções" onPlay() das cartas, eventualmente mudar de cardName para cardID;
        
         if(card.nameText.text == "Cafe") {DrawCard();}
@@ -499,7 +499,7 @@ public class GameManager2 : MonoBehaviour
             roomToBeDropped.currentCards++; // Aumenta o número de cartas na sala
             Debug.Log("Enemy played " + card.cardSO.cardName);
             Invoke("CheckPlayableCards", 0.5f);
-            card.gameObject.GetComponent<Animator>().SetTrigger("INICIO");
+            card.gameObject.GetComponent<Animator>().SetTrigger("PLAYED");
 
         }
         else if(enemyPlayableCards.Count == 0 && !playerTurn || enemyAvailableRooms.Count == 0 && !playerTurn)

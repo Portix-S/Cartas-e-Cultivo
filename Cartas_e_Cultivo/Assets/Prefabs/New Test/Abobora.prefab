@@ -526,9 +526,9 @@ MonoBehaviour:
   cardDescription: Uma das aboboras
   cardFrame: {fileID: 21300000, guid: 5469890ae28b7744fad9a70ea4482312, type: 3}
   cardArtwork: {fileID: 21300000, guid: f0905bafe423be74e8f83fcced7f94ca, type: 3}
-  manaCost: 1
-  maxGrowthLevel: 1
-  health: 1
+  manaCost: 4
+  maxGrowthLevel: 5
+  health: 5
   played: 0
   isOnHand: 0
   isTurnedBack: 0

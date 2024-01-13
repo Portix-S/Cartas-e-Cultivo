@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daffb05723cb3034199fd8d3e4870fb4, type: 3}
   m_Name: Meteoro
   m_EditorClassIdentifier: 
-  cardID: 7
+  cardID: 10
   cardName: 
   description: 
   mask: {fileID: 0}
