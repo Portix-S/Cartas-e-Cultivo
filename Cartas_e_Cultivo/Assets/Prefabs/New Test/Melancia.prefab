@@ -448,7 +448,7 @@ MonoBehaviour:
   healthText: {fileID: 6430491101970866959}
   growthTimeText: {fileID: 6609142394083660256}
   cardName: Melancia
-  cardDescription: Melambia
+  cardDescription: Crie clones ao jogar no campo
   cardFrame: {fileID: 21300000, guid: 5469890ae28b7744fad9a70ea4482312, type: 3}
   cardArtwork: {fileID: 21300000, guid: a08cc58af018b024c9e71607cea0e02b, type: 3}
   manaCost: 2

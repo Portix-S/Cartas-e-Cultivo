@@ -19,7 +19,7 @@ MonoBehaviour:
   artwork: {fileID: 0}
   imagemDaCarta: {fileID: 0}
   manaCost: 1
-  hasGrowthTime: 0
+  hasGrowthTime: 1
   hasHealth: 1
   hasOnDraw: 0
   hasOnPlay: 0
@@ -28,4 +28,4 @@ MonoBehaviour:
   canBePlayedOnPlayerRoom: 0
   isPlantCard: 1
   growthTime: 1
-  health: 0
+  health: 1

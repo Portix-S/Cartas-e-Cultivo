@@ -215,8 +215,9 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             RoomManager roomScript = lastRoom.GetComponent<RoomManager>();
             roomScript.currentCards--;
         }
+                anim.SetTrigger("PLAYED");
         // Maybe do Something?
-        cardSO.OnPlay();
+        cardSO.OnPlay(anim);
         
         // Get Card Health Indicator
         _cardHealthIndicatorOnRoom = roomManager.GetCardHealthIndicator();
@@ -226,7 +227,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         // GetComponent<CanvasGroup>().blocksRaycasts = true;
         FindObjectOfType<AudioManager>().Play("cardThrown");
         
-        anim.SetTrigger("INICIO");
+        
     }
     
     public bool CanAffordMana()
@@ -255,7 +256,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void onPlay()
     {
-        cardSO.OnPlay();
+        cardSO.OnPlay(anim);
     }
 
     public void onDie()

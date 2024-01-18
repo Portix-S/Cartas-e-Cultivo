@@ -9,7 +9,7 @@ public class PlantCard : CardSO {
     [SerializeField] int growthTime;
     [SerializeField] int health;
     private static readonly int ID = Animator.StringToHash("ID");
-
+    private static readonly int TEMPO = Animator.StringToHash("TEMPO");
     public override int GetGrowthTime()
     {
         if (hasGrowthTime)
@@ -38,8 +38,10 @@ public class PlantCard : CardSO {
         anim.SetInteger(ID, cardID);
     }
 
-    public override void OnPlay()
-    {
+    public override void OnPlay(Animator anim)
+    {   
+        
+        anim.SetInteger(TEMPO, growthTime);
         Debug.Log("Carta de Planta");
     }
     
