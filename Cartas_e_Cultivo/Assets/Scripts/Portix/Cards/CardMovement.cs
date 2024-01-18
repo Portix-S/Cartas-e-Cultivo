@@ -1,5 +1,6 @@
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -23,6 +24,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public Image artwork;
     [SerializeField] private GameObject cardBack;
 
+    [SerializeField] GameObject stats;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI descriptionText;
     public TextMeshProUGUI manaCostText;
@@ -43,7 +45,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     private bool isPlantCard;
     public bool isOnHand;
     public bool isTurnedBack;
-
+    private bool isShowingCardInfo;
     
     private void Awake()
     {
@@ -57,7 +59,6 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         frame.sprite = cardFrame;
         artwork.sprite = cardArtwork;
         manaCostText.text = manaCost.ToString();
-
         if (isPlantCard)
         {
             healthText.text = health.ToString();
@@ -175,6 +176,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void OnEndDrag(PointerEventData eventdata)
     {
+        GetComponent<CanvasGroup>().blocksRaycasts = false;
         if (!gc.canAffordMana(cardSO.manaCost) && !played)
         {
             Debug.Log("N�o tem mana suficiente");
@@ -254,5 +256,15 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         isTurnedBack = !isTurnedBack;
         cardBack.SetActive(isTurnedBack);
+    }
+
+    public void ShowCard()
+    {
+        isShowingCardInfo = !isShowingCardInfo;
+        // anim.enabled = isShowingCardInfo ? false : true;
+        // stats.SetActive(isShowingCardInfo);
+        gc.ShowCardFullScreen(this.gameObject, stats);
+        // Maybe show at the center of the screen, just like in Mulligan system,
+        //maybe reuse the same code
     }
 }

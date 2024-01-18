@@ -1,17 +1,15 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class RoomManager : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
+public class RoomManager : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
     [SerializeField] private int maxCards = 1;
-    public int currentCards = 0;
+    public int currentCards;
 
     private GameObject currentRoomPrefab;
     private bool isEnemyRoom;
-
+    private CardMovement cardScript;
+    bool _isShowingCardInfo;
     private void Awake()
     {
         if (this.CompareTag("EnemyRoom"))
@@ -21,18 +19,29 @@ public class RoomManager : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
     //[SerializeField] Transform roomWorldPositon;
     public void OnPointerEnter(PointerEventData eventData)
     {
-
+        
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (_isShowingCardInfo)
+        {
+            cardScript.ShowCard();
+            _isShowingCardInfo = false;
+        }
+    }
 
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (currentCards == 0 || isEnemyRoom || this.CompareTag("Hand")) return;  // Shouldn't show cards with these conditions
+        _isShowingCardInfo = !_isShowingCardInfo;
+        cardScript.ShowCard();
     }
 
     public void OnDrop(PointerEventData eventData)
     {
         // If Something was dropped on this place on the board
-        CardMovement cardScript = eventData.pointerDrag.GetComponent<CardMovement>();
+        cardScript = eventData.pointerDrag.GetComponent<CardMovement>();
         if (!cardScript.CanAffordMana()) return;
         if (!CanDropCards(cardScript)) return;
         Debug.Log(cardScript.CanBePlayedOnEnemyRoom() + " " + isEnemyRoom);

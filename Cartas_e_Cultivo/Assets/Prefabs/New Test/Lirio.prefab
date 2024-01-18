@@ -517,6 +517,7 @@ MonoBehaviour:
   frame: {fileID: 2669199882288199864}
   artwork: {fileID: 2609792037277482430}
   cardBack: {fileID: 2083459848351094408}
+  stats: {fileID: 3809994511533765827}
   nameText: {fileID: 7042118424486694189}
   descriptionText: {fileID: 660457036172679205}
   manaCostText: {fileID: 7584848796941265040}

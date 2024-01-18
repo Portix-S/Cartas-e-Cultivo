@@ -32,8 +32,8 @@ public class GameManager2 : MonoBehaviour
     private int numOfCardsToBeBought;
     [SerializeField] private RoomManager handScript;
 
-    [Header("Enemy AI Configs")]
-    public List<Deck> ememyDeckPreset = new();
+    [FormerlySerializedAs("enemyDeckPreset")] [Header("Enemy AI Configs")]
+    public List<Deck> enemyDeckPreset = new();
     public List<CardMovement> enemyCards = new();
     public List<CardMovement> enemyPlayableCards = new();
     public List<CardMovement> enemyDeck = new(); 
@@ -82,6 +82,7 @@ public class GameManager2 : MonoBehaviour
     public List<CardMovement> cardsOnMulligan;
     public List<CardMovement> cardsToBeReturned;
     public CardMovement teste;
+    private static readonly int Inicio = Animator.StringToHash("INICIO");
 
     public void Start() {
         // Adiciona todas as cartas ao deck e à mao
@@ -96,7 +97,7 @@ public class GameManager2 : MonoBehaviour
             }
         }
         
-        foreach(Deck deck in ememyDeckPreset)
+        foreach(Deck deck in enemyDeckPreset)
         {
             for(int i = 0; i < deck.amount; i++)
             {
@@ -142,10 +143,7 @@ public class GameManager2 : MonoBehaviour
         }
         else
         {
-            if (!playerTurn)
-                Debug.Log("Not your turn");
-            else
-                Debug.Log("Already bought once");
+            Debug.Log(!playerTurn ? "Not your turn" : "Already bought once");
         }
     }
 
@@ -164,6 +162,7 @@ public class GameManager2 : MonoBehaviour
                 card.gameObject.SetActive(true); // Dá visibilidade à carta comprada
                                                  //card.transform.position = handSlots[i].position; // Insere a carta no espaço correto
                                                  //card.currentSlot = i;
+                card.isOnHand = true;
                 //availableSlots[i] = false; // Avisa que o espaço agora está ocupado
                 // card.onDraw(); // Realiza evento ao comprar
                 deck.Remove(card); // Remove carta comprada do deck
@@ -286,7 +285,7 @@ public class GameManager2 : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("cardThrown");  // plays cardThrown sounds
         
 
-            card.gameObject.GetComponent<Animator>().SetTrigger("INICIO");
+            card.gameObject.GetComponent<Animator>().SetTrigger(Inicio);
         //"Funções" onPlay() das cartas, eventualmente mudar de cardName para cardID;
        
         if(card.nameText.text == "Cafe") {DrawCard();}
@@ -431,6 +430,26 @@ public class GameManager2 : MonoBehaviour
         deck.Remove(card);
     }
 
+    public void ShowCardFullScreen(GameObject card, GameObject stats)
+    {
+        GameObject newCard = null;
+        if (!mulligan.activeSelf)
+        {
+            mulligan.SetActive(true);
+            //mulliganSlots[2]
+            stats.SetActive(true);
+            newCard = Instantiate(card, mulliganSlots[2].transform);
+            newCard.transform.localPosition = Vector3.zero;
+            newCard.transform.localScale = new Vector3(2.2f, 2.2f);
+        }
+        else
+        {
+            mulligan.SetActive(false);
+            if(newCard != null)
+                Destroy(newCard);
+        }        
+    }
+    
     private void EnemyDrawCard(int numOfCardsToBeBought)
     {
         if (enemyDeck.Count >= 1)
@@ -499,7 +518,7 @@ public class GameManager2 : MonoBehaviour
             roomToBeDropped.currentCards++; // Aumenta o número de cartas na sala
             Debug.Log("Enemy played " + card.cardSO.cardName);
             Invoke("CheckPlayableCards", 0.5f);
-            card.gameObject.GetComponent<Animator>().SetTrigger("INICIO");
+            card.gameObject.GetComponent<Animator>().SetTrigger(Inicio);
 
         }
         else if(enemyPlayableCards.Count == 0 && !playerTurn || enemyAvailableRooms.Count == 0 && !playerTurn)

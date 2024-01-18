@@ -160,8 +160,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -94, y: -59}
-  m_SizeDelta: {x: 165, y: 116}
+  m_AnchoredPosition: {x: -89.222046, y: -53.162}
+  m_SizeDelta: {x: 154.1235, y: 110.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &18488
 MonoBehaviour:
@@ -360,7 +360,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: 523a9b8a855835d46a96e5a246fe3111, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: maxGrowthLevel
       value: 2
@@ -544,8 +544,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 63.450012, y: -178.7}
-  m_SizeDelta: {x: 165, y: 116}
+  m_AnchoredPosition: {x: 58.8098, y: -176.502}
+  m_SizeDelta: {x: 155.312, y: 119.9831}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &179599909
 MonoBehaviour:
@@ -744,7 +744,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: bbab6bce0d8f96049a0a0430843d9ee6, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: maxGrowthLevel
       value: 2
@@ -791,8 +791,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 128.13, y: 260.00003}
-  m_SizeDelta: {x: 165, y: 116}
+  m_AnchoredPosition: {x: 135.77686, y: 262.48972}
+  m_SizeDelta: {x: 176.452, y: 110.2317}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &228866532
 MonoBehaviour:
@@ -1151,7 +1151,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: 7c43aa3cae8d6e2438fb203048bb9798, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: maxGrowthLevel
       value: 2
@@ -1166,6 +1166,104 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4295474285252374772, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
   m_PrefabInstance: {fileID: 268270897}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &275690538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 275690539}
+  - component: {fileID: 275690542}
+  - component: {fileID: 275690541}
+  - component: {fileID: 275690540}
+  m_Layer: 5
+  m_Name: Board (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &275690539
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275690538}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 221.82285}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2034040415757347406}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &275690540
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275690538}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fcd882b1f4c8677468cbf628f2361adc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &275690541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275690538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: b5952c65b7c3100baad16efbb1ab5d0e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &275690542
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275690538}
+  m_CullTransparentMesh: 1
 --- !u!1 &315238942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1414,7 +1512,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: 523a9b8a855835d46a96e5a246fe3111, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1473,8 +1571,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 55.913025, y: -59}
-  m_SizeDelta: {x: 165, y: 116}
+  m_AnchoredPosition: {x: 46.858, y: -53.662}
+  m_SizeDelta: {x: 150.03, y: 109.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &344440087
 MonoBehaviour:
@@ -1801,8 +1899,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 142.18, y: 197.36003}
-  m_SizeDelta: {x: 165, y: 116}
+  m_AnchoredPosition: {x: 149.82684, y: 200.91673}
+  m_SizeDelta: {x: 169.9754, y: 113.4792}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &427273883
 MonoBehaviour:
@@ -2396,8 +2494,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26.312, y: 260.00003}
-  m_SizeDelta: {x: 165, y: 116}
+  m_AnchoredPosition: {x: 28.801685, y: 262.31192}
+  m_SizeDelta: {x: 163.7946, y: 110.9526}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &535527983
 MonoBehaviour:
@@ -2719,7 +2817,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: bbab6bce0d8f96049a0a0430843d9ee6, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: maxGrowthLevel
       value: 2
@@ -2915,8 +3013,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -194.18, y: 200.18002}
-  m_SizeDelta: {x: 165, y: 116}
+  m_AnchoredPosition: {x: -192.04602, y: 200.89139}
+  m_SizeDelta: {x: 171.6336, y: 113.4791}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &696471850
 MonoBehaviour:
@@ -3414,7 +3512,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: eb09fe4f26725004bb8d4c8c090429ea, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: maxGrowthLevel
       value: 2
@@ -3674,7 +3772,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: 0a98281c28f28774083f8c2b5db7c4bc, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4012,7 +4110,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: 0a98281c28f28774083f8c2b5db7c4bc, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: maxGrowthLevel
       value: 2
@@ -4064,8 +4162,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 31.375, y: 198.80002}
-  m_SizeDelta: {x: 165, y: 116}
+  m_AnchoredPosition: {x: 35.82086, y: 200.7562}
+  m_SizeDelta: {x: 160.0246, y: 112.8488}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1046845217
 MonoBehaviour:
@@ -4182,8 +4280,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -272.38498, y: -176}
-  m_SizeDelta: {x: 165, y: 116}
+  m_AnchoredPosition: {x: -269.82, y: -174.12}
+  m_SizeDelta: {x: 170.36, y: 119.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1047878856
 MonoBehaviour:
@@ -4464,8 +4562,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 228.43503, y: -181.5}
-  m_SizeDelta: {x: 165, y: 116}
+  m_AnchoredPosition: {x: 229.1677, y: -178.56934}
+  m_SizeDelta: {x: 174.6881, y: 121.3108}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1116829226
 MonoBehaviour:
@@ -4710,7 +4808,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: bbab6bce0d8f96049a0a0430843d9ee6, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4769,8 +4867,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -82.25, y: 200.18002}
-  m_SizeDelta: {x: 165, y: 116}
+  m_AnchoredPosition: {x: -75.49219, y: 200.18002}
+  m_SizeDelta: {x: 163.8944, y: 116}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1205978975
 MonoBehaviour:
@@ -4969,7 +5067,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: 7c43aa3cae8d6e2438fb203048bb9798, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: maxGrowthLevel
       value: 2
@@ -5190,7 +5288,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: eb09fe4f26725004bb8d4c8c090429ea, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: maxGrowthLevel
       value: 2
@@ -5237,8 +5335,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -74.375, y: 260.00003}
-  m_SizeDelta: {x: 165, y: 116}
+  m_AnchoredPosition: {x: -73.84149, y: 263.7346}
+  m_SizeDelta: {x: 163.1918, y: 109.5106}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1459187117
 MonoBehaviour:
@@ -5778,9 +5876,13 @@ MonoBehaviour:
   graveyardCountText: {fileID: 1926076270}
   animator: {fileID: 0}
   handScript: {fileID: 6096622931560717936}
-  ememyDeckPreset:
+  enemyDeckPreset:
   - card: {fileID: 4946529856588461148, guid: 1295b7c1708189e4aa75ee3fb547c30c, type: 3}
-    amount: 10
+    amount: 5
+  - card: {fileID: 4946529856588461148, guid: 37a979921c17b2344b89cf97dea08067, type: 3}
+    amount: 5
+  - card: {fileID: 4946529856588461148, guid: b6d929d64c0032243bac03490e8f927e, type: 3}
+    amount: 5
   enemyCards: []
   enemyPlayableCards: []
   enemyDeck: []
@@ -6013,8 +6115,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 207.49503, y: -59}
-  m_SizeDelta: {x: 165, y: 116}
+  m_AnchoredPosition: {x: 199.67984, y: -54.198536}
+  m_SizeDelta: {x: 164.9998, y: 108.0727}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1582310620
 MonoBehaviour:
@@ -6193,8 +6295,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -105.724976, y: -176}
-  m_SizeDelta: {x: 165, y: 116}
+  m_AnchoredPosition: {x: -98.64252, y: -175.26733}
+  m_SizeDelta: {x: 159.3911, y: 117.3277}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1684397851
 MonoBehaviour:
@@ -6360,7 +6462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5673062241498175082, guid: 995637e625b775dfa923bd8127879c7d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5673062241498175082, guid: 995637e625b775dfa923bd8127879c7d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6653,8 +6755,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -176.18, y: 260}
-  m_SizeDelta: {x: 165, y: 116}
+  m_AnchoredPosition: {x: -176.18, y: 263.73462}
+  m_SizeDelta: {x: 165, y: 106.6263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1707082814
 MonoBehaviour:
@@ -7237,7 +7339,7 @@ PrefabInstance:
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: cardSO
       value: 
-      objectReference: {fileID: 11400000, guid: 5f802e9236afd86458ddef1dba371126, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6265003896202763430, guid: 668aed60ae2905945a7cab79f575ae00, type: 3}
       propertyPath: maxGrowthLevel
       value: 2
@@ -11279,6 +11381,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 275690539}
   - {fileID: 6673656818534962679}
   - {fileID: 7932656651176292643}
   - {fileID: 1535280518}
@@ -21889,8 +21992,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -245.58498, y: -59}
-  m_SizeDelta: {x: 165, y: 116}
+  m_AnchoredPosition: {x: -239.98, y: -52.713}
+  m_SizeDelta: {x: 167.77, y: 107.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6096622930843186997
 GameObject:
@@ -26320,19 +26423,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
+  stats: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493502502239319
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26359,19 +26470,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
+  stats: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493502595888255
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26398,19 +26517,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
+  stats: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493502660377353
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26437,19 +26564,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
+  stats: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493502679199921
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26476,19 +26611,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
+  stats: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493502750271294
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26515,19 +26658,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
+  stats: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493502846405175
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26554,19 +26705,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
+  stats: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493502936801836
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26593,19 +26752,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
+  stats: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493503023872455
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26632,19 +26799,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
+  stats: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493503229016461
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26671,19 +26846,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
+  stats: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493503429452898
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26710,19 +26893,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
+  stats: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493503544843303
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26749,19 +26940,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
+  stats: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493503598282584
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26788,19 +26987,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
+  stats: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493503951874186
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26827,19 +27034,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
+  stats: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!225 &8448493504160449280
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26866,19 +27081,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAICard: 1
   parentToReturnTo: {fileID: 0}
-  changedByDropZone: 0
-  played: 0
   layoutElement: {fileID: 0}
   cardSO: {fileID: 11400000, guid: 564f5141d96891c43b0a8ab5d4409513, type: 2}
+  frame: {fileID: 0}
+  artwork: {fileID: 0}
+  cardBack: {fileID: 0}
+  stats: {fileID: 0}
   nameText: {fileID: 0}
   descriptionText: {fileID: 0}
-  maskImage: {fileID: 0}
-  artworkImage: {fileID: 0}
   manaCostText: {fileID: 0}
   healthText: {fileID: 0}
-  health: 0
   growthTimeText: {fileID: 0}
+  cardName: 
+  cardDescription: 
+  cardFrame: {fileID: 0}
+  cardArtwork: {fileID: 0}
+  manaCost: 0
   maxGrowthLevel: 1
+  health: 0
+  played: 0
+  isOnHand: 0
+  isTurnedBack: 0
 --- !u!95 &8466294129306209001
 Animator:
   serializedVersion: 5
