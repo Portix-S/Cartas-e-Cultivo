@@ -513,12 +513,13 @@ public class GameManager2 : MonoBehaviour
             enemyAvailableRooms.Remove(selectedRoom); // Remove a sala das salas disponíveis
             
             RoomManager roomToBeDropped = enemyRooms[value]; // Seleciona a sala a ser jogada
-            card.transform.SetParent(roomToBeDropped.gameObject.transform); // Muda o pai
-            card.played = true;
+            // card.transform.SetParent(roomToBeDropped.gameObject.transform); // Muda o pai
+            // card.played = true;
             roomToBeDropped.currentCards++; // Aumenta o número de cartas na sala
-            Debug.Log("Enemy played " + card.cardSO.cardName);
+            card.PlayCard(roomToBeDropped);
+            // Debug.Log("Enemy played " + card.cardSO.cardName);
             Invoke("CheckPlayableCards", 0.5f);
-            card.gameObject.GetComponent<Animator>().SetTrigger(Inicio);
+            // card.gameObject.GetComponent<Animator>().SetTrigger(Inicio);
 
         }
         else if(enemyPlayableCards.Count == 0 && !playerTurn || enemyAvailableRooms.Count == 0 && !playerTurn)

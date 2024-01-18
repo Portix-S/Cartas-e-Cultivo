@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
@@ -38,7 +39,6 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     [SerializeField] private int manaCost;
     [SerializeField] private int maxGrowthLevel = 1;
 
-    public int health;
     private Animator anim;
     public bool played;
     private int growthLevel = 0;
@@ -46,6 +46,11 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public bool isOnHand;
     public bool isTurnedBack;
     private bool isShowingCardInfo;
+    
+    [Header("Health System")]
+    private int _health;
+    [SerializeField] int maxHealth;
+    private TextMeshProUGUI _cardHealthIndicatorOnRoom;
     
     private void Awake()
     {
@@ -59,9 +64,10 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         frame.sprite = cardFrame;
         artwork.sprite = cardArtwork;
         manaCostText.text = manaCost.ToString();
+        _health = maxHealth;
         if (isPlantCard)
         {
-            healthText.text = health.ToString();
+            healthText.text = maxHealth.ToString();
             growthTimeText.text = maxGrowthLevel.ToString();
         }
 
@@ -212,6 +218,11 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         // Maybe do Something?
         cardSO.OnPlay();
         
+        // Get Card Health Indicator
+        _cardHealthIndicatorOnRoom = roomManager.GetCardHealthIndicator();
+        _cardHealthIndicatorOnRoom.gameObject.SetActive(true);
+        _cardHealthIndicatorOnRoom.text = _health.ToString();
+        
         // GetComponent<CanvasGroup>().blocksRaycasts = true;
         FindObjectOfType<AudioManager>().Play("cardThrown");
         
@@ -267,4 +278,29 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         // Maybe show at the center of the screen, just like in Mulligan system,
         //maybe reuse the same code
     }
+    
+    public void TakeDamage(int damage)
+    {
+        if (!cardSO.hasHealth || !played) return;
+        
+        _health -= damage;
+        if (_health <= 0)
+        {
+            _health = 0;
+            // Action to die
+            // cardSO.OnDie();
+        }
+        healthText.text = _health.ToString();
+        _cardHealthIndicatorOnRoom.text = _health.ToString();
+    }
+    
+    #if UNITY_EDITOR
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            TakeDamage(1);
+        }
+    }
+#endif
 }

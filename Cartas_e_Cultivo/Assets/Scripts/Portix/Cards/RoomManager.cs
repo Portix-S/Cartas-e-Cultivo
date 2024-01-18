@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -10,12 +11,18 @@ public class RoomManager : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
     private bool isEnemyRoom;
     private CardMovement cardScript;
     bool _isShowingCardInfo;
+    private TextMeshProUGUI _cardHealthIndicator;
     private void Awake()
     {
         if (this.CompareTag("EnemyRoom"))
             isEnemyRoom = true;
+        if (!this.CompareTag("Hand"))
+        {
+            _cardHealthIndicator = GetComponentInChildren<TextMeshProUGUI>();
+            _cardHealthIndicator.gameObject.SetActive(false);
+        }
     }
-
+    
     //[SerializeField] Transform roomWorldPositon;
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -71,5 +78,15 @@ public class RoomManager : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
     public GameObject GetRoomPrefab()
     {
         return this.currentRoomPrefab;
+    }
+    
+    public TextMeshProUGUI GetCardHealthIndicator()
+    {
+        return _cardHealthIndicator;
+    }
+    
+    public CardMovement GetCardScript()
+    {
+        return cardScript;
     }
 }

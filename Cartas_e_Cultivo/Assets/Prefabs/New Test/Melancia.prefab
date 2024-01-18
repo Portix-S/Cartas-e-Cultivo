@@ -453,10 +453,10 @@ MonoBehaviour:
   cardArtwork: {fileID: 21300000, guid: a08cc58af018b024c9e71607cea0e02b, type: 3}
   manaCost: 2
   maxGrowthLevel: 2
-  health: 2
   played: 0
   isOnHand: 0
   isTurnedBack: 0
+  maxHealth: 3
 --- !u!1 &3809994511533765827
 GameObject:
   m_ObjectHideFlags: 0
