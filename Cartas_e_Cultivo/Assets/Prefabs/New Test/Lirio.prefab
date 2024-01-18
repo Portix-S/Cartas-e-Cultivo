@@ -321,8 +321,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28.251038, y: 50.466187}
-  m_SizeDelta: {x: 157.4763, y: 195.5735}
+  m_AnchoredPosition: {x: 39.19997, y: 34.52288}
+  m_SizeDelta: {x: 343.3588, y: 446.3094}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7153838327642862904
 CanvasRenderer:
@@ -352,7 +352,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b40c92e8498aa2a43a6cdf6ac2043869, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 098e08e273590e74a91a66bc0874b3e4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -517,6 +517,7 @@ MonoBehaviour:
   frame: {fileID: 2669199882288199864}
   artwork: {fileID: 2609792037277482430}
   cardBack: {fileID: 2083459848351094408}
+  stats: {fileID: 3809994511533765827}
   nameText: {fileID: 7042118424486694189}
   descriptionText: {fileID: 660457036172679205}
   manaCostText: {fileID: 7584848796941265040}
@@ -528,10 +529,10 @@ MonoBehaviour:
   cardArtwork: {fileID: 21300000, guid: 2a84ef8162863fe4a93a5cb081845227, type: 3}
   manaCost: 1
   maxGrowthLevel: 2
-  health: 2
   played: 0
   isOnHand: 0
   isTurnedBack: 0
+  maxHealth: 2
 --- !u!1 &3809994511533765827
 GameObject:
   m_ObjectHideFlags: 0

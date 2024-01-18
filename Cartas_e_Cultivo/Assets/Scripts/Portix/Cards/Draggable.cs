@@ -102,7 +102,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                 }
             }
         }
-        Animations();
+        // Animations();
 
 
     }
@@ -117,7 +117,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         }
 
-        Animations();
+        // Animations();
 
         
     }
@@ -250,61 +250,61 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     //     cardSO.onDie();
     // }
 
-    public void Animations() {
-        int timeforGrowth = maxGrowthLevel - growthLevel;
-        if(played) {
-           /* switch (timeforGrowth) {
-                case 1:
-                    this.gameObject.GetComponent<Animator>().SetTrigger("INICIO"); //vamos precisar de um broto de uma folha só
-                    break;
-                case 2:
-                    this.gameObject.GetComponent<Animator>().SetTrigger("INICIO"); 
-                    break;
-                case 3:
-                    this.gameObject.GetComponent<Animator>().SetTrigger("INIT3");
-                    break;
-                case 4:
-                    this.gameObject.GetComponent<Animator>().SetTrigger("INIT4");
-                    break;
-                case 5:
-                    this.gameObject.GetComponent<Animator>().SetTrigger("INIT5");
-                    break;
-                default:
-                    this.gameObject.GetComponent<Animator>().SetTrigger("INICIO");
-                    break;
-                
-            }*/ 
-        }    
-        if(growthLevel == maxGrowthLevel) {
-            if(this.nameText.text == "Batata") {
-                this.gameObject.GetComponent<Animator>().SetInteger("ID", 0);
-            } 
-            if (this.nameText.text == "Lirio") {
-                this.gameObject.GetComponent<Animator>().SetInteger("ID", 1);
-
-            }
-            if (this.nameText.text == "Cafe") {
-                this.gameObject.GetComponent<Animator>().SetInteger("ID", 2);
-
-            }
-            if (this.nameText.text == "Limao") {
-                this.gameObject.GetComponent<Animator>().SetInteger("ID", 4);
-
-            }
-            if (this.nameText.text == "Melancia") {
-                this.gameObject.GetComponent<Animator>().SetInteger("ID", 5);
-
-            }
-            if (this.nameText.text == "Abobora") {
-                this.gameObject.GetComponent<Animator>().SetInteger("ID", 7);
-
-            }
-            if (this.nameText.text == "Acafrao") {
-                this.gameObject.GetComponent<Animator>().SetInteger("ID", 8);
-
-            }
-    
-        }
-        
-    }
+    // public void Animations() {
+    //     int timeforGrowth = maxGrowthLevel - growthLevel;
+    //     if(played) {
+    //        /* switch (timeforGrowth) {
+    //             case 1:
+    //                 this.gameObject.GetComponent<Animator>().SetTrigger("INICIO"); //vamos precisar de um broto de uma folha só
+    //                 break;
+    //             case 2:
+    //                 this.gameObject.GetComponent<Animator>().SetTrigger("INICIO"); 
+    //                 break;
+    //             case 3:
+    //                 this.gameObject.GetComponent<Animator>().SetTrigger("INIT3");
+    //                 break;
+    //             case 4:
+    //                 this.gameObject.GetComponent<Animator>().SetTrigger("INIT4");
+    //                 break;
+    //             case 5:
+    //                 this.gameObject.GetComponent<Animator>().SetTrigger("INIT5");
+    //                 break;
+    //             default:
+    //                 this.gameObject.GetComponent<Animator>().SetTrigger("INICIO");
+    //                 break;
+    //             
+    //         }*/ 
+    //     }    
+    //     if(growthLevel == maxGrowthLevel) {
+    //         if(this.nameText.text == "Batata") {
+    //             this.gameObject.GetComponent<Animator>().SetInteger("ID", 0);
+    //         } 
+    //         if (this.nameText.text == "Lirio") {
+    //             this.gameObject.GetComponent<Animator>().SetInteger("ID", 1);
+    //
+    //         }
+    //         if (this.nameText.text == "Cafe") {
+    //             this.gameObject.GetComponent<Animator>().SetInteger("ID", 2);
+    //
+    //         }
+    //         if (this.nameText.text == "Limao") {
+    //             this.gameObject.GetComponent<Animator>().SetInteger("ID", 4);
+    //
+    //         }
+    //         if (this.nameText.text == "Melancia") {
+    //             this.gameObject.GetComponent<Animator>().SetInteger("ID", 5);
+    //
+    //         }
+    //         if (this.nameText.text == "Abobora") {
+    //             this.gameObject.GetComponent<Animator>().SetInteger("ID", 7);
+    //
+    //         }
+    //         if (this.nameText.text == "Acafrao") {
+    //             this.gameObject.GetComponent<Animator>().SetInteger("ID", 8);
+    //
+    //         }
+    //
+    //     }
+    //     
+    // }
 }

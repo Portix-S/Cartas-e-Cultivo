@@ -1,5 +1,7 @@
+using System;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -23,6 +25,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public Image artwork;
     [SerializeField] private GameObject cardBack;
 
+    [SerializeField] GameObject stats;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI descriptionText;
     public TextMeshProUGUI manaCostText;
@@ -36,15 +39,20 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     [SerializeField] private int manaCost;
     [SerializeField] private int maxGrowthLevel = 1;
 
-    public int health;
     private Animator anim;
     public bool played;
     private int growthLevel = 0;
     private bool isPlantCard;
     public bool isOnHand;
     public bool isTurnedBack;
-
+    private bool isShowingCardInfo;
     
+    [Header("Health System")]
+    private int _health;
+    [SerializeField] int maxHealth;
+    private TextMeshProUGUI _cardHealthIndicatorOnRoom;
+    private static readonly int Tempo = Animator.StringToHash("TEMPO");
+
     private void Awake()
     {
         // Initial Configuration of a card
@@ -57,10 +65,10 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         frame.sprite = cardFrame;
         artwork.sprite = cardArtwork;
         manaCostText.text = manaCost.ToString();
-
+        _health = maxHealth;
         if (isPlantCard)
         {
-            healthText.text = health.ToString();
+            healthText.text = maxHealth.ToString();
             growthTimeText.text = maxGrowthLevel.ToString();
         }
 
@@ -81,6 +89,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         {
             Debug.Log("Grow" + cardSO.cardName);
             growthLevel++;
+            anim.SetInteger(Tempo, maxGrowthLevel - growthLevel);
             if (growthLevel == maxGrowthLevel)
             {
                 gc.cardsGrown++;
@@ -175,6 +184,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void OnEndDrag(PointerEventData eventdata)
     {
+        GetComponent<CanvasGroup>().blocksRaycasts = false;
         if (!gc.canAffordMana(cardSO.manaCost) && !played)
         {
             Debug.Log("N�o tem mana suficiente");
@@ -207,9 +217,16 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             RoomManager roomScript = lastRoom.GetComponent<RoomManager>();
             roomScript.currentCards--;
         }
-                anim.SetTrigger("PLAYED");
+        anim.SetTrigger("PLAYED");
+        anim.SetInteger(Tempo, maxGrowthLevel);
+        
         // Maybe do Something?
-        cardSO.OnPlay(anim);
+        cardSO.OnPlay(roomManager);
+
+        // Get Card Health Indicator
+        _cardHealthIndicatorOnRoom = roomManager.GetCardHealthIndicator();
+        _cardHealthIndicatorOnRoom.gameObject.SetActive(true);
+        _cardHealthIndicatorOnRoom.text = _health.ToString();
         
         // GetComponent<CanvasGroup>().blocksRaycasts = true;
         FindObjectOfType<AudioManager>().Play("cardThrown");
@@ -256,4 +273,39 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         isTurnedBack = !isTurnedBack;
         cardBack.SetActive(isTurnedBack);
     }
+
+    public void ShowCard()
+    {
+        isShowingCardInfo = !isShowingCardInfo;
+        // anim.enabled = isShowingCardInfo ? false : true;
+        // stats.SetActive(isShowingCardInfo);
+        gc.ShowCardFullScreen(this.gameObject, stats);
+        // Maybe show at the center of the screen, just like in Mulligan system,
+        //maybe reuse the same code
+    }
+    
+    public void TakeDamage(int damage)
+    {
+        if (!cardSO.hasHealth || !played) return;
+        
+        _health -= damage;
+        if (_health <= 0)
+        {
+            _health = 0;
+            // Action to die
+            // cardSO.OnDie();
+        }
+        healthText.text = _health.ToString();
+        _cardHealthIndicatorOnRoom.text = _health.ToString();
+    }
+    
+    #if UNITY_EDITOR
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            TakeDamage(1);
+        }
+    }
+#endif
 }
