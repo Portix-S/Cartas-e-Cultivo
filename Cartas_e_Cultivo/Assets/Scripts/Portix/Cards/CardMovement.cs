@@ -83,6 +83,12 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         }
     }
 
+    public void EnemySubscribe()
+    {
+        Debug.Log("Enemy Card subscribing to event EnemyTurnBegin");
+        gc.OnEnemyTurnBegin += Gc_OnEnemyTurnBegin;
+    }
+
     private void Gc_OnPlayerTurnBegin(object sender, System.EventArgs e)
     {
         if (played && growthLevel < maxGrowthLevel && !isAICard)
@@ -123,10 +129,12 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     private void Gc_OnEnemyTurnBegin(object sender, System.EventArgs e)
     {
+        Debug.Log("Enemy Turn Begin "  + played + growthLevel + maxGrowthLevel + isAICard);
         if (played && growthLevel < maxGrowthLevel && isAICard)
         {
             Debug.Log("Grow enemy card" + cardSO.cardName + " level" + growthLevel + "out of" + maxGrowthLevel);
             growthLevel++;
+            anim.SetInteger(Tempo, maxGrowthLevel - growthLevel);
             if (growthLevel == maxGrowthLevel)
             {
                 gc.enemyCardsGrown++;
@@ -185,7 +193,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public void OnEndDrag(PointerEventData eventdata)
     {
         GetComponent<CanvasGroup>().blocksRaycasts = false;
-        if (!gc.canAffordMana(cardSO.manaCost) && !played)
+        if (!gc.canAffordMana(manaCost) && !played)
         {
             Debug.Log("N�o tem mana suficiente");
         }
@@ -236,7 +244,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     
     public bool CanAffordMana()
     {
-        return gc.canAffordMana(cardSO.manaCost);
+        return gc.canAffordMana(manaCost);
     }
 
     public void HideImage()

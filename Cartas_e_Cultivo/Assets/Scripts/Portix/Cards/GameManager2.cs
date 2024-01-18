@@ -102,8 +102,9 @@ public class GameManager2 : MonoBehaviour
             for(int i = 0; i < deck.amount; i++)
             {
                 CardMovement card = Instantiate(deck.card, enemyHandScript.transform).GetComponent<CardMovement>();
-                card.gameObject.SetActive(false);
                 card.isAICard = true;
+                card.EnemySubscribe();
+                card.gameObject.SetActive(false);                
                 card.TurnCard();
                 this.enemyDeck.Add(card);
             }
