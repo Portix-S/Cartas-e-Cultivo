@@ -51,7 +51,8 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     private int _health;
     [SerializeField] int maxHealth;
     private TextMeshProUGUI _cardHealthIndicatorOnRoom;
-    
+    private static readonly int Tempo = Animator.StringToHash("TEMPO");
+
     private void Awake()
     {
         // Initial Configuration of a card
@@ -88,6 +89,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         {
             Debug.Log("Grow" + cardSO.cardName);
             growthLevel++;
+            anim.SetInteger(Tempo, maxGrowthLevel - growthLevel);
             if (growthLevel == maxGrowthLevel)
             {
                 gc.cardsGrown++;
@@ -215,10 +217,12 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             RoomManager roomScript = lastRoom.GetComponent<RoomManager>();
             roomScript.currentCards--;
         }
-                anim.SetTrigger("PLAYED");
-        // Maybe do Something?
-        cardSO.OnPlay(anim);
+        anim.SetTrigger("PLAYED");
+        anim.SetInteger(Tempo, maxGrowthLevel);
         
+        // Maybe do Something?
+        cardSO.OnPlay(roomManager);
+
         // Get Card Health Indicator
         _cardHealthIndicatorOnRoom = roomManager.GetCardHealthIndicator();
         _cardHealthIndicatorOnRoom.gameObject.SetActive(true);

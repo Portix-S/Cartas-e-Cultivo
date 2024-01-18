@@ -257,7 +257,7 @@ public class GameController : MonoBehaviour {
 
     public void PlayCard(Draggable card, string room)
     {
-        card.Animations();
+        // card.Animations();
         int value = (room.Last() - '0') - 1;
         int[] adj = AdjacentFields(value);
          // int value = (room.Last().ParseInt());
@@ -459,7 +459,7 @@ public class GameController : MonoBehaviour {
             roomToBeDropped.currentCards++; // Aumenta o número de cartas na sala
             Debug.Log("Enemy played " + card.cardSO.cardName);
             Invoke("CheckPlayableCards", 0.5f);
-            card.Animations();
+            // card.Animations();
 
 
         }

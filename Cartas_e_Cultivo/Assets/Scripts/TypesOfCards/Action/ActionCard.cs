@@ -43,6 +43,11 @@ public class ActionCard : CardSO {
     {
         
     }
+
+    public override void OnPlay()
+    {
+        
+    }
     
     public override void OnDie()
     {

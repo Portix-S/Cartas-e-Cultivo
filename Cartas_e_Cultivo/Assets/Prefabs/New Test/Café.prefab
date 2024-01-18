@@ -517,6 +517,7 @@ MonoBehaviour:
   frame: {fileID: 2669199882288199864}
   artwork: {fileID: 2609792037277482430}
   cardBack: {fileID: 427012506141624}
+  stats: {fileID: 0}
   nameText: {fileID: 7042118424486694189}
   descriptionText: {fileID: 660457036172679205}
   manaCostText: {fileID: 7584848796941265040}
@@ -528,10 +529,10 @@ MonoBehaviour:
   cardArtwork: {fileID: 21300000, guid: 8c9ffea2b99bbea4484f63b63b24c092, type: 3}
   manaCost: 3
   maxGrowthLevel: 3
-  health: 2
   played: 0
   isOnHand: 0
   isTurnedBack: 0
+  maxHealth: 3
 --- !u!1 &3809994511533765827
 GameObject:
   m_ObjectHideFlags: 0

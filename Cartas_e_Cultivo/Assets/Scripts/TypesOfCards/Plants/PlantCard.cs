@@ -45,6 +45,10 @@ public class PlantCard : CardSO {
         Debug.Log("Carta de Planta");
     }
     
+    public override void OnPlay()
+    {
+        
+    }
     public override void OnPlay(RoomManager room)
     {
         
