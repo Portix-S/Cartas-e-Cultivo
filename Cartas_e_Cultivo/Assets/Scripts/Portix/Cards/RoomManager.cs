@@ -10,6 +10,7 @@ public class RoomManager : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
     private GameObject currentRoomPrefab;
     private bool isEnemyRoom;
     private CardMovement cardScript;
+    private CardMovement _currentCardScript;
     bool _isShowingCardInfo;
     private TextMeshProUGUI _cardHealthIndicator;
     private void Awake()
@@ -52,22 +53,32 @@ public class RoomManager : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
         if (!cardScript.CanAffordMana()) return;
         if (!CanDropCards(cardScript)) return;
         Debug.Log(cardScript.CanBePlayedOnEnemyRoom() + " " + isEnemyRoom);
-        currentCards++;
         cardScript.PlayCard(this);
     }
 
 
     private bool CanDropCards(CardMovement cardScript)
     {
-        if (cardScript != null && currentCards < maxCards && cardScript.parentToReturnTo != this.transform 
+        if (cardScript != null && currentCards < maxCards && cardScript.parentToReturnTo != this.transform
             && !cardScript.isAICard && !isEnemyRoom)
+        {
+            currentCards++;
+            _currentCardScript = cardScript;
             return true;
+        }
 
         if (cardScript != null && cardScript.CanBePlayedOnEnemyRoom() && isEnemyRoom)
             return true;
 
         
         return false;
+    }
+
+    public void RemoveCurrentCard()
+    {
+        currentCards--;
+        _isShowingCardInfo = false;
+        _cardHealthIndicator.gameObject.SetActive(false);
     }
 
     public int GetMaxCards()
@@ -87,6 +98,11 @@ public class RoomManager : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
     
     public CardMovement GetCardScript()
     {
-        return cardScript;
+        return _currentCardScript;
+    }
+
+    public void SetCurrentCard(CardMovement card)
+    {
+        _currentCardScript = card;
     }
 }

@@ -19,8 +19,8 @@ MonoBehaviour:
   artwork: {fileID: 0}
   imagemDaCarta: {fileID: 0}
   manaCost: 3
-  hasGrowthTime: 0
-  hasHealth: 0
+  hasGrowthTime: 1
+  hasHealth: 1
   hasOnDraw: 0
   hasOnPlay: 0
   hasOnDie: 0

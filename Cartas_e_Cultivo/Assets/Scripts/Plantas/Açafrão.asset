@@ -20,7 +20,7 @@ MonoBehaviour:
   imagemDaCarta: {fileID: 0}
   manaCost: 2
   hasGrowthTime: 0
-  hasHealth: 0
+  hasHealth: 1
   hasOnDraw: 0
   hasOnPlay: 0
   hasOnDie: 0
