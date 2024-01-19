@@ -96,11 +96,13 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         {
             Debug.Log("Grow" + cardSO.cardName);
             growthLevel++;
+            if (anim == null) return;
+
             anim.SetInteger(Tempo, maxGrowthLevel - growthLevel);
             if (growthLevel == maxGrowthLevel)
             {
                 gc.cardsGrown++;
-                Debug.Log("Grow");
+                Debug.Log("Full grow " + this.gameObject);
 
                 // Funções OnGrowth() das cartas, localizacao temporaria
                 // int value = (parentToReturnTo.name.Last() - '0') - 1;

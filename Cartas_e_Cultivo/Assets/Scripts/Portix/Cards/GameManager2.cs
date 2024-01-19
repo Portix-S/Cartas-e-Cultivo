@@ -24,7 +24,7 @@ public class GameManager2 : MonoBehaviour
     public TextMeshProUGUI deckCountText;
     public TextMeshProUGUI manaCountText;
     public TextMeshProUGUI graveyardCountText;
-
+    [SerializeField] GameObject _cardFullScreen;
     public Animator animator;
 
     private int currentTurn;
@@ -436,21 +436,20 @@ public class GameManager2 : MonoBehaviour
 
     public void ShowCardFullScreen(GameObject card, GameObject stats)
     {
-        GameObject newCard = null;
         if (!mulligan.activeSelf)
         {
             mulligan.SetActive(true);
             //mulliganSlots[2]
             stats.SetActive(true);
-            newCard = Instantiate(card, mulliganSlots[2].transform);
-            newCard.transform.localPosition = Vector3.zero;
-            newCard.transform.localScale = new Vector3(2.2f, 2.2f);
+            _cardFullScreen = Instantiate(card, mulliganSlots[2].transform);
+            _cardFullScreen.transform.localPosition = Vector3.zero;
+            _cardFullScreen.transform.localScale = new Vector3(2.2f, 2.2f);
         }
         else
         {
             mulligan.SetActive(false);
-            if(newCard != null)
-                Destroy(newCard);
+            if(_cardFullScreen != null)
+                Destroy(_cardFullScreen);
         }        
     }
     
