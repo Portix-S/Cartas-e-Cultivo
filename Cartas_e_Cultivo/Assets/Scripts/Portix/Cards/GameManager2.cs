@@ -13,6 +13,8 @@ public class GameManager2 : MonoBehaviour
     public List<Deck> deckPreset = new();
     public List<CardMovement> deck = new();
     public List<CardMovement> graveyard = new();
+    [SerializeField] private List<RoomManager> playerRooms;
+
     
     // can be removed?
     public Transform[] handSlots;
@@ -22,7 +24,7 @@ public class GameManager2 : MonoBehaviour
     public TextMeshProUGUI deckCountText;
     public TextMeshProUGUI manaCountText;
     public TextMeshProUGUI graveyardCountText;
-
+    [SerializeField] GameObject _cardFullScreen;
     public Animator animator;
 
     private int currentTurn;
@@ -32,7 +34,8 @@ public class GameManager2 : MonoBehaviour
     private int numOfCardsToBeBought;
     [SerializeField] private RoomManager handScript;
 
-    [FormerlySerializedAs("enemyDeckPreset")] [Header("Enemy AI Configs")]
+    [FormerlySerializedAs("enemyDeckPreset")] 
+    [Header("Enemy AI Configs")]
     public List<Deck> enemyDeckPreset = new();
     public List<CardMovement> enemyCards = new();
     public List<CardMovement> enemyPlayableCards = new();
@@ -433,21 +436,20 @@ public class GameManager2 : MonoBehaviour
 
     public void ShowCardFullScreen(GameObject card, GameObject stats)
     {
-        GameObject newCard = null;
         if (!mulligan.activeSelf)
         {
             mulligan.SetActive(true);
             //mulliganSlots[2]
             stats.SetActive(true);
-            newCard = Instantiate(card, mulliganSlots[2].transform);
-            newCard.transform.localPosition = Vector3.zero;
-            newCard.transform.localScale = new Vector3(2.2f, 2.2f);
+            _cardFullScreen = Instantiate(card, mulliganSlots[2].transform);
+            _cardFullScreen.transform.localPosition = Vector3.zero;
+            _cardFullScreen.transform.localScale = new Vector3(2.2f, 2.2f);
         }
         else
         {
             mulligan.SetActive(false);
-            if(newCard != null)
-                Destroy(newCard);
+            if(_cardFullScreen != null)
+                Destroy(_cardFullScreen);
         }        
     }
     
@@ -517,6 +519,7 @@ public class GameManager2 : MonoBehaviour
             // card.transform.SetParent(roomToBeDropped.gameObject.transform); // Muda o pai
             // card.played = true;
             roomToBeDropped.currentCards++; // Aumenta o número de cartas na sala
+            roomToBeDropped.SetCurrentCard(card); // Adiciona a carta à sala
             card.PlayCard(roomToBeDropped);
             // Debug.Log("Enemy played " + card.cardSO.cardName);
             Invoke("CheckPlayableCards", 0.5f);
@@ -528,6 +531,19 @@ public class GameManager2 : MonoBehaviour
             Debug.Log("End Enemy Turn");
             EndTurn();
         }
+    }
+
+    public void KillCard(CardMovement card, RoomManager room)
+    {
+        Debug.Log("Killing " + card.name);
+        graveyard.Add(card);
+        graveyardCountText.text = graveyard.Count.ToString();
+        if(card.isAICard)
+            enemyAvailableRooms.Add(room.gameObject);
+        card.played = false; // Shouldn't be able to change this
+        card.gameObject.SetActive(false);
+        card.transform.SetParent(null);
+        room.RemoveCurrentCard();
     }
 
     [Serializable]
