@@ -6305,7 +6305,7 @@ MonoBehaviour:
   - card: {fileID: 4946529856588461148, guid: 73250f48c93d629469f9b3c54f95a588, type: 3}
     amount: 2
   - card: {fileID: 4946529856588461148, guid: b6d929d64c0032243bac03490e8f927e, type: 3}
-    amount: 2
+    amount: 5
   - card: {fileID: 4946529856588461148, guid: 37a979921c17b2344b89cf97dea08067, type: 3}
     amount: 2
   - card: {fileID: 4946529856588461148, guid: bb774f122708b3b408aec37fbe472da3, type: 3}
@@ -6320,12 +6320,21 @@ MonoBehaviour:
     amount: 2
   deck: []
   graveyard: []
-  playerRooms: []
+  playerRooms:
+  - {fileID: 6096622930843186998}
+  - {fileID: 18491}
+  - {fileID: 344440090}
+  - {fileID: 1582310623}
+  - {fileID: 1047878859}
+  - {fileID: 1684397854}
+  - {fileID: 179599912}
+  - {fileID: 1116829229}
   handSlots: []
   availableSlots: 
   deckCountText: {fileID: 1568687425}
   manaCountText: {fileID: 700805267}
   graveyardCountText: {fileID: 1926076270}
+  _cardFullScreen: {fileID: 0}
   animator: {fileID: 0}
   handScript: {fileID: 6096622931560717936}
   enemyDeckPreset:
@@ -7506,7 +7515,7 @@ GameObject:
   - component: {fileID: 1707082814}
   - component: {fileID: 1707082817}
   m_Layer: 5
-  m_Name: EnemyRoom
+  m_Name: EnemyRoom1
   m_TagString: EnemyRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9461,7 +9470,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.009964, y: -64}
+  m_AnchoredPosition: {x: -0.009964, y: 0}
   m_SizeDelta: {x: 1920, y: 225.50238}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &6096622931560717923

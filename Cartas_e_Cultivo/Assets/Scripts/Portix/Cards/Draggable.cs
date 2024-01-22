@@ -54,8 +54,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         //isOnHand = true; // Ser� usado mais pra frente
         nameText.text = cardSO.cardName;
         descriptionText.text = cardSO.description;
-        maskImage.sprite = cardSO.mask;
-        artworkImage.sprite = cardSO.artwork;
+        // maskImage.sprite = cardSO.mask;
+        // artworkImage.sprite = cardSO.artwork;
         manaCostText.text = cardSO.manaCost.ToString();
         if (!isAICard)
         {

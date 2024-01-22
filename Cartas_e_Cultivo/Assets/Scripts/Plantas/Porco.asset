@@ -15,9 +15,6 @@ MonoBehaviour:
   cardID: 9
   cardName: 
   description: 
-  mask: {fileID: 0}
-  artwork: {fileID: 0}
-  imagemDaCarta: {fileID: 0}
   manaCost: 1
   hasGrowthTime: 0
   hasHealth: 0
@@ -25,5 +22,5 @@ MonoBehaviour:
   hasOnPlay: 0
   hasOnDie: 0
   canBePlayedOnEnemyRoom: 1
-  canBePlayedOnPlayerRoom: 0
+  canBePlayedOnPlayerRoom: 1
   isActionCard: 1

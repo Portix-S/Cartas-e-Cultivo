@@ -50,6 +50,7 @@ public class RoomManager : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
     {
         // If Something was dropped on this place on the board
         cardScript = eventData.pointerDrag.GetComponent<CardMovement>();
+        if (!cardScript.isOnHand) return;
         if (!cardScript.CanAffordMana()) return;
         if (!CanDropCards(cardScript)) return;
         Debug.Log(cardScript.CanBePlayedOnEnemyRoom() + " " + isEnemyRoom);
@@ -67,7 +68,7 @@ public class RoomManager : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
             return true;
         }
 
-        if (cardScript != null && cardScript.CanBePlayedOnEnemyRoom() && isEnemyRoom)
+        if (cardScript != null && ((cardScript.CanBePlayedOnEnemyRoom() && isEnemyRoom) || (cardScript.CanBePlayedOnPlayerRoom() && !isEnemyRoom)))
             return true;
 
         

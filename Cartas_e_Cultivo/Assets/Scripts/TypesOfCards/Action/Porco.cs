@@ -10,6 +10,6 @@ using System;
 public class Porco : ActionCard {
     public override void OnPlay(RoomManager room)
     {
-        room.GetCardScript().TakeDamage(10);
+        room.GetCardScript().TakeDamage(2);
     }
 }

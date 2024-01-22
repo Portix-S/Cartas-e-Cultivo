@@ -21,10 +21,10 @@ public class ActionCard : CardSO {
         return -1;
     }
 
-    public override void OnGrowth(Animator anim)
+    public override void OnGrowth(Animator anim, GameManager2 gm, RoomManager roomManager)
     {
     }
-    
+
     public override bool IsPlantCard()
     {
         return false;

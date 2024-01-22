@@ -139,6 +139,11 @@ public class GameManager2 : MonoBehaviour
             mana = 10;
     } 
 
+    public bool IsPlayerTurn()
+    {
+        return playerTurn;
+    }
+    
     public void TryDraw() {
         if (canPlayerDraw)
         {
@@ -342,6 +347,38 @@ public class GameManager2 : MonoBehaviour
         } 
     }
   
+    public List<RoomManager> GetAdjacentRooms(RoomManager currentRoom)
+    {
+        if (enemyRooms.Contains(currentRoom))
+        {
+            Debug.Log("enemyRoom");
+            return AddAdjacentsRooms(currentRoom, enemyRooms);
+        }
+        else if (playerRooms.Contains(currentRoom))
+        {
+            Debug.Log("playerRoom");
+            return AddAdjacentsRooms(currentRoom, playerRooms);
+        }
+        return null;
+    }
+
+    private List<RoomManager> AddAdjacentsRooms(RoomManager currentRoom, List<RoomManager> listOfRooms)
+    {
+        List<RoomManager> adjacentRooms = new();
+        int roomNumber = currentRoom.gameObject.name.Last() - '0';
+        roomNumber--;
+        Debug.Log("Room number to adjacents: " + roomNumber);
+        if(roomNumber - 1 > 0)
+            adjacentRooms.Add(listOfRooms[roomNumber - 1]);
+        if(roomNumber + 1 < listOfRooms.Count)
+            adjacentRooms.Add(listOfRooms[roomNumber + 1]);
+        if(roomNumber + 4 < listOfRooms.Count)
+            adjacentRooms.Add(listOfRooms[roomNumber + 4]);
+        if(roomNumber - 4 > 0)
+            adjacentRooms.Add(listOfRooms[roomNumber - 4]);
+        return adjacentRooms;
+    }
+    
     public void MulliganSystem()
     {
         mulligan.SetActive(true);
@@ -453,7 +490,7 @@ public class GameManager2 : MonoBehaviour
         }        
     }
     
-    private void EnemyDrawCard(int numOfCardsToBeBought)
+    public void EnemyDrawCard(int numOfCardsToBeBought)
     {
         if (enemyDeck.Count >= 1)
         { // Se houverem cartas no deck:
@@ -462,7 +499,6 @@ public class GameManager2 : MonoBehaviour
             {
                 CardMovement card = enemyDeck[0]; // Seleciona a primeira carta do deck
                 card.gameObject.SetActive(true); // Dá visibilidade à carta comprada -> mudar para gameObjects depois
-                Debug.Log("tentando " + card.cardSO.cardName);
                 enemyCards.Add(card); // Adciona carta comprada à mão da IA
                 //card.onDraw(); // Realiza evento ao comprar
                 Debug.Log("Enemy drew " + card.cardSO.cardName);
