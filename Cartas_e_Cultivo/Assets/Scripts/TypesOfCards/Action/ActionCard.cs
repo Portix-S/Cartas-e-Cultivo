@@ -49,7 +49,7 @@ public class ActionCard : CardSO {
         
     }
     
-    public override void OnDie()
+    public override void OnDie(Animator anim)
     {
         
     }

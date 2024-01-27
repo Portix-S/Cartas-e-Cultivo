@@ -10,6 +10,12 @@ using System;
 public class Porco : ActionCard {
     public override void OnPlay(RoomManager room)
     {
-        room.GetCardScript().TakeDamage(10);
+        room.GetCardScript().TakeDamage(10);   
+
+    }
+
+    public override void OnPlay(Animator anim)
+    {
+        anim.SetTrigger("Dano");
     }
 }

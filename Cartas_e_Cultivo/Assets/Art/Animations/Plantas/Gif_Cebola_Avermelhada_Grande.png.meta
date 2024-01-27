@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1cf59709654103e4e82e3902f8135b4e
+guid: 50d2fd082c0fc904a89132f7f0db5130
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,34 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sheet_Acafrao_0
+      name: Gif_Cebola_Avermelhada_Grande_0
       rect:
         serializedVersion: 2
-        x: 72
-        y: 210
-        width: 54
-        height: 27
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3374b30e2ad77fc49a74e8280ad0e9b3
-      internalID: -973417320
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet_Acafrao_1
-      rect:
-        serializedVersion: 2
-        x: 138
-        y: 209
-        width: 54
-        height: 27
+        x: 1024
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e14f77dd4f1de042b019798ae9b3b0b
-      internalID: -1343634968
+      spriteID: beaa4d4d0fd45d74eaf70a84130c8104
+      internalID: 602101928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheet_Acafrao_2
+      name: Gif_Cebola_Avermelhada_Grande_1
       rect:
         serializedVersion: 2
-        x: 207
-        y: 210
-        width: 54
-        height: 27
+        x: 2048
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c05cbf15218670b4c81b8f808c1ade7d
-      internalID: 1001415610
+      spriteID: 3142996be47ee2d48855e34b54de902c
+      internalID: -1274520628
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheet_Acafrao_3
+      name: Gif_Cebola_Avermelhada_Grande_2
       rect:
         serializedVersion: 2
-        x: 277
-        y: 210
-        width: 54
-        height: 27
+        x: 3072
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0406d70c8da6197488d8f84be94412f4
-      internalID: -100583442
+      spriteID: e188523bf1ac0e147a00f8b7c87f706c
+      internalID: 306107638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheet_Acafrao_4
+      name: Gif_Cebola_Avermelhada_Grande_3
       rect:
         serializedVersion: 2
-        x: 1
-        y: 140
-        width: 46
-        height: 26
+        x: 4096
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d448bd44387e8b43bf877e90b9a9c5b
-      internalID: 728708550
+      spriteID: 7510a5e01f53e1449848bff7a9771f46
+      internalID: -1627338235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheet_Acafrao_5
+      name: Gif_Cebola_Avermelhada_Grande_4
       rect:
         serializedVersion: 2
-        x: 66
-        y: 140
-        width: 54
-        height: 27
+        x: 5120
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83bc469f2a342054f8468f553a098224
-      internalID: 1937340602
+      spriteID: 3ca213386bb4d2444b496973beadd362
+      internalID: -92402690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheet_Acafrao_6
+      name: Gif_Cebola_Avermelhada_Grande_5
       rect:
         serializedVersion: 2
-        x: 136
-        y: 140
-        width: 54
-        height: 27
+        x: 6144
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,146 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb2f7060900a0e045bc32ce61042d387
-      internalID: 105383194
+      spriteID: adac9c38c4bc3bd43b0e32238840723e
+      internalID: -1722421767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheet_Acafrao_7
+      name: Gif_Cebola_Avermelhada_Grande_6
       rect:
         serializedVersion: 2
-        x: 215
-        y: 139
-        width: 54
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4cd919410dcd40844a12ffb1535ae6e2
-      internalID: 1768045189
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet_Acafrao_10
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 70
-        width: 54
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dc475a5ba351cbd46b395b5389c66431
-      internalID: 411995285
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet_Acafrao_11
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 70
-        width: 54
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55f0e20194f38844cba0d8f33ae7ec08
-      internalID: -1821170025
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet_Acafrao_12
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 70
-        width: 54
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d60c6839916fb4149aaacfb970364f27
-      internalID: -791991390
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet_Acafrao_13
-      rect:
-        serializedVersion: 2
-        x: 214
-        y: 70
-        width: 54
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 60fe041fdb2df14408a0373d322cc550
-      internalID: -1728870200
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet_Acafrao_14
-      rect:
-        serializedVersion: 2
-        x: 284
-        y: 70
-        width: 54
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 49576b27899084c4ba5b0cc43f1b3120
-      internalID: -1189301656
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet_Acafrao_15
-      rect:
-        serializedVersion: 2
-        x: 4
+        x: 0
         y: 0
-        width: 54
-        height: 21
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -397,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f80cb81cc7541244c98ed310d849b100
-      internalID: 1920181230
+      spriteID: 0fcc917aa3c0dd34eae27d3f0c8ef004
+      internalID: -207864324
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheet_Acafrao_16
+      name: Gif_Cebola_Avermelhada_Grande_7
       rect:
         serializedVersion: 2
-        x: 74
+        x: 1024
         y: 0
-        width: 54
-        height: 21
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -418,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce740ee6f1bb04f4e9f7434cff014c91
-      internalID: 1699497402
+      spriteID: f83f79ad79b830349b3463671535d7a1
+      internalID: 1675285768
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheet_Acafrao_17
+      name: Gif_Cebola_Avermelhada_Grande_8
       rect:
         serializedVersion: 2
-        x: 144
+        x: 2048
         y: 0
-        width: 54
-        height: 21
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -439,20 +292,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 055dde1245b9de94297a88250f727c71
-      internalID: 588931934
+      spriteID: 4702641c638a632438dd4c1f278f1da4
+      internalID: -409223961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheet_Acafrao_8
+      name: Gif_Cebola_Avermelhada_Grande_9
       rect:
         serializedVersion: 2
-        x: 285
-        y: 139
-        width: 54
-        height: 27
+        x: 3072
+        y: 0
+        width: 1020
+        height: 1024
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -460,8 +313,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee35bcc805010de4a9230f5fe2a81869
-      internalID: 1757058858
+      spriteID: ef3b67bde038db448bcd3853e1363e17
+      internalID: 1339790510
       vertices: []
       indices: 
       edges: []
@@ -477,24 +330,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sheet_Acafrao_0: -973417320
-      Sheet_Acafrao_1: -1343634968
-      Sheet_Acafrao_10: 411995285
-      Sheet_Acafrao_11: -1821170025
-      Sheet_Acafrao_12: -791991390
-      Sheet_Acafrao_13: -1728870200
-      Sheet_Acafrao_14: -1189301656
-      Sheet_Acafrao_15: 1920181230
-      Sheet_Acafrao_16: 1699497402
-      Sheet_Acafrao_17: 588931934
-      Sheet_Acafrao_2: 1001415610
-      Sheet_Acafrao_3: -100583442
-      Sheet_Acafrao_4: 728708550
-      Sheet_Acafrao_5: 1937340602
-      Sheet_Acafrao_6: 105383194
-      Sheet_Acafrao_7: 1768045189
-      Sheet_Acafrao_8: 1757058858
-      Sheet_Acafrao_9: 1020683851
+      Gif_Cebola_Avermelhada_Grande_0: 602101928
+      Gif_Cebola_Avermelhada_Grande_1: -1274520628
+      Gif_Cebola_Avermelhada_Grande_10: -1148992144
+      Gif_Cebola_Avermelhada_Grande_11: -1702399207
+      Gif_Cebola_Avermelhada_Grande_12: 659560746
+      Gif_Cebola_Avermelhada_Grande_2: 306107638
+      Gif_Cebola_Avermelhada_Grande_3: -1627338235
+      Gif_Cebola_Avermelhada_Grande_4: -92402690
+      Gif_Cebola_Avermelhada_Grande_5: -1722421767
+      Gif_Cebola_Avermelhada_Grande_6: -207864324
+      Gif_Cebola_Avermelhada_Grande_7: 1675285768
+      Gif_Cebola_Avermelhada_Grande_8: -409223961
+      Gif_Cebola_Avermelhada_Grande_9: 1339790510
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

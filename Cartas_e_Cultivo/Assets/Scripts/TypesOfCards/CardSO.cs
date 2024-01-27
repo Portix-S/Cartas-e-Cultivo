@@ -44,7 +44,7 @@ public abstract class CardSO : ScriptableObject {
     public abstract void OnPlay();
     public abstract void OnPlay(RoomManager room);
     public abstract void OnPlay(Animator anim);
-    public abstract void OnDie();
+    public abstract void OnDie(Animator anim);
 
 
 
