@@ -46,8 +46,9 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public bool isOnHand;
     public bool isTurnedBack;
     private bool isShowingCardInfo;
-    
-    [Header("Health System")]
+
+    [Header("Health System")] 
+    public bool isClone;
     private int _health;
     [SerializeField] int maxHealth;
     private TextMeshProUGUI _cardHealthIndicatorOnRoom;
@@ -102,14 +103,14 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             if (growthLevel == maxGrowthLevel)
             {
                 gc.cardsGrown++;
-                Debug.Log("Full grow " + this.gameObject);
+                Debug.Log("Full grow " + this.gameObject + anim + gc + newRoom.GetComponent<RoomManager>());
 
                 // Funções OnGrowth() das cartas, localizacao temporaria
                 // int value = (parentToReturnTo.name.Last() - '0') - 1;
                 // int[] adj = gc.AdjacentFields(value);
                 
                 // Atualizar tudo pelo script especifico da planta
-                cardSO.OnGrowth(anim);
+                cardSO.OnGrowth(anim, gc, newRoom.GetComponent<RoomManager>(), this.gameObject);
                 
                 // if (this.nameText.text == "Batata")
                 // {
@@ -142,7 +143,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             if (growthLevel == maxGrowthLevel)
             {
                 gc.enemyCardsGrown++;
-                cardSO.OnGrowth(anim);
+                cardSO.OnGrowth(anim, gc, newRoom.GetComponent<RoomManager>(), this.gameObject);
             }
             // artworkImage = grownSprite;
         }
@@ -167,7 +168,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         // As it begins to be dragged, saves the parent and tries to chang parent
         //if already played that card, it'll only be destroyed (if clicked, by now)
-        if (!played)
+        if (!played && isOnHand)
         {
             // Debug.Log("OnBeginDrag");
             var parent = this.transform.parent;
@@ -187,15 +188,21 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         return cardSO.GetCanBePlayedOnEnemyRoom();
     }
+    
+    public bool CanBePlayedOnPlayerRoom()
+    {
+        return cardSO.GetCanBePlayedOnPlayerRoom();
+    }
 
     public void OnDrag(PointerEventData eventdata) // Perfect for Dragging
     {
-        if (!played)
+        if (!played && isOnHand)
             this.transform.position = eventdata.position;
     }
 
     public void OnEndDrag(PointerEventData eventdata)
     {
+        if(!isOnHand) return;
         GetComponent<CanvasGroup>().blocksRaycasts = false;
         if (!gc.canAffordMana(manaCost) && !played)
         {
@@ -219,7 +226,14 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         
         // Lose mana
         gc.LoseMana(manaCost);
-        
+        if(!isAICard)
+            gc.playerPlayedCards.Add(this);
+        else if (!gc.enemyPlayedCards.Contains(this))
+        {
+            gc.enemyPlayedCards.Add(this);
+            gc.enemyAvailableRooms.Remove(roomManager.gameObject);
+        }
+
         // Change Card State
         played = true;
         
@@ -247,7 +261,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         // GetComponent<CanvasGroup>().blocksRaycasts = true;
         FindObjectOfType<AudioManager>().Play("cardThrown");
         
-        //provisorio
+        //provisorio -> para cartas de ação
         if(!cardSO.hasHealth)
             this.gameObject.SetActive(false);
     }
@@ -283,7 +297,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void onDie()
     {
-        cardSO.OnDie(anim);
+        // cardSO.OnDie(anim,);
     }
 
     public void TurnCard()
@@ -312,7 +326,8 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         {
             _health = 0;
             // Action to die
-           // cardSO.OnDie(anim);
+            cardSO.OnDie(anim, gc, newRoom.GetComponent<RoomManager>(), this.gameObject);
+
             Debug.Log("Carta morreu");
             gc.KillCard(this, newRoom.GetComponent<RoomManager>());
         }
@@ -320,6 +335,18 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         _cardHealthIndicatorOnRoom.text = _health.ToString();
     }
 
+    public void Heal(int amount)
+    {
+        if (!cardSO.hasHealth || !played) return;
+        
+        _health += amount;
+        if (_health > maxHealth)
+        {
+            _health = maxHealth;
+        }
+        healthText.text = _health.ToString();
+        _cardHealthIndicatorOnRoom.text = _health.ToString();
+    }
 
     
     

@@ -437,7 +437,7 @@ MonoBehaviour:
   isAICard: 0
   parentToReturnTo: {fileID: 0}
   layoutElement: {fileID: 0}
-  cardSO: {fileID: 11400000, guid: 6bd2e2688860cd44386d0864592d1b1e, type: 2}
+  cardSO: {fileID: 11400000, guid: 619da6ee0453daa47a21d58bd31d8a8a, type: 2}
   frame: {fileID: 2669199882288199864}
   artwork: {fileID: 2609792037277482430}
   cardBack: {fileID: 6368377153353821373}

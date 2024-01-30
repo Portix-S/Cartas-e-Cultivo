@@ -14,7 +14,7 @@ public class GameManager2 : MonoBehaviour
     public List<CardMovement> deck = new();
     public List<CardMovement> graveyard = new();
     [SerializeField] private List<RoomManager> playerRooms;
-
+    public List<CardMovement> playerPlayedCards = new();
     
     // can be removed?
     public Transform[] handSlots;
@@ -39,6 +39,7 @@ public class GameManager2 : MonoBehaviour
     public List<Deck> enemyDeckPreset = new();
     public List<CardMovement> enemyCards = new();
     public List<CardMovement> enemyPlayableCards = new();
+    public List<CardMovement> enemyPlayedCards = new();
     public List<CardMovement> enemyDeck = new(); 
     public List<CardMovement> enemyGraveyard = new();
     public Transform[] enemyHandSlots;
@@ -47,10 +48,10 @@ public class GameManager2 : MonoBehaviour
     [SerializeField] private int enemyMana = 1;
     public int enemyCardsGrown;
     public List<CardMovement> enemyCardFields;
-    [SerializeField] private List<GameObject> enemyAvailableRooms;
+    [SerializeField] public List<GameObject> enemyAvailableRooms;
     [SerializeField] private List<RoomManager> enemyRooms;
     [SerializeField] private RoomManager enemyHandScript;
-
+    public bool checkingPlayableCards;
 
 
     [Header("Turn Configs")]
@@ -117,7 +118,7 @@ public class GameManager2 : MonoBehaviour
         ShuffleDeck(ref deck);
         ShuffleDeck(ref enemyDeck);
         MulliganSystem();
-        EnemyDrawCard(5);
+        EnemyDrawCard(5, false);
         UpdateMana();
         UpdateDeckCount();
     }
@@ -130,7 +131,8 @@ public class GameManager2 : MonoBehaviour
         mana = mana - value;
         if(mana < 0)
             mana = 0;
-        UpdateMana();
+        if(playerTurn)
+            UpdateMana();
     } 
 
     public void gainMana(int value) {
@@ -139,6 +141,11 @@ public class GameManager2 : MonoBehaviour
             mana = 10;
     } 
 
+    public bool IsPlayerTurn()
+    {
+        return playerTurn;
+    }
+    
     public void TryDraw() {
         if (canPlayerDraw)
         {
@@ -157,6 +164,7 @@ public class GameManager2 : MonoBehaviour
         { // Se houverem cartas no deck:
         
             int numOfCardsInHand = handScript.currentCards;
+            if(numOfCardsInHand >= handScript.GetMaxCards()) return;
             numOfCardsToBeBought = currentTurn == 0 ? 0 : 1;
             Debug.Log("Buying " + numOfCardsToBeBought + " cards");
             for (int i = 0; i < numOfCardsToBeBought; i++)
@@ -214,7 +222,7 @@ public class GameManager2 : MonoBehaviour
             canPlayerDraw = false;
             stimulateGrowth = false;
             enemyMana = (currentTurn + 1 > 10) ? 10 : currentTurn + 1;
-            EnemyDrawCard(1);
+            EnemyDrawCard(1, false);
             OnEnemyTurnBegin?.Invoke(this, EventArgs.Empty);
         }
 
@@ -342,6 +350,61 @@ public class GameManager2 : MonoBehaviour
         } 
     }
   
+    public List<RoomManager> GetAdjacentRooms(RoomManager currentRoom)
+    {
+        if (enemyRooms.Contains(currentRoom))
+        {
+            Debug.Log("enemyRoom");
+            return AddAdjacentsRooms(currentRoom, enemyRooms);
+        }
+        else if (playerRooms.Contains(currentRoom))
+        {
+            Debug.Log("playerRoom");
+            return AddAdjacentsRooms(currentRoom, playerRooms);
+        }
+        return null;
+    }
+
+    private List<RoomManager> AddAdjacentsRooms(RoomManager currentRoom, List<RoomManager> listOfRooms)
+    {
+        List<RoomManager> adjacentRooms = new();
+        int roomNumber = currentRoom.gameObject.name.Last() - '0';
+        roomNumber--;
+        Debug.Log("Room number to adjacents: " + roomNumber);
+        if(roomNumber - 1 >= 0 && roomNumber - 1 != 3)
+            adjacentRooms.Add(listOfRooms[roomNumber - 1]);
+        if(roomNumber + 1 < listOfRooms.Count && roomNumber + 1 != 4)
+            adjacentRooms.Add(listOfRooms[roomNumber + 1]);
+        if(roomNumber + 4 < listOfRooms.Count)
+            adjacentRooms.Add(listOfRooms[roomNumber + 4]);
+        if(roomNumber - 4 >= 0)
+            adjacentRooms.Add(listOfRooms[roomNumber - 4]);
+        foreach (RoomManager room in adjacentRooms)
+        {
+            Debug.Log("Adjacent room to : " + roomNumber + ": " + room.gameObject.name);
+        }
+        
+        return adjacentRooms;
+    }
+
+    public CardMovement GetRandomCard()
+    {
+        if (playerTurn)
+        {
+            int enemyCardCount = enemyPlayedCards.Count;
+            if (enemyCardCount == 0) return null;
+            int randomCard = UnityEngine.Random.Range(0, enemyCardCount);
+            return enemyPlayedCards[randomCard];
+        }
+        else
+        {
+            int playerCardCount = playerPlayedCards.Count;
+            if (playerCardCount == 0) return null;
+            int randomCard = UnityEngine.Random.Range(0, playerCardCount);
+            return playerPlayedCards[randomCard];
+        }
+    }
+
     public void MulliganSystem()
     {
         mulligan.SetActive(true);
@@ -453,22 +516,23 @@ public class GameManager2 : MonoBehaviour
         }        
     }
     
-    private void EnemyDrawCard(int numOfCardsToBeBought)
+    public void EnemyDrawCard(int numOfCardsToBeBought, bool drawByAction)
     {
         if (enemyDeck.Count >= 1)
         { // Se houverem cartas no deck:
             Debug.Log("Buying " + numOfCardsToBeBought + " cards");
+            if(enemyHandScript.currentCards >= enemyHandScript.GetMaxCards()) return;
             for (int i = 0; i < numOfCardsToBeBought; i++)
             {
                 CardMovement card = enemyDeck[0]; // Seleciona a primeira carta do deck
                 card.gameObject.SetActive(true); // Dá visibilidade à carta comprada -> mudar para gameObjects depois
-                Debug.Log("tentando " + card.cardSO.cardName);
                 enemyCards.Add(card); // Adciona carta comprada à mão da IA
                 //card.onDraw(); // Realiza evento ao comprar
                 Debug.Log("Enemy drew " + card.cardSO.cardName);
                 enemyDeck.Remove(card); // Remove carta comprada do deck
             }
-            CheckPlayableCards();
+            if(!drawByAction)
+                CheckPlayableCards();
         }
         else
         {
@@ -513,18 +577,19 @@ public class GameManager2 : MonoBehaviour
                     break;
                 }
             }
-            enemyAvailableRooms.Remove(selectedRoom); // Remove a sala das salas disponíveis
             
             RoomManager roomToBeDropped = enemyRooms[value]; // Seleciona a sala a ser jogada
             // card.transform.SetParent(roomToBeDropped.gameObject.transform); // Muda o pai
             // card.played = true;
+            enemyPlayedCards.Add(card);
+            Debug.Log("Played card at " + roomToBeDropped.gameObject.name);
             roomToBeDropped.currentCards++; // Aumenta o número de cartas na sala
             roomToBeDropped.SetCurrentCard(card); // Adiciona a carta à sala
             card.PlayCard(roomToBeDropped);
             // Debug.Log("Enemy played " + card.cardSO.cardName);
             Invoke("CheckPlayableCards", 0.5f);
             card.gameObject.GetComponent<Animator>().SetTrigger("PLAYED");
-
+            enemyAvailableRooms.Remove(selectedRoom); // Remove a sala das salas disponíveis
         }
         else if(enemyPlayableCards.Count == 0 && !playerTurn || enemyAvailableRooms.Count == 0 && !playerTurn)
         {
@@ -535,15 +600,31 @@ public class GameManager2 : MonoBehaviour
 
     public void KillCard(CardMovement card, RoomManager room)
     {
-        Debug.Log("Killing " + card.name);
-        graveyard.Add(card);
-        graveyardCountText.text = graveyard.Count.ToString();
-        if(card.isAICard)
-            enemyAvailableRooms.Add(room.gameObject);
-        card.played = false; // Shouldn't be able to change this
-        card.gameObject.SetActive(false);
-        card.transform.SetParent(null);
-        room.RemoveCurrentCard();
+        try
+        {
+            Debug.Log("Killing " + card.name + " is AI:" + card.isAICard);
+            graveyard.Add(card);
+            graveyardCountText.text = graveyard.Count.ToString();
+            room.RemoveCurrentCard();
+            if (card.isAICard)
+            {
+                enemyAvailableRooms.Add(room.gameObject);
+                Debug.Log(enemyPlayedCards.FindIndex(x => x == card));
+                enemyPlayedCards.Remove(card);
+            }
+            else
+            {
+                playerPlayedCards.Remove(card);
+            }
+            card.played = false; // Shouldn't be able to change this
+            card.gameObject.SetActive(false);
+            card.transform.SetParent(null);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 
     [Serializable]

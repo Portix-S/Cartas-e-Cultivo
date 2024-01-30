@@ -8,7 +8,7 @@ public class PlantCard : CardSO {
     public bool isPlantCard = true;
     [SerializeField] int growthTime;
     [SerializeField] int health;
-    private static readonly int ID = Animator.StringToHash("ID");
+    protected static readonly int ID = Animator.StringToHash("ID");
     private static readonly int TEMPO = Animator.StringToHash("TEMPO");
     public override int GetGrowthTime()
     {
@@ -33,7 +33,7 @@ public class PlantCard : CardSO {
         
     }
     
-    public override void OnGrowth(Animator anim)
+    public override void OnGrowth(Animator anim, GameManager2 gm, RoomManager roomManager, GameObject card)
     {
         anim.SetInteger(ID, cardID);
     }
@@ -53,7 +53,8 @@ public class PlantCard : CardSO {
     {
         
     }
-    public override void OnDie(Animator anim)
+    
+    public override void OnDie(Animator anim,GameManager2 gm, RoomManager roomManager, GameObject card)
     {
         anim.SetTrigger("MORTE");
 

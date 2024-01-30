@@ -21,10 +21,10 @@ public class ActionCard : CardSO {
         return -1;
     }
 
-    public override void OnGrowth(Animator anim)
+    public override void OnGrowth(Animator anim, GameManager2 gm, RoomManager roomManager, GameObject card)
     {
     }
-    
+
     public override bool IsPlantCard()
     {
         return false;
@@ -49,7 +49,7 @@ public class ActionCard : CardSO {
         
     }
     
-    public override void OnDie(Animator anim)
+    public override void OnDie(Animator anim,GameManager2 gm, RoomManager roomManager, GameObject card)
     {
         
     }

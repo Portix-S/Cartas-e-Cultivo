@@ -513,7 +513,7 @@ MonoBehaviour:
   isAICard: 0
   parentToReturnTo: {fileID: 0}
   layoutElement: {fileID: 0}
-  cardSO: {fileID: 11400000, guid: fc2b3c7126f73aa4f99dc89f57cd582d, type: 2}
+  cardSO: {fileID: 11400000, guid: 3d7a93ec362614243adf1c09e904d894, type: 2}
   frame: {fileID: 2669199882288199864}
   artwork: {fileID: 2609792037277482430}
   cardBack: {fileID: 427012506141624}
@@ -532,6 +532,7 @@ MonoBehaviour:
   played: 0
   isOnHand: 0
   isTurnedBack: 0
+  isClone: 0
   maxHealth: 8
 --- !u!1 &3809994511533765827
 GameObject:
