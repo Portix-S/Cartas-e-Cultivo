@@ -43,13 +43,14 @@ public class RoomManager : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
     {
         if (currentCards == 0 || isEnemyRoom || this.CompareTag("Hand")) return;  // Shouldn't show cards with these conditions
         _isShowingCardInfo = !_isShowingCardInfo;
-        cardScript.ShowCard();
+        _currentCardScript.ShowCard();
     }
 
     public void OnDrop(PointerEventData eventData)
     {
         // If Something was dropped on this place on the board
         cardScript = eventData.pointerDrag.GetComponent<CardMovement>();
+        if (this.CompareTag("Hand")) return;
         if (!cardScript.isOnHand) return;
         if (!cardScript.CanAffordMana()) return;
         if (!CanDropCards(cardScript)) return;
@@ -61,14 +62,14 @@ public class RoomManager : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
     private bool CanDropCards(CardMovement cardScript)
     {
         if (cardScript != null && currentCards < maxCards && cardScript.parentToReturnTo != this.transform
-            && !cardScript.isAICard && !isEnemyRoom)
+            && !cardScript.isAICard && !isEnemyRoom && cardScript.cardSO.IsPlantCard())
         {
             currentCards++;
             _currentCardScript = cardScript;
             return true;
         }
 
-        if (cardScript != null && ((cardScript.CanBePlayedOnEnemyRoom() && isEnemyRoom) || (cardScript.CanBePlayedOnPlayerRoom() && !isEnemyRoom)))
+        if (cardScript != null && _currentCardScript != null && ((cardScript.CanBePlayedOnEnemyRoom() && isEnemyRoom) || (cardScript.CanBePlayedOnPlayerRoom() && !isEnemyRoom)))
             return true;
 
         
@@ -105,5 +106,17 @@ public class RoomManager : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
     public void SetCurrentCard(CardMovement card)
     {
         _currentCardScript = card;
+    }
+
+    public void PlayClone(GameObject card)
+    {
+        cardScript = card.GetComponent<CardMovement>();
+        if(cardScript.isClone) return;
+        
+        GameObject newCard = Instantiate(card, transform);
+        currentCards++;
+        _currentCardScript = newCard.GetComponent<CardMovement>();
+        _currentCardScript.isClone = true;
+        _currentCardScript.PlayCard(this);
     }
 }

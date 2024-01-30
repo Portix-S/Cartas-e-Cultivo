@@ -9,13 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0b91047e380b70419e8a4b24395d107, type: 3}
-  m_Name: Melancia
+  m_Script: {fileID: 11500000, guid: 3a744391f0f07f841978f04c197b1fa9, type: 3}
+  m_Name: Aboboras
   m_EditorClassIdentifier: 
-  cardID: 5
-  cardName: Melancia
-  description: Melancia
-  manaCost: 1
+  cardID: 7
+  cardName: Abobora
+  description: 
+  mask: {fileID: 0}
+  artwork: {fileID: 0}
+  imagemDaCarta: {fileID: 0}
+  manaCost: 4
   hasGrowthTime: 1
   hasHealth: 1
   hasOnDraw: 0
@@ -24,5 +27,5 @@ MonoBehaviour:
   canBePlayedOnEnemyRoom: 0
   canBePlayedOnPlayerRoom: 0
   isPlantCard: 1
-  growthTime: 2
-  health: 0
+  growthTime: 5
+  health: 5

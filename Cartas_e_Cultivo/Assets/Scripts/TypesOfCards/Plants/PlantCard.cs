@@ -33,7 +33,7 @@ public class PlantCard : CardSO {
         
     }
     
-    public override void OnGrowth(Animator anim, GameManager2 gm, RoomManager roomManager)
+    public override void OnGrowth(Animator anim, GameManager2 gm, RoomManager roomManager, GameObject card)
     {
         anim.SetInteger(ID, cardID);
     }
@@ -53,7 +53,7 @@ public class PlantCard : CardSO {
     {
         
     }
-    public override void OnDie()
+    public override void OnDie(Animator anim,GameManager2 gm, RoomManager roomManager, GameObject card)
     {
         
     }

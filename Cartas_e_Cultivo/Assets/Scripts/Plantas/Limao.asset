@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0b91047e380b70419e8a4b24395d107, type: 3}
-  m_Name: Melancia
+  m_Script: {fileID: 11500000, guid: f1a7a441533ef9442acdc47704c0c69a, type: 3}
+  m_Name: Limao
   m_EditorClassIdentifier: 
-  cardID: 5
-  cardName: Melancia
-  description: Melancia
-  manaCost: 1
+  cardID: 4
+  cardName: "Lim\xE3o"
+  description: Lemon
+  manaCost: 2
   hasGrowthTime: 1
   hasHealth: 1
   hasOnDraw: 0
@@ -24,5 +24,5 @@ MonoBehaviour:
   canBePlayedOnEnemyRoom: 0
   canBePlayedOnPlayerRoom: 0
   isPlantCard: 1
-  growthTime: 2
+  growthTime: 0
   health: 0

@@ -1,17 +1,18 @@
+
 using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "New Action Card", menuName = "Lirio")]
+[CreateAssetMenu(fileName = "Abobora", menuName = "Abobora")]
 
-public class Lirio : PlantCard {
+public class Abobora : PlantCard {
     public override void OnGrowth(Animator anim,GameManager2 gm, RoomManager roomManager, GameObject card)
     {
         gm.GetAdjacentRooms(roomManager).ForEach(room =>
         {
             CardMovement cardScript = room.GetCardScript();
-            if(cardScript != null)
-                cardScript.Heal(2);
+            if (cardScript == null)
+                room.PlayClone(card);
         });
         anim.SetInteger(ID, cardID);
     }
