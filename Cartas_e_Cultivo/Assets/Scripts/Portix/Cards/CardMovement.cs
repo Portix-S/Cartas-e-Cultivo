@@ -228,9 +228,12 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         gc.LoseMana(manaCost);
         if(!isAICard)
             gc.playerPlayedCards.Add(this);
-        else if(!gc.enemyPlayedCards.Contains(this))
+        else if (!gc.enemyPlayedCards.Contains(this))
+        {
             gc.enemyPlayedCards.Add(this);
-        
+            gc.enemyAvailableRooms.Remove(roomManager.gameObject);
+        }
+
         // Change Card State
         played = true;
         
@@ -294,7 +297,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void onDie()
     {
-        cardSO.OnDie(anim);
+        // cardSO.OnDie(anim,);
     }
 
     public void TurnCard()

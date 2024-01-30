@@ -48,7 +48,7 @@ public class GameManager2 : MonoBehaviour
     [SerializeField] private int enemyMana = 1;
     public int enemyCardsGrown;
     public List<CardMovement> enemyCardFields;
-    [SerializeField] private List<GameObject> enemyAvailableRooms;
+    [SerializeField] public List<GameObject> enemyAvailableRooms;
     [SerializeField] private List<RoomManager> enemyRooms;
     [SerializeField] private RoomManager enemyHandScript;
     public bool checkingPlayableCards;
