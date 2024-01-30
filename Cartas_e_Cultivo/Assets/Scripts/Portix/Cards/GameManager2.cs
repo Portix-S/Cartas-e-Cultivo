@@ -297,7 +297,7 @@ public class GameManager2 : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("cardThrown");  // plays cardThrown sounds
         
 
-            card.gameObject.GetComponent<Animator>().SetTrigger(Inicio);
+        card.gameObject.GetComponent<Animator>().SetTrigger(Inicio);
         //"Funções" onPlay() das cartas, eventualmente mudar de cardName para cardID;
        
         if(card.nameText.text == "Cafe") {DrawCard();}

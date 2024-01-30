@@ -244,6 +244,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         anim.SetInteger(Tempo, maxGrowthLevel);
         
         // Maybe do Something?
+        // cardSO.OnPlay(anim);
         cardSO.OnPlay(roomManager);
 
         // Get Card Health Indicator
@@ -293,7 +294,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void onDie()
     {
-        // cardSO.OnDie();
+        cardSO.OnDie(anim);
     }
 
     public void TurnCard()
@@ -322,8 +323,8 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         {
             _health = 0;
             // Action to die
-            // cardSO.OnDie();
             cardSO.OnDie(anim, gc, newRoom.GetComponent<RoomManager>(), this.gameObject);
+
             Debug.Log("Carta morreu");
             gc.KillCard(this, newRoom.GetComponent<RoomManager>());
         }

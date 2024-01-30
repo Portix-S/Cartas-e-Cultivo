@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,19 +106,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -126,19 +113,19 @@ TextureImporter:
       name: Batata_Animacao_Crescer_0
       rect:
         serializedVersion: 2
-        x: 38
-        y: 297
-        width: 21
-        height: 5
+        x: 0
+        y: 4078.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50d5b00a4245b3b4c87d4c336fd618ef
-      internalID: 1199608255
+      spriteID: 6b0710118d66f574aa701b6538b14842
+      internalID: 1604164279
       vertices: []
       indices: 
       edges: []
@@ -147,19 +134,19 @@ TextureImporter:
       name: Batata_Animacao_Crescer_1
       rect:
         serializedVersion: 2
-        x: 157
-        y: 297
-        width: 21
-        height: 8
+        x: 1024
+        y: 4078.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e6b784c3b47f4e4e8b520a9f693a8ec
-      internalID: 1752250945
+      spriteID: cba0076a680e11f488b7a472a46260e8
+      internalID: 511301832
       vertices: []
       indices: 
       edges: []
@@ -168,19 +155,19 @@ TextureImporter:
       name: Batata_Animacao_Crescer_2
       rect:
         serializedVersion: 2
-        x: 272
-        y: 297
-        width: 21
-        height: 21
+        x: 2048
+        y: 4078.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2dfc799536eb6f4b918aa432fdb564c
-      internalID: -88005607
+      spriteID: b32f67857d9ebfa4190b55b3996bc1fb
+      internalID: 213745756
       vertices: []
       indices: 
       edges: []
@@ -189,19 +176,19 @@ TextureImporter:
       name: Batata_Animacao_Crescer_3
       rect:
         serializedVersion: 2
-        x: 390
-        y: 297
-        width: 21
-        height: 46
+        x: 3072
+        y: 4078.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 286a1e02a3a84e04bbc75e26ddd9266b
-      internalID: -832871294
+      spriteID: 2475ceb2d500a3f40a8c09c180e06787
+      internalID: 813756343
       vertices: []
       indices: 
       edges: []
@@ -210,19 +197,19 @@ TextureImporter:
       name: Batata_Animacao_Crescer_4
       rect:
         serializedVersion: 2
-        x: 502
-        y: 297
-        width: 22
-        height: 80
+        x: 4096
+        y: 4078.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d01159977d11b624f8ac5bb1310a0a8d
-      internalID: -1406875194
+      spriteID: d6f401a360c30f548b9c55c545919df8
+      internalID: 1434174059
       vertices: []
       indices: 
       edges: []
@@ -231,19 +218,19 @@ TextureImporter:
       name: Batata_Animacao_Crescer_5
       rect:
         serializedVersion: 2
-        x: 38
-        y: 202
-        width: 22
-        height: 75
+        x: 5120
+        y: 4078.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d868ba4924091640aa4ea6ca31d66d6
-      internalID: 1458700558
+      spriteID: beefbc51987bcbc4e8aaf48f7edc8ad6
+      internalID: 1915410759
       vertices: []
       indices: 
       edges: []
@@ -252,19 +239,19 @@ TextureImporter:
       name: Batata_Animacao_Crescer_6
       rect:
         serializedVersion: 2
-        x: 157
-        y: 202
-        width: 22
-        height: 80
+        x: 6144
+        y: 4078.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57316db54bface54e8013636474d745d
-      internalID: -878351561
+      spriteID: 770a9eec7f87038458f7c761a87d683b
+      internalID: 180755775
       vertices: []
       indices: 
       edges: []
@@ -273,19 +260,19 @@ TextureImporter:
       name: Batata_Animacao_Crescer_7
       rect:
         serializedVersion: 2
-        x: 271
-        y: 202
-        width: 22
-        height: 82
+        x: 0
+        y: 3059.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 925dc2a7e1afe8647bc4cbc6637cd74c
-      internalID: -2058419986
+      spriteID: 41313dfc983ec6c459c48fdc99ef8c10
+      internalID: -20855147
       vertices: []
       indices: 
       edges: []
@@ -294,19 +281,19 @@ TextureImporter:
       name: Batata_Animacao_Crescer_8
       rect:
         serializedVersion: 2
-        x: 390
-        y: 202
-        width: 22
-        height: 82
+        x: 1024
+        y: 3059.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c18f9c35bdd726545b5a5a4b0095cd32
-      internalID: -423981466
+      spriteID: d5e1b91b80a90364a820cf1e91b99ec0
+      internalID: 439206546
       vertices: []
       indices: 
       edges: []
@@ -315,19 +302,19 @@ TextureImporter:
       name: Batata_Animacao_Crescer_9
       rect:
         serializedVersion: 2
-        x: 502
-        y: 202
-        width: 22
-        height: 77
+        x: 2048
+        y: 3059.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44128c9e44656094da9f2fb871a3a33c
-      internalID: -2123556946
+      spriteID: fd185be8b84899845890ef667175ec57
+      internalID: 134529102
       vertices: []
       indices: 
       edges: []
@@ -336,19 +323,19 @@ TextureImporter:
       name: Batata_Animacao_Crescer_10
       rect:
         serializedVersion: 2
-        x: 38
-        y: 107
-        width: 22
-        height: 70
+        x: 3072
+        y: 3059.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ca5eba628e06cf47a316255958cc49a
-      internalID: -448468826
+      spriteID: 04eac27f03be773459bb198d7e15f093
+      internalID: 158033030
       vertices: []
       indices: 
       edges: []
@@ -357,19 +344,19 @@ TextureImporter:
       name: Batata_Animacao_Crescer_11
       rect:
         serializedVersion: 2
-        x: 142
-        y: 107
-        width: 43
-        height: 74
+        x: 4096
+        y: 3059.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5adb2e11d3cdfe4c8fb32eb9788613a
-      internalID: 244713128
+      spriteID: 0a690577cedd6374b89f32c77cf0470e
+      internalID: 111483052
       vertices: []
       indices: 
       edges: []
@@ -378,19 +365,19 @@ TextureImporter:
       name: Batata_Animacao_Crescer_12
       rect:
         serializedVersion: 2
-        x: 254
-        y: 107
-        width: 56
-        height: 78
+        x: 5120
+        y: 3059.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95f776ac79cf2ef4088d34e9402d2a48
-      internalID: 1069639654
+      spriteID: 96ed9df4ac39f304e8a048cc5ef7c010
+      internalID: 117205916
       vertices: []
       indices: 
       edges: []
@@ -399,19 +386,19 @@ TextureImporter:
       name: Batata_Animacao_Crescer_13
       rect:
         serializedVersion: 2
-        x: 366
-        y: 107
-        width: 60
-        height: 72
+        x: 6144
+        y: 3059.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72917544edb4c9b4db9d01c9eb362ff9
-      internalID: -1325882094
+      spriteID: cfc8975fb1fde3d419fda2e874017a1a
+      internalID: -783107851
       vertices: []
       indices: 
       edges: []
@@ -420,19 +407,19 @@ TextureImporter:
       name: Batata_Animacao_Crescer_14
       rect:
         serializedVersion: 2
-        x: 479
-        y: 107
-        width: 72
-        height: 77
+        x: 0
+        y: 2040.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e153fd4c16f2c554f9f05d4969b31092
-      internalID: 842397890
+      spriteID: cedb39ed747d244458d255dd1c8183f2
+      internalID: -1818186509
       vertices: []
       indices: 
       edges: []
@@ -441,19 +428,19 @@ TextureImporter:
       name: Batata_Animacao_Crescer_15
       rect:
         serializedVersion: 2
-        x: 580
-        y: 107
-        width: 93
-        height: 88
+        x: 1024
+        y: 2040.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64ac56edc0daa494c8561280d8129ad4
-      internalID: 1689096851
+      spriteID: 898fac7ca9444ba44b7f501ed80363db
+      internalID: -721494725
       vertices: []
       indices: 
       edges: []
@@ -462,19 +449,19 @@ TextureImporter:
       name: Batata_Animacao_Crescer_16
       rect:
         serializedVersion: 2
-        x: 0
-        y: 15
-        width: 98
-        height: 80
+        x: 2048
+        y: 2040.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fdc4e42152844046951c552c001bb13
-      internalID: -2111188882
+      spriteID: a20b59bdd857ca24898098ff2423abc4
+      internalID: 919873149
       vertices: []
       indices: 
       edges: []
@@ -483,19 +470,19 @@ TextureImporter:
       name: Batata_Animacao_Crescer_17
       rect:
         serializedVersion: 2
-        x: 117
-        y: 22
-        width: 98
-        height: 80
+        x: 3072
+        y: 2040.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 241dd62a8459f0d4d92a5fc8a6d58bfd
-      internalID: 1071532769
+      spriteID: 1b46a8ba3acf07e4b9666eaa87fb01dc
+      internalID: 29773249
       vertices: []
       indices: 
       edges: []
@@ -504,19 +491,19 @@ TextureImporter:
       name: Batata_Animacao_Crescer_18
       rect:
         serializedVersion: 2
-        x: 234
-        y: 15
-        width: 98
-        height: 80
+        x: 4096
+        y: 2040.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bbc51b655da15640b711ba6a7ffdeb6
-      internalID: 1292337466
+      spriteID: e4d15e66a51ce4c4dbbde88dc5ad4c0b
+      internalID: 1073935569
       vertices: []
       indices: 
       edges: []
@@ -525,19 +512,19 @@ TextureImporter:
       name: Batata_Animacao_Crescer_19
       rect:
         serializedVersion: 2
-        x: 351
-        y: 5
-        width: 98
-        height: 80
+        x: 5120
+        y: 2040.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e9ad5affaa3b8e4cac68cf2ff6ce6d9
-      internalID: 1489193849
+      spriteID: 0a7a20c47cf9e8f4cb3d6d16b7d393ce
+      internalID: -1279724768
       vertices: []
       indices: 
       edges: []
@@ -546,19 +533,19 @@ TextureImporter:
       name: Batata_Animacao_Crescer_20
       rect:
         serializedVersion: 2
-        x: 468
-        y: 0
-        width: 93
-        height: 90
+        x: 6144
+        y: 2040.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b6ed2b5351ea9c4ab257636f4c74bfa
-      internalID: 1097067954
+      spriteID: 61eb0ed9dcd8f41449aeeee1613bfaf2
+      internalID: 1414563281
       vertices: []
       indices: 
       edges: []
@@ -567,19 +554,187 @@ TextureImporter:
       name: Batata_Animacao_Crescer_21
       rect:
         serializedVersion: 2
-        x: 580
-        y: 0
-        width: 93
-        height: 90
+        x: 0
+        y: 1021.4
+        width: 1024
+        height: 1019.6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd58b660f623fd0489e7995189e01278
-      internalID: -916632725
+      spriteID: 83cce3c3e6f2ebc408cef2efcfdbf50d
+      internalID: 559326298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batata_Animacao_Crescer_22
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1021.4
+        width: 1024
+        height: 1019.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2235c53880b0e89429833f722a86c598
+      internalID: -867455206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batata_Animacao_Crescer_23
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1021.4
+        width: 1024
+        height: 1019.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d049057688d11bf40ad600a867c53d92
+      internalID: -104946849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batata_Animacao_Crescer_24
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1021.4
+        width: 1024
+        height: 1019.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce9af6c6bb6f9b442b1527b7cc407c8e
+      internalID: 105753049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batata_Animacao_Crescer_25
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 1021.4
+        width: 1024
+        height: 1019.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac0caafc0ab51ba41888abc1983686db
+      internalID: 508901046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batata_Animacao_Crescer_26
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 1021.4
+        width: 1024
+        height: 1019.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4d83d005a3b0384fa73dc4876998e83
+      internalID: 353007203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batata_Animacao_Crescer_27
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 1021.4
+        width: 1024
+        height: 1019.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 889e36547033e6e4db136ec4d1b3e5de
+      internalID: 2120315547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batata_Animacao_Crescer_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2.4000244
+        width: 1024
+        height: 1019.6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10872e9498af12e41a96dbc748bbe8c7
+      internalID: -2047262571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batata_Animacao_Crescer_29
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2
+        width: 1022
+        height: 1020
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 080a55b97f77f58449ebe0178a2a7199
+      internalID: 493387195
       vertices: []
       indices: 
       edges: []
@@ -595,28 +750,41 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Batata_Animacao_Crescer_0: 1199608255
-      Batata_Animacao_Crescer_1: 1752250945
-      Batata_Animacao_Crescer_10: -448468826
-      Batata_Animacao_Crescer_11: 244713128
-      Batata_Animacao_Crescer_12: 1069639654
-      Batata_Animacao_Crescer_13: -1325882094
-      Batata_Animacao_Crescer_14: 842397890
-      Batata_Animacao_Crescer_15: 1689096851
-      Batata_Animacao_Crescer_16: -2111188882
-      Batata_Animacao_Crescer_17: 1071532769
-      Batata_Animacao_Crescer_18: 1292337466
-      Batata_Animacao_Crescer_19: 1489193849
-      Batata_Animacao_Crescer_2: -88005607
-      Batata_Animacao_Crescer_20: 1097067954
-      Batata_Animacao_Crescer_21: -916632725
-      Batata_Animacao_Crescer_3: -832871294
-      Batata_Animacao_Crescer_4: -1406875194
-      Batata_Animacao_Crescer_5: 1458700558
-      Batata_Animacao_Crescer_6: -878351561
-      Batata_Animacao_Crescer_7: -2058419986
-      Batata_Animacao_Crescer_8: -423981466
-      Batata_Animacao_Crescer_9: -2123556946
+      Batata_Animacao_Crescer_0: 1604164279
+      Batata_Animacao_Crescer_1: 511301832
+      Batata_Animacao_Crescer_10: 158033030
+      Batata_Animacao_Crescer_11: 111483052
+      Batata_Animacao_Crescer_12: 117205916
+      Batata_Animacao_Crescer_13: -783107851
+      Batata_Animacao_Crescer_14: -1818186509
+      Batata_Animacao_Crescer_15: -721494725
+      Batata_Animacao_Crescer_16: 919873149
+      Batata_Animacao_Crescer_17: 29773249
+      Batata_Animacao_Crescer_18: 1073935569
+      Batata_Animacao_Crescer_19: -1279724768
+      Batata_Animacao_Crescer_2: 213745756
+      Batata_Animacao_Crescer_20: 1414563281
+      Batata_Animacao_Crescer_21: 559326298
+      Batata_Animacao_Crescer_22: -867455206
+      Batata_Animacao_Crescer_23: -104946849
+      Batata_Animacao_Crescer_24: 105753049
+      Batata_Animacao_Crescer_25: 508901046
+      Batata_Animacao_Crescer_26: 353007203
+      Batata_Animacao_Crescer_27: 2120315547
+      Batata_Animacao_Crescer_28: -2047262571
+      Batata_Animacao_Crescer_29: 493387195
+      Batata_Animacao_Crescer_3: 813756343
+      Batata_Animacao_Crescer_30: 2945045
+      Batata_Animacao_Crescer_31: -13175618
+      Batata_Animacao_Crescer_32: 1904250777
+      Batata_Animacao_Crescer_33: -1793712767
+      Batata_Animacao_Crescer_34: 336643419
+      Batata_Animacao_Crescer_4: 1434174059
+      Batata_Animacao_Crescer_5: 1915410759
+      Batata_Animacao_Crescer_6: 180755775
+      Batata_Animacao_Crescer_7: -20855147
+      Batata_Animacao_Crescer_8: 439206546
+      Batata_Animacao_Crescer_9: 134529102
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

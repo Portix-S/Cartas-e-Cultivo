@@ -25,7 +25,7 @@ MonoBehaviour:
   hasOnPlay: 0
   hasOnDie: 0
   canBePlayedOnEnemyRoom: 0
-  canBePlayedOnPlayerRoom: 0
+  canBePlayedOnPlayerRoom: 1
   isPlantCard: 1
   growthTime: 1
   health: 1

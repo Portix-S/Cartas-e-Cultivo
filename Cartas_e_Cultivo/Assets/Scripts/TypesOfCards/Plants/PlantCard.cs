@@ -53,9 +53,11 @@ public class PlantCard : CardSO {
     {
         
     }
+    
     public override void OnDie(Animator anim,GameManager2 gm, RoomManager roomManager, GameObject card)
     {
-        
+        anim.SetTrigger("MORTE");
+
     }
     
 }
