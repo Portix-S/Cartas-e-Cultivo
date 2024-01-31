@@ -398,7 +398,7 @@ SpriteRenderer:
   m_Size: {x: 0.21, y: 0.05}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &1911410481645776086
@@ -437,7 +437,7 @@ MonoBehaviour:
   isAICard: 0
   parentToReturnTo: {fileID: 0}
   layoutElement: {fileID: 0}
-  cardSO: {fileID: 11400000, guid: 2716fd980ab004041b9b906e15ee025d, type: 2}
+  cardSO: {fileID: 11400000, guid: 0edc8f072b05a8c41bd78ce41041b50e, type: 2}
   frame: {fileID: 2669199882288199864}
   artwork: {fileID: 2609792037277482430}
   cardBack: {fileID: 5323654875118770061}
@@ -456,6 +456,7 @@ MonoBehaviour:
   played: 0
   isOnHand: 0
   isTurnedBack: 0
+  isClone: 0
   maxHealth: 0
 --- !u!1 &3809994511533765827
 GameObject:

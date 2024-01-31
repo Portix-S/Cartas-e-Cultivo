@@ -387,6 +387,14 @@ public class GameManager2 : MonoBehaviour
         return adjacentRooms;
     }
 
+    public List<CardMovement> GetEnemyRooms(RoomManager room)
+    {
+        if (room.GetIsEnemyRoom())
+            return enemyPlayedCards;
+        else
+            return playerPlayedCards;            
+    }
+
     public CardMovement GetRandomCard()
     {
         if (playerTurn)

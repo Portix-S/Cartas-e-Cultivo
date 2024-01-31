@@ -9,18 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a24898f99b855e459e93ff67f7374aa, type: 3}
-  m_Name: Meteoro
+  m_Script: {fileID: 11500000, guid: daffb05723cb3034199fd8d3e4870fb4, type: 3}
+  m_Name: Chuvas
   m_EditorClassIdentifier: 
   cardID: 10
-  cardName: 
+  cardName: Chuva
   description: 
-  manaCost: 2
+  mask: {fileID: 0}
+  artwork: {fileID: 0}
+  imagemDaCarta: {fileID: 0}
+  manaCost: 1
   hasGrowthTime: 0
   hasHealth: 0
   hasOnDraw: 0
   hasOnPlay: 0
   hasOnDie: 0
   canBePlayedOnEnemyRoom: 1
-  canBePlayedOnPlayerRoom: 1
+  canBePlayedOnPlayerRoom: 0
   isActionCard: 1

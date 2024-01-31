@@ -5,12 +5,15 @@ using UnityEngine;
 using UnityEngine.Events;
 using System;
 
-[CreateAssetMenu(fileName = "New Action Card", menuName = "Porco")]
+[CreateAssetMenu(fileName = "Meteoro", menuName = "Meteoro")]
 
-public class Porco : ActionCard {
+public class Meteoro : ActionCard {
     public override void OnPlay(RoomManager room, GameManager2 gm)
     {
-        room.GetCardScript().TakeDamage(10);   
+        gm.GetEnemyRooms(room).ForEach(card =>
+        { 
+            card.TakeDamage(2);
+        });
     }
 
     public override void OnPlay(Animator anim)
