@@ -332,6 +332,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             gc.KillCard(this, newRoom.GetComponent<RoomManager>());
         }
         healthText.text = _health.ToString();
+        healthText.color = Color.red;
         _cardHealthIndicatorOnRoom.text = _health.ToString();
     }
 
@@ -345,6 +346,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             _health = maxHealth;
         }
         healthText.text = _health.ToString();
+        healthText.color = Color.green;
         _cardHealthIndicatorOnRoom.text = _health.ToString();
     }
 

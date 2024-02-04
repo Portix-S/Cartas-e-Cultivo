@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 242721372244331311}
   - component: {fileID: 201385651095527550}
   - component: {fileID: 5619733029115562719}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Anim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,6 +609,7 @@ MonoBehaviour:
   played: 0
   isOnHand: 0
   isTurnedBack: 0
+  isClone: 0
   maxHealth: 2
 --- !u!1 &3809994511533765827
 GameObject:
