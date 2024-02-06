@@ -39,7 +39,7 @@ public class ActionCard : CardSO {
         Debug.Log("Carta de Ação");
     }
 
-    public override void OnPlay(RoomManager room)
+    public override void OnPlay(RoomManager room, GameManager2 gm)
     {
         
     }

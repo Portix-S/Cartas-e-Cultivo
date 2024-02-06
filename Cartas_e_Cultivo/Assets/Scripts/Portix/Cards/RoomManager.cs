@@ -13,6 +13,11 @@ public class RoomManager : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
     private CardMovement _currentCardScript;
     bool _isShowingCardInfo;
     private TextMeshProUGUI _cardHealthIndicator;
+
+    public bool GetIsEnemyRoom()
+    {
+        return isEnemyRoom;
+    }
     private void Awake()
     {
         if (this.CompareTag("EnemyRoom"))
@@ -118,5 +123,6 @@ public class RoomManager : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
         _currentCardScript = newCard.GetComponent<CardMovement>();
         _currentCardScript.isClone = true;
         _currentCardScript.PlayCard(this);
+        _currentCardScript.GrowPlant();
     }
 }

@@ -142,11 +142,18 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             anim.SetInteger(Tempo, maxGrowthLevel - growthLevel);
             if (growthLevel == maxGrowthLevel)
             {
-                gc.enemyCardsGrown++;
-                cardSO.OnGrowth(anim, gc, newRoom.GetComponent<RoomManager>(), this.gameObject);
+                GrowPlant();
             }
             // artworkImage = grownSprite;
         }
+    }
+
+    public void GrowPlant()
+    {
+        growthLevel = maxGrowthLevel;
+        anim.SetInteger(Tempo, maxGrowthLevel - growthLevel);
+        gc.enemyCardsGrown++;
+        cardSO.OnGrowth(anim, gc, newRoom.GetComponent<RoomManager>(), this.gameObject);
     }
 
     // Pointer enter/exit lidar com visuais das salas?
@@ -244,11 +251,12 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             roomScript.currentCards--;
         }
         anim.SetTrigger("PLAYED");
-        anim.SetInteger(Tempo, maxGrowthLevel);
+        if(!isClone)
+            anim.SetInteger(Tempo, maxGrowthLevel);
         
         // Maybe do Something?
         // cardSO.OnPlay(anim);
-        cardSO.OnPlay(roomManager);
+        cardSO.OnPlay(roomManager, gc);
 
         // Get Card Health Indicator
         if (cardSO.hasHealth)
@@ -304,6 +312,22 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         isTurnedBack = !isTurnedBack;
         cardBack.SetActive(isTurnedBack);
+    }
+    
+    public void ReduceGrowthTime(int amount)
+    {
+        if (!isPlantCard || !played) return;
+        Debug.Log("current level" + growthLevel + "max level" + maxGrowthLevel + "amount" + amount + "new level" + (growthLevel - amount));
+        growthLevel += amount;
+        if (growthLevel >= maxGrowthLevel)
+        {
+            growthLevel = maxGrowthLevel;
+            GrowPlant();
+        }
+        else
+            anim.SetInteger(Tempo, maxGrowthLevel - growthLevel);
+
+        
     }
 
     public void ShowCard()

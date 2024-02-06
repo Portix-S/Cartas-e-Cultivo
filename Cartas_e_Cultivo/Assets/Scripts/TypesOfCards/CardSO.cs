@@ -38,7 +38,7 @@ public abstract class CardSO : ScriptableObject {
     public abstract void OnDraw();
     public abstract void OnGrowth(Animator anim, GameManager2 gm, RoomManager roomManager, GameObject card);
     public abstract void OnPlay();
-    public abstract void OnPlay(RoomManager room);
+    public abstract void OnPlay(RoomManager room, GameManager2 gm);
     public abstract void OnPlay(Animator anim);
     public abstract void OnDie(Animator anim,GameManager2 gm, RoomManager roomManager, GameObject card);
 

@@ -49,7 +49,7 @@ public class PlantCard : CardSO {
     {
         
     }
-    public override void OnPlay(RoomManager room)
+    public override void OnPlay(RoomManager room, GameManager2 gm)
     {
         
     }
