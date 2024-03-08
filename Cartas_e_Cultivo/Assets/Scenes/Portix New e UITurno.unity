@@ -161,7 +161,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -89.222046, y: -53.162}
+  m_AnchoredPosition: {x: -94, y: -53.162}
   m_SizeDelta: {x: 154.1235, y: 110.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &18488
@@ -1218,6 +1218,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1060625080}
   - {fileID: 510479917}
   - {fileID: 1502040109}
   - {fileID: 1926076269}
@@ -1225,7 +1226,6 @@ RectTransform:
   - {fileID: 700805266}
   - {fileID: 1647927124}
   - {fileID: 350066402}
-  - {fileID: 1060625080}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4481,7 +4481,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060625079}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4532,8 +4532,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1348890433
-  m_SortingLayer: 1
+  m_SortingLayerID: 397397401
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6415,21 +6415,21 @@ MonoBehaviour:
   - card: {fileID: 4946529856588461148, guid: 1295b7c1708189e4aa75ee3fb547c30c, type: 3}
     amount: 0
   - card: {fileID: 4946529856588461148, guid: 73250f48c93d629469f9b3c54f95a588, type: 3}
-    amount: 5
+    amount: 2
   - card: {fileID: 4946529856588461148, guid: b6d929d64c0032243bac03490e8f927e, type: 3}
-    amount: 0
+    amount: 5
   - card: {fileID: 4946529856588461148, guid: 37a979921c17b2344b89cf97dea08067, type: 3}
-    amount: 4
+    amount: 2
   - card: {fileID: 4946529856588461148, guid: bb774f122708b3b408aec37fbe472da3, type: 3}
-    amount: 4
+    amount: 2
   - card: {fileID: 4946529856588461148, guid: 7a8427a8ee875e941b5bad1d30dd3820, type: 3}
     amount: 0
   - card: {fileID: 4946529856588461148, guid: 23c3640b933b862488ed9c25f4b369bc, type: 3}
     amount: 0
   - card: {fileID: 4946529856588461148, guid: 1ea5d720ff97e214e8982167f220ff16, type: 3}
-    amount: 5
+    amount: 2
   - card: {fileID: 4946529856588461148, guid: 7905a1d191dce7040a890c4bc639d823, type: 3}
-    amount: 1
+    amount: 0
   deck: []
   graveyard: []
   playerRooms:

@@ -15,7 +15,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     private Transform newRoom;
     private Transform lastRoom;
     private Image image; // ???
-    public LayoutElement layoutElement;
+    public LayoutElement layoutElement; 
     
     [Header("Reference to Hierarchy")]
     [SerializeField] public CardSO cardSO;
@@ -356,8 +356,8 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             gc.KillCard(this, newRoom.GetComponent<RoomManager>());
         }
         healthText.text = _health.ToString();
-        healthText.color = Color.red;
         _cardHealthIndicatorOnRoom.text = _health.ToString();
+        _cardHealthIndicatorOnRoom.color = new Color(1f, 0.294f, 0.294f, 1f);
     }
 
     public void Heal(int amount)
@@ -370,8 +370,9 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             _health = maxHealth;
         }
         healthText.text = _health.ToString();
-        healthText.color = Color.green;
+       
         _cardHealthIndicatorOnRoom.text = _health.ToString();
+        _cardHealthIndicatorOnRoom.color = Color.green;
     }
 
     
