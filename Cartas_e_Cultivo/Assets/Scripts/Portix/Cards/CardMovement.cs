@@ -40,6 +40,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     [SerializeField] private int maxGrowthLevel = 1;
 
     private Animator anim;
+    [SerializeField] Animator effects;
     public bool played;
     private int growthLevel = 0;
     private bool isPlantCard;
@@ -355,6 +356,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             Debug.Log("Carta morreu");
             gc.KillCard(this, newRoom.GetComponent<RoomManager>());
         }
+        effects.Play("takehit");
         healthText.text = _health.ToString();
         _cardHealthIndicatorOnRoom.text = _health.ToString();
         _cardHealthIndicatorOnRoom.color = new Color(1f, 0.294f, 0.294f, 1f);

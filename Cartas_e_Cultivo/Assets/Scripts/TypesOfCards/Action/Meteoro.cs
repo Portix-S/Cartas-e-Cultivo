@@ -18,6 +18,6 @@ public class Meteoro : ActionCard {
 
     public override void OnPlay(Animator anim)
     {
-        anim.SetTrigger("Dano");
+        // anim.SetTrigger("Dano");
     }
 }
