@@ -474,7 +474,7 @@ SpriteRenderer:
   m_Size: {x: 0.21, y: 0.05}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &1911410481645776086
@@ -532,6 +532,7 @@ MonoBehaviour:
   played: 0
   isOnHand: 0
   isTurnedBack: 0
+  isClone: 0
   maxHealth: 3
 --- !u!1 &3809994511533765827
 GameObject:

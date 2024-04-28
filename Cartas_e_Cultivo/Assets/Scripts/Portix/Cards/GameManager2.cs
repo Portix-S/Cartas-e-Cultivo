@@ -88,7 +88,7 @@ public class GameManager2 : MonoBehaviour
     public CardMovement teste;
     private static readonly int Inicio = Animator.StringToHash("INICIO");
 
-    public Animator TurnoUI;
+    // public Animator TurnoUI;
     public void Start() {
         // Adiciona todas as cartas ao deck e à mao
         //*
@@ -217,7 +217,7 @@ public class GameManager2 : MonoBehaviour
             mana = (currentTurn + 1 > 10) ? 10 : currentTurn + 1;
             UpdateMana();
             OnPlayerTurnBegin?.Invoke(this, EventArgs.Empty);
-            TurnoUI.SetTrigger("seuTurno");        
+            // TurnoUI.SetTrigger("seuTurno");        
             }
 
         else
@@ -227,7 +227,7 @@ public class GameManager2 : MonoBehaviour
             enemyMana = (currentTurn + 1 > 10) ? 10 : currentTurn + 1;
             EnemyDrawCard(1, false);
             OnEnemyTurnBegin?.Invoke(this, EventArgs.Empty);
-            TurnoUI.SetTrigger("turnoInimigo");   
+            // TurnoUI.SetTrigger("turnoInimigo");   
         }
 
         FindObjectOfType<AudioManager>().Play("buttonClick1"); // plays a button sound
@@ -273,7 +273,7 @@ public class GameManager2 : MonoBehaviour
         isPlaying = false;
         isOnMenu = true;
         winUI.SetActive(true);  
-        Invoke("GameOverMenu", 3f);
+        Invoke("GameOverMenu", 5f);
     }
 
     public void ShowLoseUI()
@@ -281,7 +281,7 @@ public class GameManager2 : MonoBehaviour
         isPlaying = false;
         isOnMenu = true;
         loseUI.SetActive(true);
-        Invoke("GameOverMenu", 3f);
+        Invoke("GameOverMenu", 5f);
     }
 
     private void GameOverMenu()

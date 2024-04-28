@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using System;
 
-[CreateAssetMenu(fileName = "Chuva", menuName = "Chuva")]
+[CreateAssetMenu(fileName = "Chuvas", menuName = "Chuvaaa")]
 
-public class Chuva : ActionCard {
+public class Chuvas : ActionCard {
     public override void OnPlay(RoomManager room, GameManager2 gm)
     {
         gm.GetEnemyRooms(room).ForEach(card =>
