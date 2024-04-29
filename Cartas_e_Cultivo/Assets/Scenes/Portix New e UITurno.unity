@@ -161,7 +161,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -94, y: -53.162}
+  m_AnchoredPosition: {x: -89.222046, y: -53.162}
   m_SizeDelta: {x: 154.1235, y: 110.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &18488
@@ -1218,7 +1218,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1060625080}
   - {fileID: 510479917}
   - {fileID: 1502040109}
   - {fileID: 1926076269}
@@ -2322,7 +2321,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510479916}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fcd882b1f4c8677468cbf628f2361adc, type: 2}
   m_CullingMode: 0
@@ -4456,6 +4455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCards: 1
   currentCards: 0
+
 --- !u!1 &1060625079
 GameObject:
   m_ObjectHideFlags: 0
@@ -4567,6 +4567,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+
 --- !u!1 &1061459674
 GameObject:
   m_ObjectHideFlags: 0
@@ -6413,7 +6414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deckPreset:
   - card: {fileID: 4946529856588461148, guid: 1295b7c1708189e4aa75ee3fb547c30c, type: 3}
-    amount: 0
+    amount: 2
   - card: {fileID: 4946529856588461148, guid: 73250f48c93d629469f9b3c54f95a588, type: 3}
     amount: 2
   - card: {fileID: 4946529856588461148, guid: b6d929d64c0032243bac03490e8f927e, type: 3}
@@ -6423,13 +6424,19 @@ MonoBehaviour:
   - card: {fileID: 4946529856588461148, guid: bb774f122708b3b408aec37fbe472da3, type: 3}
     amount: 2
   - card: {fileID: 4946529856588461148, guid: 7a8427a8ee875e941b5bad1d30dd3820, type: 3}
-    amount: 0
+    amount: 2
   - card: {fileID: 4946529856588461148, guid: 23c3640b933b862488ed9c25f4b369bc, type: 3}
+
     amount: 0
   - card: {fileID: 4946529856588461148, guid: 1ea5d720ff97e214e8982167f220ff16, type: 3}
     amount: 5
   - card: {fileID: 4946529856588461148, guid: 7905a1d191dce7040a890c4bc639d823, type: 3}
+
     amount: 0
+  - card: {fileID: 4946529856588461148, guid: 7905a1d191dce7040a890c4bc639d823, type: 3}
+    amount: 2
+  - card: {fileID: 4946529856588461148, guid: 346c25f0ed9602e4892351c94bdeeb27, type: 3}
+    amount: 2
   deck: []
   graveyard: []
   playerRooms:
@@ -6452,19 +6459,21 @@ MonoBehaviour:
   handScript: {fileID: 6096622931560717936}
   enemyDeckPreset:
   - card: {fileID: 4946529856588461148, guid: 1295b7c1708189e4aa75ee3fb547c30c, type: 3}
-    amount: 0
+    amount: 2
   - card: {fileID: 4946529856588461148, guid: 37a979921c17b2344b89cf97dea08067, type: 3}
-    amount: 5
+    amount: 2
   - card: {fileID: 4946529856588461148, guid: b6d929d64c0032243bac03490e8f927e, type: 3}
-    amount: 0
+    amount: 2
   - card: {fileID: 4946529856588461148, guid: bb774f122708b3b408aec37fbe472da3, type: 3}
-    amount: 5
+    amount: 2
   - card: {fileID: 4946529856588461148, guid: 7a8427a8ee875e941b5bad1d30dd3820, type: 3}
-    amount: 0
+    amount: 2
   - card: {fileID: 4946529856588461148, guid: 23c3640b933b862488ed9c25f4b369bc, type: 3}
-    amount: 0
+    amount: 2
   - card: {fileID: 4946529856588461148, guid: 7905a1d191dce7040a890c4bc639d823, type: 3}
-    amount: 0
+    amount: 2
+  - card: {fileID: 4946529856588461148, guid: 346c25f0ed9602e4892351c94bdeeb27, type: 3}
+    amount: 2
   enemyCards: []
   enemyPlayableCards: []
   enemyPlayedCards: []
@@ -6527,7 +6536,6 @@ MonoBehaviour:
   cardsOnMulligan: []
   cardsToBeReturned: []
   teste: {fileID: 0}
-  TurnoUI: {fileID: 1060625082}
 --- !u!1 &1565471893
 GameObject:
   m_ObjectHideFlags: 0

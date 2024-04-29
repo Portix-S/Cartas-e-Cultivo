@@ -15,12 +15,12 @@ MonoBehaviour:
   cardID: 10
   cardName: Chuva
   description: 
-  manaCost: 2
+  manaCost: 1
   hasGrowthTime: 0
   hasHealth: 0
   hasOnDraw: 0
   hasOnPlay: 0
   hasOnDie: 0
-  canBePlayedOnEnemyRoom: 1
+  canBePlayedOnEnemyRoom: 0
   canBePlayedOnPlayerRoom: 1
   isActionCard: 1

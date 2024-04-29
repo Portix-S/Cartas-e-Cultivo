@@ -7,7 +7,8 @@ using System;
 
 [CreateAssetMenu(fileName = "New Action Card", menuName = "Porco")]
 
-public class Porco : ActionCard {
+public class Porco : ActionCard
+{
     public override void OnPlay(RoomManager room, GameManager2 gm)
     {
         room.GetCardScript().TakeDamage(10);   

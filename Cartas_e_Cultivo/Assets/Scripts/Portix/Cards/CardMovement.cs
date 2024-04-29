@@ -153,7 +153,10 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         growthLevel = maxGrowthLevel;
         anim.SetInteger(Tempo, maxGrowthLevel - growthLevel);
-        gc.enemyCardsGrown++;
+        if (isAICard)
+            gc.enemyCardsGrown++;
+        else
+            gc.cardsGrown++;
         cardSO.OnGrowth(anim, gc, newRoom.GetComponent<RoomManager>(), this.gameObject);
     }
 
@@ -318,7 +321,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     
     public void ReduceGrowthTime(int amount)
     {
-        if (!isPlantCard || !played) return;
+        if (!isPlantCard || !played || growthLevel == maxGrowthLevel) return;
         Debug.Log("current level" + growthLevel + "max level" + maxGrowthLevel + "amount" + amount + "new level" + (growthLevel - amount));
         growthLevel += amount;
         if (growthLevel >= maxGrowthLevel)
