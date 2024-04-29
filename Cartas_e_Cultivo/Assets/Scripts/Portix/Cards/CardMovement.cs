@@ -23,6 +23,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     private Transform priorityLayerUI;
     public Image frame;
     public Image artwork;
+    [SerializeField] private Animator damageAnim;
     [SerializeField] private GameObject cardBack;
 
     [SerializeField] GameObject stats;
@@ -40,7 +41,6 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     [SerializeField] private int maxGrowthLevel = 1;
 
     private Animator anim;
-    [SerializeField] Animator effects;
     public bool played;
     private int growthLevel = 0;
     private bool isPlantCard;
@@ -251,7 +251,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             RoomManager roomScript = lastRoom.GetComponent<RoomManager>();
             roomScript.currentCards--;
         }
-        anim.SetTrigger("PLAYED");
+        
         if(!isClone)
             anim.SetInteger(Tempo, maxGrowthLevel);
         
@@ -262,6 +262,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         // Get Card Health Indicator
         if (cardSO.hasHealth)
         {
+            anim.SetTrigger("PLAYED");
             _cardHealthIndicatorOnRoom = roomManager.GetCardHealthIndicator();
             _cardHealthIndicatorOnRoom.gameObject.SetActive(true);
             _cardHealthIndicatorOnRoom.text = _health.ToString();
@@ -345,7 +346,12 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         Debug.Log("Carta tem vida?" + cardSO.hasHealth + "jogada " + played);
         if (!cardSO.hasHealth || !played) return;
-        
+        if (damageAnim != null)
+        {
+            Debug.Log("Taking damage animation");
+            damageAnim.Play("takehit");
+        }
+
         _health -= damage;
         if (_health <= 0)
         {
@@ -356,7 +362,6 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             Debug.Log("Carta morreu");
             gc.KillCard(this, newRoom.GetComponent<RoomManager>());
         }
-        effects.Play("takehit");
         healthText.text = _health.ToString();
         _cardHealthIndicatorOnRoom.text = _health.ToString();
         _cardHealthIndicatorOnRoom.color = new Color(1f, 0.294f, 0.294f, 1f);
