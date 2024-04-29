@@ -360,14 +360,19 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         {
             _health = 0;
             // Action to die
-            cardSO.OnDie(anim, gc, newRoom.GetComponent<RoomManager>(), this.gameObject);
-
-            Debug.Log("Carta morreu");
-            gc.KillCard(this, newRoom.GetComponent<RoomManager>());
+            Invoke(nameof(Die), 0.4f);
         }
         healthText.text = _health.ToString();
         _cardHealthIndicatorOnRoom.text = _health.ToString();
         _cardHealthIndicatorOnRoom.color = new Color(1f, 0.294f, 0.294f, 1f);
+    }
+
+    private void Die()
+    {
+        cardSO.OnDie(anim, gc, newRoom.GetComponent<RoomManager>(), this.gameObject);
+
+        Debug.Log("Carta morreu");
+        gc.KillCard(this, newRoom.GetComponent<RoomManager>());
     }
 
     public void Heal(int amount)
