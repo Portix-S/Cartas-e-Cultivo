@@ -223,6 +223,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         if (lastRoom == newRoom || newRoom == null)
         {
             this.transform.SetParent(lastRoom);
+            this.transform.localScale = new Vector3(1f, 1f, 1f);
             GetComponent<CanvasGroup>().blocksRaycasts = true;
         }
     }
