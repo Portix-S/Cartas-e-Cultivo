@@ -441,6 +441,7 @@ MonoBehaviour:
   cardSO: {fileID: 11400000, guid: 2c07657db9eeb894a801742370b192aa, type: 2}
   frame: {fileID: 2669199882288199864}
   artwork: {fileID: 2609792037277482430}
+  damageAnim: {fileID: 0}
   cardBack: {fileID: 5323654875118770061}
   stats: {fileID: 3809994511533765827}
   nameText: {fileID: 7042118424486694189}
@@ -454,7 +455,6 @@ MonoBehaviour:
   cardArtwork: {fileID: 21300000, guid: d49a37e6d5aefde449d924ff7d763b47, type: 3}
   manaCost: 2
   maxGrowthLevel: 0
-  effects: {fileID: 0}
   played: 0
   isOnHand: 0
   isTurnedBack: 0
@@ -866,7 +866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6068337782843141837
 RectTransform:
   m_ObjectHideFlags: 0

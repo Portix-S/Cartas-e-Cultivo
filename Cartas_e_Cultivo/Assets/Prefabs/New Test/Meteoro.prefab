@@ -440,6 +440,7 @@ MonoBehaviour:
   cardSO: {fileID: 11400000, guid: 7f09ca088ad4b714a9b880a0e3c33a03, type: 2}
   frame: {fileID: 2669199882288199864}
   artwork: {fileID: 2609792037277482430}
+  damageAnim: {fileID: 0}
   cardBack: {fileID: 5323654875118770061}
   stats: {fileID: 3809994511533765827}
   nameText: {fileID: 7042118424486694189}

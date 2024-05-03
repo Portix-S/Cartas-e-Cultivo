@@ -443,9 +443,10 @@ public class GameManager2 : MonoBehaviour
 
     public void SelectCard(GameObject test)
     {
+        Debug.Log("Selected card: " + test.name);
+
         Button b = test.GetComponent<Button>();
         ColorBlock cb = b.colors;
-
         teste = test.gameObject.transform.parent.GetComponentInChildren<CardMovement>();
         if (cardsToBeReturned.Contains(teste))
         {
@@ -502,11 +503,12 @@ public class GameManager2 : MonoBehaviour
         cardsOnMulligan.Add(card);
         Transform transform1;
         (transform1 = card.transform).SetParent(mulliganPos);
-        transform1.localScale = new Vector3(2.2f, 2.2f);
+        transform1.localScale = new Vector3(2f, 2f);
         transform1.localPosition = new Vector3(0f, 0f, 0f);
         card.gameObject.SetActive(true);
         card.isOnHand = false;
         deck.Remove(card);
+        card.transform.localPosition = new Vector3(-50f, -50f, 0f);
     }
 
     public void ShowCardFullScreen(GameObject card, GameObject stats)
