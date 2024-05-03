@@ -23,6 +23,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     private Transform priorityLayerUI;
     public Image frame;
     public Image artwork;
+    [SerializeField] private Animator damageAnim;
     [SerializeField] private GameObject cardBack;
 
     [SerializeField] GameObject stats;
@@ -253,7 +254,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             RoomManager roomScript = lastRoom.GetComponent<RoomManager>();
             roomScript.currentCards--;
         }
-        anim.SetTrigger("PLAYED");
+        
         if(!isClone)
             anim.SetInteger(Tempo, maxGrowthLevel);
         
@@ -264,6 +265,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         // Get Card Health Indicator
         if (cardSO.hasHealth)
         {
+            anim.SetTrigger("PLAYED");
             _cardHealthIndicatorOnRoom = roomManager.GetCardHealthIndicator();
             _cardHealthIndicatorOnRoom.gameObject.SetActive(true);
             _cardHealthIndicatorOnRoom.text = _health.ToString();
@@ -347,20 +349,30 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         Debug.Log("Carta tem vida?" + cardSO.hasHealth + "jogada " + played);
         if (!cardSO.hasHealth || !played) return;
-        
+        if (damageAnim != null)
+        {
+            Debug.Log("Taking damage animation");
+            damageAnim.Play("takehit");
+        }
+
         _health -= damage;
         if (_health <= 0)
         {
             _health = 0;
             // Action to die
-            cardSO.OnDie(anim, gc, newRoom.GetComponent<RoomManager>(), this.gameObject);
-
-            Debug.Log("Carta morreu");
-            gc.KillCard(this, newRoom.GetComponent<RoomManager>());
+            Invoke(nameof(Die), 0.4f);
         }
         healthText.text = _health.ToString();
         _cardHealthIndicatorOnRoom.text = _health.ToString();
         _cardHealthIndicatorOnRoom.color = new Color(1f, 0.294f, 0.294f, 1f);
+    }
+
+    private void Die()
+    {
+        cardSO.OnDie(anim, gc, newRoom.GetComponent<RoomManager>(), this.gameObject);
+
+        Debug.Log("Carta morreu");
+        gc.KillCard(this, newRoom.GetComponent<RoomManager>());
     }
 
     public void Heal(int amount)
