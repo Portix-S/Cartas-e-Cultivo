@@ -360,7 +360,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         {
             _health = 0;
             // Action to die
-            Invoke(nameof(Die), 0.4f);
+            Invoke(nameof(Die), 0.45f);
         }
         healthText.text = _health.ToString();
         _cardHealthIndicatorOnRoom.text = _health.ToString();
