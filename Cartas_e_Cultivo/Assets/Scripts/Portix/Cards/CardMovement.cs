@@ -103,7 +103,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             anim.SetInteger(Tempo, maxGrowthLevel - growthLevel);
             if (growthLevel == maxGrowthLevel)
             {
-                gc.cardsGrown++;
+                GrowPlant();
                 Debug.Log("Full grow " + this.gameObject + anim + gc + newRoom.GetComponent<RoomManager>());
 
                 // Funções OnGrowth() das cartas, localizacao temporaria
@@ -154,9 +154,9 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         growthLevel = maxGrowthLevel;
         anim.SetInteger(Tempo, maxGrowthLevel - growthLevel);
         if (isAICard)
-            gc.enemyCardsGrown++;
+            gc.EnemyCardGrown();
         else
-            gc.cardsGrown++;
+            gc.CardGrown();
         cardSO.OnGrowth(anim, gc, newRoom.GetComponent<RoomManager>(), this.gameObject);
     }
 
@@ -348,7 +348,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     
     public void TakeDamage(int damage)
     {
-        Debug.Log("Carta tem vida?" + cardSO.hasHealth + "jogada " + played);
+        Debug.Log("Carta" + this.name + " tem vida?" + cardSO.hasHealth + "jogada " + played);
         if (!cardSO.hasHealth || !played) return;
         if (damageAnim != null)
         {

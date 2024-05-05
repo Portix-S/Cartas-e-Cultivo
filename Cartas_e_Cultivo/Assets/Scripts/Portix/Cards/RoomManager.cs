@@ -39,16 +39,17 @@ public class RoomManager : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
     {
         if (_isShowingCardInfo)
         {
-            cardScript.ShowCard();
+            _currentCardScript.ShowCard();
             _isShowingCardInfo = false;
         }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (currentCards == 0 || isEnemyRoom || this.CompareTag("Hand")) return;  // Shouldn't show cards with these conditions
+        if (currentCards == 0 || this.CompareTag("Hand")) return;  // Shouldn't show cards with these conditions
         _isShowingCardInfo = !_isShowingCardInfo;
         _currentCardScript.ShowCard();
+        _currentCardScript.GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 
     public void OnDrop(PointerEventData eventData)

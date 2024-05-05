@@ -1218,6 +1218,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1060625080}
   - {fileID: 510479917}
   - {fileID: 1502040109}
   - {fileID: 1926076269}
@@ -1225,7 +1226,6 @@ RectTransform:
   - {fileID: 700805266}
   - {fileID: 1647927124}
   - {fileID: 350066402}
-  - {fileID: 1060625080}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4468,7 +4468,7 @@ GameObject:
   - component: {fileID: 1060625082}
   - component: {fileID: 1060625081}
   m_Layer: 5
-  m_Name: TurnoUI
+  m_Name: TurnoSign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4481,17 +4481,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060625079}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.018499834, z: -0, w: 0.9998289}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 30, y: 30, z: 1}
+  m_LocalScale: {x: 14.429428, y: 14.429428, z: 0.4809809}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 250808501}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 2.12, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: 73}
+  m_AnchoredPosition: {x: 797, y: 256}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1060625081
@@ -4534,8 +4534,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 397397401
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_SortingOrder: 35
+  m_Sprite: {fileID: 21300000, guid: 54ac1446e656d579fbbaf91bb3faea29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4543,7 +4543,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &1060625082
@@ -6415,19 +6415,19 @@ MonoBehaviour:
   - card: {fileID: 4946529856588461148, guid: 1295b7c1708189e4aa75ee3fb547c30c, type: 3}
     amount: 2
   - card: {fileID: 4946529856588461148, guid: 73250f48c93d629469f9b3c54f95a588, type: 3}
-    amount: 2
+    amount: 5
   - card: {fileID: 4946529856588461148, guid: b6d929d64c0032243bac03490e8f927e, type: 3}
     amount: 2
   - card: {fileID: 4946529856588461148, guid: 37a979921c17b2344b89cf97dea08067, type: 3}
-    amount: 2
+    amount: 5
   - card: {fileID: 4946529856588461148, guid: bb774f122708b3b408aec37fbe472da3, type: 3}
     amount: 2
   - card: {fileID: 4946529856588461148, guid: 7a8427a8ee875e941b5bad1d30dd3820, type: 3}
     amount: 2
   - card: {fileID: 4946529856588461148, guid: 23c3640b933b862488ed9c25f4b369bc, type: 3}
-    amount: 0
+    amount: 2
   - card: {fileID: 4946529856588461148, guid: 1ea5d720ff97e214e8982167f220ff16, type: 3}
-    amount: 5
+    amount: 2
   - card: {fileID: 4946529856588461148, guid: 7905a1d191dce7040a890c4bc639d823, type: 3}
     amount: 0
   - card: {fileID: 4946529856588461148, guid: 7905a1d191dce7040a890c4bc639d823, type: 3}
@@ -6504,6 +6504,8 @@ MonoBehaviour:
   checkingPlayableCards: 0
   playerTurn: 1
   maxCardsToDraw: 3
+  turnSignAnimator: {fileID: 1060625082}
+  endTurnButton: {fileID: 350066401}
   stimulateGrowth: 0
   cardsGrown: 0
   playButton: {fileID: 6096622931560717923}

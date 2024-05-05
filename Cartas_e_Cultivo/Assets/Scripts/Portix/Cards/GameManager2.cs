@@ -58,6 +58,8 @@ public class GameManager2 : MonoBehaviour
     public bool playerTurn = true;
     public int maxCardsToDraw = 3;
     private static System.Random rng = new();
+    [SerializeField] private Animator turnSignAnimator;
+    [SerializeField] private GameObject endTurnButton;
 
     [Header("Growth Stats")]
     [SerializeField] private bool stimulateGrowth;
@@ -87,6 +89,7 @@ public class GameManager2 : MonoBehaviour
     public List<CardMovement> cardsToBeReturned;
     public CardMovement teste;
     private static readonly int Inicio = Animator.StringToHash("INICIO");
+    private static readonly int ChangeTurn = Animator.StringToHash("ChangeTurn");
 
     // public Animator TurnoUI;
     public void Start() {
@@ -208,8 +211,10 @@ public class GameManager2 : MonoBehaviour
 
     public void EndTurn() {
         playerTurn = !playerTurn; // Can be changed to use with AI Player
+        turnSignAnimator.SetTrigger(ChangeTurn);
         if(playerTurn)
         {
+            endTurnButton.SetActive(true);
             currentTurn += 1;
             stimulateGrowth = true;
             canPlayerDraw = true;
@@ -218,10 +223,11 @@ public class GameManager2 : MonoBehaviour
             UpdateMana();
             OnPlayerTurnBegin?.Invoke(this, EventArgs.Empty);
             // TurnoUI.SetTrigger("seuTurno");        
-            }
+        }
 
         else
         {
+            endTurnButton.SetActive(false);
             canPlayerDraw = false;
             stimulateGrowth = false;
             enemyMana = (currentTurn + 1 > 10) ? 10 : currentTurn + 1;
@@ -243,23 +249,6 @@ public class GameManager2 : MonoBehaviour
         else
         {
             Debug.Log("Can't end turn now");
-        }
-    }
-
-    private void Update() {
-        // deckCountText.text = deck.Count.ToString();
-        // manaCountText.text = mana.ToString();
-        // graveyardCountText.text = graveyard.Count.ToString();
-        if(cardsGrown >= maxCardsOnRooms)
-        {
-            Debug.Log("Show Win");
-            WinGame();
-        }
-
-        if(enemyCardsGrown >= maxCardsOnRooms)
-        {
-            Debug.Log("Show Lose");
-            ShowLoseUI();
         }
     }
 
@@ -519,8 +508,11 @@ public class GameManager2 : MonoBehaviour
             //mulliganSlots[2]
             stats.SetActive(true);
             _cardFullScreen = Instantiate(card, mulliganSlots[2].transform);
-            _cardFullScreen.transform.localPosition = Vector3.zero;
-            _cardFullScreen.transform.localScale = new Vector3(2.2f, 2.2f);
+            CardMovement cardScript = _cardFullScreen.GetComponent<CardMovement>();
+            if(cardScript.isTurnedBack)
+                cardScript.TurnCard();
+            _cardFullScreen.transform.localPosition = new Vector3(-50f, -50f, 0f);
+            _cardFullScreen.transform.localScale = new Vector3(3f, 3f);
         }
         else
         {
@@ -638,6 +630,24 @@ public class GameManager2 : MonoBehaviour
         {
             Console.WriteLine(e);
             throw;
+        }
+    }
+
+    public void CardGrown()
+    {
+        cardsGrown++;
+        if(cardsGrown >= maxCardsOnRooms && !isOnMenu)
+        {
+            Invoke(nameof(WinGame) , 2f);
+        }
+    }
+
+    public void EnemyCardGrown()
+    {
+        enemyCardsGrown++;
+        if(enemyCardsGrown >= maxCardsOnRooms && !isOnMenu)
+        {
+            Invoke(nameof(ShowLoseUI), 2f);
         }
     }
 
