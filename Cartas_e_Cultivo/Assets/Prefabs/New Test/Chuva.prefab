@@ -450,7 +450,8 @@ MonoBehaviour:
   healthText: {fileID: 0}
   growthTimeText: {fileID: 0}
   cardName: Chuva
-  cardDescription: Acelerele em x o tempo de crescimento de todas as plantas
+  cardDescription: Acelere em 2 turnos o tempo de crescimento das plantas no seu
+    campo
   cardFrame: {fileID: 21300000, guid: 061a9c14650e06540b29b526da4d3a97, type: 3}
   cardArtwork: {fileID: 21300000, guid: 93ad2f423a824ab488a9d57675abdb70, type: 3}
   manaCost: 2
@@ -779,7 +780,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Acelere em x o tempo de crescimento de todas as plantas
+  m_text: Acelere em 2 turnos o tempo de crescimento das plantas no seu campo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 888cd2eb98f18bf4480ed6a7fe42c27d, type: 2}
   m_sharedMaterial: {fileID: -5166092694447943323, guid: 888cd2eb98f18bf4480ed6a7fe42c27d, type: 2}
@@ -806,15 +807,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 13
+  m_fontSizeBase: 13
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -842,7 +843,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 13.207761, y: 0, z: -44.35954, w: -39.281998}
+  m_margin: {x: -2.1081724, y: 0, z: -58.43362, w: -39.281998}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

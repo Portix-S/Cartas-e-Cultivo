@@ -527,7 +527,7 @@ MonoBehaviour:
   healthText: {fileID: 6430491101970866959}
   growthTimeText: {fileID: 6609142394083660256}
   cardName: Abobora
-  cardDescription: Uma das aboboras
+  cardDescription: depois de crescer crie clones nos terrenos adjacentes desta planta
   cardFrame: {fileID: 21300000, guid: 5469890ae28b7744fad9a70ea4482312, type: 3}
   cardArtwork: {fileID: 21300000, guid: f0905bafe423be74e8f83fcced7f94ca, type: 3}
   manaCost: 4
@@ -917,7 +917,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Cria clones ao ser destruida
+  m_text: depois de crescer crie clones nos terrenos adjacentes desta planta
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 888cd2eb98f18bf4480ed6a7fe42c27d, type: 2}
   m_sharedMaterial: {fileID: -5166092694447943323, guid: 888cd2eb98f18bf4480ed6a7fe42c27d, type: 2}
@@ -944,15 +944,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 13
+  m_fontSizeBase: 13
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -980,7 +980,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 12.698087, y: 0, z: 13.385654, w: 0.1346283}
+  m_margin: {x: -0.18068218, y: 0, z: 0.06940079, w: -0.111968994}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

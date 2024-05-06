@@ -527,7 +527,7 @@ MonoBehaviour:
   healthText: {fileID: 6430491101970866959}
   growthTimeText: {fileID: 6609142394083660256}
   cardName: acafrao
-  cardDescription: Boss do chefao
+  cardDescription: Um simples e belo acafrao
   cardFrame: {fileID: 21300000, guid: 5469890ae28b7744fad9a70ea4482312, type: 3}
   cardArtwork: {fileID: 21300000, guid: d36a3f535ac52e349bd11892c21badae, type: 3}
   manaCost: 2
@@ -993,7 +993,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Boss do oponente
+  m_text: 'Um simples e belo acafrao
 
 '
   m_isRightToLeft: 0
@@ -1022,15 +1022,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

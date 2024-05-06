@@ -603,7 +603,7 @@ MonoBehaviour:
   healthText: {fileID: 6430491101970866959}
   growthTimeText: {fileID: 6609142394083660256}
   cardName: Cafe
-  cardDescription: Compre uma carta
+  cardDescription: depois de crescer compre 1 carta
   cardFrame: {fileID: 21300000, guid: 5469890ae28b7744fad9a70ea4482312, type: 3}
   cardArtwork: {fileID: 21300000, guid: 8c9ffea2b99bbea4484f63b63b24c092, type: 3}
   manaCost: 3
@@ -962,7 +962,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 29.123108, y: -2.1296}
+  m_AnchoredPosition: {x: 27.7, y: -2.1296}
   m_SizeDelta: {x: 104.9857, y: 49.0082}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2830146620101915499
@@ -993,7 +993,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Depois de crescer compre 1 carta
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 888cd2eb98f18bf4480ed6a7fe42c27d, type: 2}
   m_sharedMaterial: {fileID: -5166092694447943323, guid: 888cd2eb98f18bf4480ed6a7fe42c27d, type: 2}
@@ -1020,15 +1020,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

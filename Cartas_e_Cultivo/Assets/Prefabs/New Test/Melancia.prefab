@@ -451,7 +451,8 @@ MonoBehaviour:
   healthText: {fileID: 6430491101970866959}
   growthTimeText: {fileID: 6609142394083660256}
   cardName: Melancia
-  cardDescription: Crie clones ao jogar no campo
+  cardDescription: depois de ser destruida crie clones nos terrenos adjacentes desta
+    planta
   cardFrame: {fileID: 21300000, guid: 5469890ae28b7744fad9a70ea4482312, type: 3}
   cardArtwork: {fileID: 21300000, guid: a08cc58af018b024c9e71607cea0e02b, type: 3}
   manaCost: 2
@@ -841,7 +842,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: depois de ser destruida crie clones nos terrenos adjacentes desta planta
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 888cd2eb98f18bf4480ed6a7fe42c27d, type: 2}
   m_sharedMaterial: {fileID: -5166092694447943323, guid: 888cd2eb98f18bf4480ed6a7fe42c27d, type: 2}
@@ -875,8 +876,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -904,7 +905,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 13.207761, y: 0, z: -44.35954, w: -39.281998}
+  m_margin: {x: -0.9170561, y: 0, z: -58.201885, w: -39.281998}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
