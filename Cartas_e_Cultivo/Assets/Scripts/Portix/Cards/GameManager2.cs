@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using System.Collections;
 using System.Linq;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -560,14 +561,19 @@ public class GameManager2 : MonoBehaviour
             }
         }
         enemyPlayableCards = enemyPlayableCards.OrderByDescending(x => x.cardSO.manaCost).ToList();
-        Invoke("PlayCardsAI", 1.5f);
+        StartCoroutine(PlayCardsAI());
     }
 
-    private void PlayCardsAI()
+
+    
+    private IEnumerator PlayCardsAI()
     {
+        yield return new WaitForSeconds(1.5f);
         if (enemyPlayableCards.Count > 0 && !playerTurn && enemyAvailableRooms.Count > 0)
         {
             CardMovement card = enemyPlayableCards[0]; // Escolhe a carta mais cara
+            card.TurnCard();
+            yield return new WaitForSeconds(1.5f);
             // enemyPlayableCards.Remove(card);
             enemyCards.Remove(card); // Remove da mao
             enemyMana -= card.cardSO.manaCost; // Diminui a mana

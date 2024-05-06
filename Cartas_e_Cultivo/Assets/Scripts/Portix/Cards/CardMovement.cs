@@ -232,6 +232,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public void PlayCard(RoomManager roomManager)
     {
         Debug.Log("PlayCard");
+        anim.enabled = true;
         // Change Room
         newRoom = roomManager.transform;
         this.transform.SetParent(newRoom);
@@ -316,6 +317,8 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void TurnCard()
     {
+        anim.enabled = !isTurnedBack;
+        stats.SetActive(isTurnedBack);
         isTurnedBack = !isTurnedBack;
         cardBack.SetActive(isTurnedBack);
     }
@@ -339,11 +342,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public void ShowCard()
     {
         isShowingCardInfo = !isShowingCardInfo;
-        // anim.enabled = isShowingCardInfo ? false : true;
-        // stats.SetActive(isShowingCardInfo);
         gc.ShowCardFullScreen(this.gameObject, stats);
-        // Maybe show at the center of the screen, just like in Mulligan system,
-        //maybe reuse the same code
     }
     
     public void TakeDamage(int damage)
