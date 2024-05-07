@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum STATE{
    DISABLED,
@@ -14,6 +15,8 @@ public class DialogueSystem : MonoBehaviour
     TypeTextAnimation typeText;
     int currentText = 0;
     STATE state; 
+
+    public Image refe;
 
     private void Awake() {
         typeText = FindObjectOfType<TypeTextAnimation>();
@@ -42,9 +45,16 @@ public class DialogueSystem : MonoBehaviour
     }
 
    public void Next(){
+        refe.color = Color.white;
+        refe.sprite = dialogueData.talkScript[currentText].sprite;
+        
+        
+        if(refe.sprite == null) refe.color = Color.clear;
+
         typeText.fullText = dialogueData.talkScript[currentText++].text;
         
         if(currentText == dialogueData.talkScript.Count) finished = true;
+        
 
         typeText.StartTyping();
         state = STATE.TYPING;

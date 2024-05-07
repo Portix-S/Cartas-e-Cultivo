@@ -15,24 +15,78 @@ MonoBehaviour:
   talkScript:
   - name: "Vov\xF4"
     text: Testeeeeeeee
+    sprite: {fileID: 21300000, guid: fa8483306b531364d8e1bea1deeca5a9, type: 3}
   - name: "Vov\xF4"
     text: Filho! Filho!
+    sprite: {fileID: 0}
   - name: "Vov\xF4"
     text: "Ah! A\xED voc\xEA est\xE1. Bom dia, filho! "
+    sprite: {fileID: 0}
   - name: "Vov\xF4"
     text: "Hoje \xE9 o dia. Finalmente poderei te ensinar sobre os Duelos de Plantio.
       Como voc\xEA bem sabe, o seu velho aqui est\xE1 h\xE1 mais de 50 anos invicto!
       Claro que\u2026 numa modalidade que eu mesmo inventei he he he. "
+    sprite: {fileID: 0}
   - name: "Vov\xF4"
     text: " Voc\xEA pode n\xE3o saber, mas Plantae j\xE1 foi uma terra violenta e
       sanguin\xE1ria. Mas ap\xF3s um certo incidente amb\xEDguo e misterioso de propor\xE7\xF5es
       catacl\xEDsmicas, todos os conflitos se tornaram irrelevantes."
+    sprite: {fileID: 0}
   - name: "Vov\xF4"
     text: " E todas as armas foram eventualmente banidas. Mas os donos de terra precisavam
       descontar suas diferen\xE7as de uma forma ou de outra, n\xE3o?  "
+    sprite: {fileID: 0}
   - name: "Vov\xF4"
     text: "A tradi\xE7\xE3o dos Duelos de Plantio \xE9 t\xE3o velha quanto\u2026
       bom\u2026 quanto eu hehehe. E al\xE9m de ser um modo pac\xEDfico e relativamente
       tranquilo de duelar, pode ser muito importante e SALVAR A SUA VIDA NO FUTURO. "
+    sprite: {fileID: 0}
   - name: "Vov\xF4"
     text: "Bem, mas vamos por partes. \xC9 tudo muito simples."
+    sprite: {fileID: 0}
+  - name: "Vov\xF4"
+    text: "Est\xE1 vendo? Isto \xE9 uma batata. N\xE3o a subestime, meu filho. As
+      batatas s\xE3o a base da vida."
+    sprite: {fileID: 21300000, guid: fa8483306b531364d8e1bea1deeca5a9, type: 3}
+  - name: "Vov\xF4"
+    text: "Durante gera\xE7\xF5es, nossa fam\xEDlia passou adiante os valores do
+      cl\xE3 das ra\xEDzes. Claro que\u2026 voc\xEA \xE9 apenas a segunda gera\xE7\xE3o,
+      mas pressupunha-cremos que nossa linhagem ser\xE1 longa, duradoura e pr\xF3spera."
+    sprite: {fileID: 21300000, guid: fa8483306b531364d8e1bea1deeca5a9, type: 3}
+  - name: "Vov\xF4"
+    text: "Agora, lhe ensinarei como plant\xE1-la. Leia bem para notar suas caracter\xEDsticas."
+    sprite: {fileID: 21300000, guid: fa8483306b531364d8e1bea1deeca5a9, type: 3}
+  - name: "Vov\xF4"
+    text: Aqui fica o CUSTO dela
+    sprite: {fileID: 21300000, guid: 44ad5e7678a78e440a643178084da68d, type: 3}
+  - name: "Vov\xF4"
+    text: Aqui fica o TEMPO DE CRESCIMENTO DA PLANTA
+    sprite: {fileID: 21300000, guid: fa8483306b531364d8e1bea1deeca5a9, type: 3}
+  - name: "Vov\xF4"
+    text: "Esse valor diminui a cada turno que passa, ao chegar a 0 sua planta estar\xE1
+      crescida"
+    sprite: {fileID: 21300000, guid: fa8483306b531364d8e1bea1deeca5a9, type: 3}
+  - name: "Vov\xF4"
+    text: "Aqui est\xE1 a VIDA de sua planta"
+    sprite: {fileID: 21300000, guid: ee257ec476514db49861dcbb318124f7, type: 3}
+  - name: "Vov\xF4"
+    text: "Naturalmente se a vida da planta zerar ela morre e vai para o cemit\xE9rio
+      de plantas"
+    sprite: {fileID: 21300000, guid: fa8483306b531364d8e1bea1deeca5a9, type: 3}
+  - name: "Vov\xF4"
+    text: "E por fim, caso sua planta tenha algum efeito especial, ele ser\xE1 descrito
+      aqui"
+    sprite: {fileID: 21300000, guid: fa8483306b531364d8e1bea1deeca5a9, type: 3}
+  - name: "Vov\xF4"
+    text: "Viu como \xE9 simples?"
+    sprite: {fileID: 21300000, guid: fa8483306b531364d8e1bea1deeca5a9, type: 3}
+  - name: "Vov\xF4"
+    text: "O quanto de MANA que voc\xEA tem para plantar uma carta fica indicado
+      aqui"
+    sprite: {fileID: 0}
+  - name: "Vov\xF4"
+    text: "Seu deck de cartas ficar\xE1 colocado nessa \xE1rea"
+    sprite: {fileID: 0}
+  - name: "Vov\xF4"
+    text: "E aqui est\xE1 o cemit\xE9rio de plantas"
+    sprite: {fileID: 0}

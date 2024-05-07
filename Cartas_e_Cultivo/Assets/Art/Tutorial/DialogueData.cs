@@ -6,7 +6,9 @@ using UnityEngine;
 public struct Dialogue{
     public string name;
     public string text;
+    
     public Sprite sprite;
+    
 }
 
 [CreateAssetMenu (fileName = "Dialogo", menuName = "ScriptableObject/TalkScript", order = 1)]
