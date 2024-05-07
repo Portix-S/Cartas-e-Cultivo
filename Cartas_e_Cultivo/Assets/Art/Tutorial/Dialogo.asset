@@ -13,6 +13,26 @@ MonoBehaviour:
   m_Name: Dialogo
   m_EditorClassIdentifier: 
   talkScript:
-  - text: Bom dia fio
-  - text: Plantar cartas e cultivos e plantas e cartas e cultivos
-  - text: ele ta falando rapido demais da nem pra ler tudo pqp
+  - name: "Vov\xF4"
+    text: Testeeeeeeee
+  - name: "Vov\xF4"
+    text: Filho! Filho!
+  - name: "Vov\xF4"
+    text: "Ah! A\xED voc\xEA est\xE1. Bom dia, filho! "
+  - name: "Vov\xF4"
+    text: "Hoje \xE9 o dia. Finalmente poderei te ensinar sobre os Duelos de Plantio.
+      Como voc\xEA bem sabe, o seu velho aqui est\xE1 h\xE1 mais de 50 anos invicto!
+      Claro que\u2026 numa modalidade que eu mesmo inventei he he he. "
+  - name: "Vov\xF4"
+    text: " Voc\xEA pode n\xE3o saber, mas Plantae j\xE1 foi uma terra violenta e
+      sanguin\xE1ria. Mas ap\xF3s um certo incidente amb\xEDguo e misterioso de propor\xE7\xF5es
+      catacl\xEDsmicas, todos os conflitos se tornaram irrelevantes."
+  - name: "Vov\xF4"
+    text: " E todas as armas foram eventualmente banidas. Mas os donos de terra precisavam
+      descontar suas diferen\xE7as de uma forma ou de outra, n\xE3o?  "
+  - name: "Vov\xF4"
+    text: "A tradi\xE7\xE3o dos Duelos de Plantio \xE9 t\xE3o velha quanto\u2026
+      bom\u2026 quanto eu hehehe. E al\xE9m de ser um modo pac\xEDfico e relativamente
+      tranquilo de duelar, pode ser muito importante e SALVAR A SUA VIDA NO FUTURO. "
+  - name: "Vov\xF4"
+    text: "Bem, mas vamos por partes. \xC9 tudo muito simples."

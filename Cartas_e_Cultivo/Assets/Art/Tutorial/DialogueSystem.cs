@@ -12,8 +12,9 @@ public class DialogueSystem : MonoBehaviour
     public DialogueData dialogueData;
     bool finished = false;
     TypeTextAnimation typeText;
-    int currentText = -1;
-    STATE state;
+    int currentText = 0;
+    STATE state; 
+
     private void Awake() {
         typeText = FindObjectOfType<TypeTextAnimation>();
 
@@ -42,6 +43,7 @@ public class DialogueSystem : MonoBehaviour
 
    public void Next(){
         typeText.fullText = dialogueData.talkScript[currentText++].text;
+        
         if(currentText == dialogueData.talkScript.Count) finished = true;
 
         typeText.StartTyping();
@@ -52,6 +54,8 @@ public class DialogueSystem : MonoBehaviour
         state = STATE.WAITING;
     }
     void Waiting(){
+        if(Input.GetMouseButtonDown(0)){
+
         if(!finished){
             Next();
         }
@@ -63,7 +67,7 @@ public class DialogueSystem : MonoBehaviour
 
 
     }
-
+}
     void Typing(){
 
     }

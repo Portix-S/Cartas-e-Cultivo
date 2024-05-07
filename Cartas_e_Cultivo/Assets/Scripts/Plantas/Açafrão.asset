@@ -15,9 +15,6 @@ MonoBehaviour:
   cardID: 8
   cardName: "A\xE7afr\xE3o"
   description: 
-  mask: {fileID: 0}
-  artwork: {fileID: 0}
-  imagemDaCarta: {fileID: 0}
   manaCost: 2
   hasGrowthTime: 0
   hasHealth: 1
@@ -28,4 +25,4 @@ MonoBehaviour:
   canBePlayedOnPlayerRoom: 0
   isPlantCard: 1
   growthTime: 2
-  health: 3
+  health: 5
