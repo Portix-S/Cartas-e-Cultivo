@@ -58,7 +58,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: fa8483306b531364d8e1bea1deeca5a9, type: 3}
   - name: "Vov\xF4"
     text: Aqui fica o CUSTO dela
-    sprite: {fileID: 21300000, guid: 44ad5e7678a78e440a643178084da68d, type: 3}
+    sprite: {fileID: 21300000, guid: 4277ef6c160b988439dc6bdaf2aae463, type: 3}
   - name: "Vov\xF4"
     text: Aqui fica o TEMPO DE CRESCIMENTO DA PLANTA
     sprite: {fileID: 21300000, guid: fa8483306b531364d8e1bea1deeca5a9, type: 3}
@@ -76,10 +76,10 @@ MonoBehaviour:
   - name: "Vov\xF4"
     text: "E por fim, caso sua planta tenha algum efeito especial, ele ser\xE1 descrito
       aqui"
-    sprite: {fileID: 21300000, guid: fa8483306b531364d8e1bea1deeca5a9, type: 3}
+    sprite: {fileID: 21300000, guid: 50dbc259f2f25b44bb14051e245eebcd, type: 3}
   - name: "Vov\xF4"
     text: "Viu como \xE9 simples?"
-    sprite: {fileID: 21300000, guid: fa8483306b531364d8e1bea1deeca5a9, type: 3}
+    sprite: {fileID: 0}
   - name: "Vov\xF4"
     text: "O quanto de MANA que voc\xEA tem para plantar uma carta fica indicado
       aqui"
