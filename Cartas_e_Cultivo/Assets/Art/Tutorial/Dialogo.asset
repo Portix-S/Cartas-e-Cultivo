@@ -28,12 +28,12 @@ MonoBehaviour:
       Claro que\u2026 numa modalidade que eu mesmo inventei he he he. "
     sprite: {fileID: 0}
   - name: "Vov\xF4"
-    text: " Voc\xEA pode n\xE3o saber, mas Plantae j\xE1 foi uma terra violenta e
+    text: "Voc\xEA pode n\xE3o saber, mas Plantae j\xE1 foi uma terra violenta e
       sanguin\xE1ria. Mas ap\xF3s um certo incidente amb\xEDguo e misterioso de propor\xE7\xF5es
       catacl\xEDsmicas, todos os conflitos se tornaram irrelevantes."
     sprite: {fileID: 0}
   - name: "Vov\xF4"
-    text: " E todas as armas foram eventualmente banidas. Mas os donos de terra precisavam
+    text: "E todas as armas foram eventualmente banidas. Mas os donos de terra precisavam
       descontar suas diferen\xE7as de uma forma ou de outra, n\xE3o?  "
     sprite: {fileID: 0}
   - name: "Vov\xF4"
@@ -57,25 +57,25 @@ MonoBehaviour:
     text: "Agora, lhe ensinarei como plant\xE1-la. Leia bem para notar suas caracter\xEDsticas."
     sprite: {fileID: 21300000, guid: fa8483306b531364d8e1bea1deeca5a9, type: 3}
   - name: "Vov\xF4"
-    text: Aqui fica o CUSTO dela
+    text: Aqui fica o CUSTO dela.
     sprite: {fileID: 21300000, guid: 4277ef6c160b988439dc6bdaf2aae463, type: 3}
   - name: "Vov\xF4"
-    text: Aqui fica o TEMPO DE CRESCIMENTO DA PLANTA
-    sprite: {fileID: 21300000, guid: fa8483306b531364d8e1bea1deeca5a9, type: 3}
+    text: Aqui fica o TEMPO DE CRESCIMENTO da planta.
+    sprite: {fileID: 21300000, guid: 44f886d81e49f7848bd7bb8ea7cde75b, type: 3}
   - name: "Vov\xF4"
     text: "Esse valor diminui a cada turno que passa, ao chegar a 0 sua planta estar\xE1
-      crescida"
-    sprite: {fileID: 21300000, guid: fa8483306b531364d8e1bea1deeca5a9, type: 3}
+      crescida."
+    sprite: {fileID: 21300000, guid: 44f886d81e49f7848bd7bb8ea7cde75b, type: 3}
   - name: "Vov\xF4"
-    text: "Aqui est\xE1 a VIDA de sua planta"
+    text: "Aqui est\xE1 a VIDA de sua planta."
     sprite: {fileID: 21300000, guid: ee257ec476514db49861dcbb318124f7, type: 3}
   - name: "Vov\xF4"
     text: "Naturalmente se a vida da planta zerar ela morre e vai para o cemit\xE9rio
-      de plantas"
-    sprite: {fileID: 21300000, guid: fa8483306b531364d8e1bea1deeca5a9, type: 3}
+      de plantas."
+    sprite: {fileID: 21300000, guid: ee257ec476514db49861dcbb318124f7, type: 3}
   - name: "Vov\xF4"
     text: "E por fim, caso sua planta tenha algum efeito especial, ele ser\xE1 descrito
-      aqui"
+      aqui."
     sprite: {fileID: 21300000, guid: 50dbc259f2f25b44bb14051e245eebcd, type: 3}
   - name: "Vov\xF4"
     text: "Viu como \xE9 simples?"
@@ -83,10 +83,46 @@ MonoBehaviour:
   - name: "Vov\xF4"
     text: "O quanto de MANA que voc\xEA tem para plantar uma carta fica indicado
       aqui"
+    sprite: {fileID: 21300000, guid: b6755101a6dc88142867839f0625c410, type: 3}
+  - name: "Vov\xF4"
+    text: "E este \xE9 o s\xEDmbolo do seu cemit\xE9rio de plantas."
+    sprite: {fileID: 21300000, guid: 385e208493d402d4bb4e2f024c800c24, type: 3}
+  - name: "Vov\xF4"
+    text: "Caso termine seu turno, clique no bot\xE3o para passar a vez."
     sprite: {fileID: 0}
   - name: "Vov\xF4"
-    text: "Seu deck de cartas ficar\xE1 colocado nessa \xE1rea"
+    text: " Por fim, este \xE9 o campo. Resolvi te trazer aqui neste morro isolado
+      e perigoso \xE0s 5:39 da manh\xE3 porque as ru\xEDnas deste castelo abandonado
+      me pareceram bonitas e visualmente tem\xE1ticas."
     sprite: {fileID: 0}
   - name: "Vov\xF4"
-    text: "E aqui est\xE1 o cemit\xE9rio de plantas"
+    text: " S\xE9rio. Olha s\xF3 pra esse lugar. Deve ter dado um trabalho pra reformar.
+      Olha que riachinho bonito. "
+    sprite: {fileID: 0}
+  - name: "Vov\xF4"
+    text: Enfim.
+    sprite: {fileID: 0}
+  - name: "Vov\xF4"
+    text: "O duelo consiste em uma luta de m\xE3os e mentes, para revelar quem \xE9
+      o agricultor superior dentre os combatentes."
+    sprite: {fileID: 0}
+  - name: "Vov\xF4"
+    text: "Basta plantar nesses 8 espa\xE7os. Quando seus brotos estiverem todos
+      crescidos, voc\xEA ser\xE1 oficialmente o vencedor. Claro que existem estrat\xE9gias
+      para melhorar o seu plantio e prejudicar o do inimigo, mas isso n\xF3s decidimos
+      depois. "
+    sprite: {fileID: 0}
+  - name: "Vov\xF4"
+    text: "Ah, claro. Voc\xEA vai precisar mais do que apenas uma batata. "
+    sprite: {fileID: 0}
+  - name: "Vov\xF4"
+    text: "Resolvi te dar mais algumas cartas especiais. N\xE3o s\xE3o muito bem
+      as cartas da nossa fam\xEDlia, mas achei que seria bom voc\xEA praticar com
+      todo tipo de plantas."
+    sprite: {fileID: 0}
+  - name: "Vov\xF4"
+    text: "E, ali\xE1s, algumas dessas me lembram de\u2026 bons amigos. Enfim.  "
+    sprite: {fileID: 0}
+  - name: "Vov\xF4"
+    text: Boa sorte, filho.
     sprite: {fileID: 0}
