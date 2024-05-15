@@ -47,6 +47,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public bool isOnHand;
     public bool isTurnedBack;
     private bool isShowingCardInfo;
+    private bool hasGrown;
 
     [Header("Health System")] 
     public bool isClone;
@@ -157,7 +158,13 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             gc.EnemyCardGrown();
         else
             gc.CardGrown();
+        hasGrown = true;
         cardSO.OnGrowth(anim, gc, newRoom.GetComponent<RoomManager>(), this.gameObject);
+    }
+    
+    public bool HasGrown()
+    {
+        return hasGrown;
     }
 
     // Pointer enter/exit lidar com visuais das salas?
@@ -238,7 +245,9 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         this.transform.SetParent(newRoom);
         
         // Lose mana
-        gc.LoseMana(manaCost);
+        if(!isClone)
+            gc.LoseMana(manaCost);
+        
         if(!isAICard)
             gc.playerPlayedCards.Add(this);
         else if (!gc.enemyPlayedCards.Contains(this))
@@ -278,7 +287,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         
         //provisorio -> para cartas de ação
         if(!cardSO.hasHealth)
-            this.gameObject.SetActive(false);
+            gc.KillCard(this, null);
     }
     
     public bool CanAffordMana()
@@ -327,6 +336,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         if (!isPlantCard || !played || growthLevel == maxGrowthLevel) return;
         Debug.Log("current level" + growthLevel + "max level" + maxGrowthLevel + "amount" + amount + "new level" + (growthLevel - amount));
+        damageAnim.Play("RainHit");
         growthLevel += amount;
         if (growthLevel >= maxGrowthLevel)
         {
@@ -345,14 +355,17 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         gc.ShowCardFullScreen(this.gameObject, stats);
     }
     
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, bool meteorDamage = false)
     {
         Debug.Log("Carta" + this.name + " tem vida?" + cardSO.hasHealth + "jogada " + played);
         if (!cardSO.hasHealth || !played) return;
         if (damageAnim != null)
         {
             Debug.Log("Taking damage animation");
-            damageAnim.Play("takehit");
+            if(meteorDamage)
+                damageAnim.Play("meteorHit");
+            else
+                damageAnim.Play("takehit");
         }
 
         _health -= damage;

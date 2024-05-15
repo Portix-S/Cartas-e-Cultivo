@@ -85,6 +85,8 @@ public class RoomManager : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
     public void RemoveCurrentCard()
     {
         currentCards--;
+        cardScript = null;
+        _currentCardScript = null;
         _isShowingCardInfo = false;
         _cardHealthIndicator.gameObject.SetActive(false);
     }

@@ -14,7 +14,7 @@ public class Meteoro : ActionCard {
         // ToList() prevents it removing when iterating
         gm.GetEnemyRooms(room).ToList().ForEach(card =>
         { 
-            card.TakeDamage(2);
+            card.TakeDamage(2, true);
         });
     }
 

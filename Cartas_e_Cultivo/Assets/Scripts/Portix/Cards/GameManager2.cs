@@ -262,6 +262,7 @@ public class GameManager2 : MonoBehaviour
     {
         isPlaying = false;
         isOnMenu = true;
+        endTurnButton.SetActive(false);
         winUI.SetActive(true);  
         Invoke("GameOverMenu", 5f);
     }
@@ -271,6 +272,7 @@ public class GameManager2 : MonoBehaviour
         isPlaying = false;
         isOnMenu = true;
         loseUI.SetActive(true);
+        endTurnButton.SetActive(false);
         Invoke("GameOverMenu", 5f);
     }
 
@@ -617,17 +619,25 @@ public class GameManager2 : MonoBehaviour
             Debug.Log("Killing " + card.name + " is AI:" + card.isAICard);
             graveyard.Add(card);
             graveyardCountText.text = graveyard.Count.ToString();
-            room.RemoveCurrentCard();
+            if(room != null)
+                room.RemoveCurrentCard();
             if (card.isAICard)
             {
                 enemyAvailableRooms.Add(room.gameObject);
                 Debug.Log(enemyPlayedCards.FindIndex(x => x == card));
                 enemyPlayedCards.Remove(card);
+                if (card.HasGrown())
+                    enemyCardsGrown--;
             }
             else
             {
                 playerPlayedCards.Remove(card);
+                if (card.HasGrown())
+                    cardsGrown--;
             }
+            
+            
+                
             card.played = false; // Shouldn't be able to change this
             card.gameObject.SetActive(false);
             card.transform.SetParent(null);
